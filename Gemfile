@@ -46,6 +46,12 @@ group :development, :test do
 
 end
 
+group :test do
+  gem 'minitest-reporters', '1.0.14'
+  gem 'mini_backtrace',     '0.1.3'
+  gem 'guard-minitest',     '2.4.4'
+end
+
 group :production do
     gem 'pg', '0.18.1'
     gem 'rails_12factor', '0.0.3'
