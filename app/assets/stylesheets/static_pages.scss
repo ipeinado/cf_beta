@@ -3,8 +3,25 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 section.section-home {
-    display: block;
-    overflow: hidden;
-    min-height: 100%;
-    background: yellow;
+
+}
+
+#carousel {
+    background: LightGoldenrodYellow;
+}
+
+#discover {
+    background: PaleGreen;
+}
+
+#projects-map {
+    background: LightSteelBlue;
+}
+
+#cf-tools {
+    background: Wheat;
+}
+
+#blog-and-events {
+    background: MistyRose;
 }
