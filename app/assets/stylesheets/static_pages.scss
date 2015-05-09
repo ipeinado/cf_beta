@@ -7,7 +7,9 @@ section.section-home {
 }
 
 #carousel {
-    background: LightGoldenrodYellow;
+    background-image: asset-url("background-carousel.jpg");
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 #discover {
