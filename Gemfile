@@ -24,6 +24,9 @@ gem 'sdoc', '0.4.1', group: :doc
 #Using the bootstrap framework for styling
 gem 'bootstrap-sass', '3.3.4.1'
 
+# Use Devise for authentication
+gem 'devise'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -60,3 +63,7 @@ group :production do
     gem 'pg', '0.18.1'
     gem 'rails_12factor', '0.0.3'
 end
+
+# Windows support
+gem 'tzinfo-data'
+gem 'coffee-script-source', '1.8.0'
