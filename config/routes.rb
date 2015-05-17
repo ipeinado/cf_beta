@@ -5,6 +5,11 @@ Rails.application.routes.draw do
 
   get 'manifiesto', to: 'static_pages#manifest'
 
+  # Log in and log out
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
