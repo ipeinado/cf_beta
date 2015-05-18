@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       if user && user.authenticate(params[:session][:password])
           flash[:success] = "Bienvenido de nuevo a Closefunding"
           log_in user
-          redirect_to user
+          redirect_back_or user
       else
           flash.now[:danger] = "La combinación correo / contraseña no es correcta"
           render 'new'
