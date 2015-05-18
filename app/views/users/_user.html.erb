@@ -1,0 +1,12 @@
+<tr>
+    <td><%= user.name %></td>
+    <td><%= user.email %></td>
+    <td>
+        <%= link_to "Ver perfil", user, class: 'btn btn-sm btn-default' %>
+    </td>
+    <td>
+        <% if current_user.admin? && !current_user?(user) && !user.admin? %>
+            <%= link_to "eliminar", user, class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: "¿Estás seguro? Una vez eliminado no habrá vuelta atrás" } %>
+        <% end %>
+    </td>
+</tr>

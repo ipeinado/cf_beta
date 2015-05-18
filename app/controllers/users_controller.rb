@@ -1,14 +1,15 @@
 class UsersController < ApplicationController
 
-  before_action :logged_in_user, only: [:index, :edit, :update]
+  before_action :logged_in_user, only: [:index, :new, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
+  before_action :admin_user, only: [:destroy]
+  before_action :get_user, only: [:show, :edit, :update, :destroy ]
 
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page])
   end
 
   def show
-      @user = User.find(params[:id])
   end
 
   def new
@@ -27,11 +28,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-      @user = User.find(params[:id])
   end
 
   def update
-      @user = User.find(params[:id])
       if @user.update_attributes(user_params)
           flash[:success] = "Tu perfil se ha actualizado"
           redirect_to @user
@@ -40,10 +39,20 @@ class UsersController < ApplicationController
       end
   end
 
+  def destroy
+      @user.destroy
+      flash[:success] = "#{@user.name} ha sido eliminado"
+      redirect_to users_path
+  end
+
   private
 
     def user_params
         params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    end
+
+    def get_user
+        @user = User.find(params[:id])
     end
 
     # Before filters
@@ -61,6 +70,10 @@ class UsersController < ApplicationController
         flash[:danger] = "Operación no permitida"
         redirect_to root_url
       end
+    end
+
+    def admin_user
+        redirect_to root_url unless current_user.admin?
     end
 
 end
