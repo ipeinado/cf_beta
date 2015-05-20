@@ -2,10 +2,14 @@
 
 <div class="row">
 	<div class="col-md-9 col-md-offset-1">
-		<h1>Usuarios</h1>
+		<h1>
+			Usuarios
+			<%= link_to 'Añadir nuevo', new_user_path, class: 'btn btn-default' %>
+		</h1>
 		<%= will_paginate %>
 		<table class="table">
 			<tr>
+				<th></th>
 				<th>Nombre</th>
 				<th>email</th>
 				<th></th>
