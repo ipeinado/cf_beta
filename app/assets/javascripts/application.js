@@ -13,6 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require jquery.onepage-scroll
 //= require_tree .
 //= require bootstrap
