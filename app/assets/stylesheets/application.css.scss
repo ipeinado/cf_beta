@@ -10,7 +10,6 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require onepage-scroll
  *= require_tree .
  *= require_self
  */
@@ -19,6 +18,7 @@
 @import 'bootstrap';
 
 @import 'static_pages';
+@import 'posts';
 
 $cf-blue: #03C;
 $cf-orange: #F90;

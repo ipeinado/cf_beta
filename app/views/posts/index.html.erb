@@ -1,0 +1,23 @@
+<% provide(:title, "Posts de #{ @user.name }") %>
+
+<div class="row">
+  <div class="col-md-9 col-md-offset-1">
+    <% if current_user && current_user.admin? %>
+      <%= render 'layouts/admin_menu' %>
+    <% end %>
+
+    <h1>
+      Tus posts
+      <%= link_to 'Nuevo post', new_user_post_path(@user), class: 'btn btn-success' %>
+    </h1>
+
+    <ul class="posts">
+      <% @posts.each do |post| %>
+        <%= render post %>
+      <% end %>
+    </ul>
+
+    <%= will_paginate %>
+
+  </div>
+</div>

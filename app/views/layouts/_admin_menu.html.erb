@@ -1,0 +1,4 @@
+<ul class="nav nav-pills" role="navigation">
+  <li class="<%= current_controller?('users') %>"><%= link_to 'Usuarios', users_path %></li>
+  <li class="<%= current_controller?('posts') %>"><%= link_to 'Posts', user_posts_path(current_user.id) %></li>
+</ul>

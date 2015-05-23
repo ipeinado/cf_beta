@@ -3,11 +3,7 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 
   def setup
-      @user = User.new(
-        name: "Example User",
-        email: "user@example.com",
-        password: "foobar",
-        password_confirmation: "foobar")
+      @user = users(:michael)
   end
 
   test "user should be valid" do
@@ -67,6 +63,14 @@ class UserTest < ActiveSupport::TestCase
   test "password should have a minimum length" do
       @user.password = @user.password_confirmation = "a" * 5
       assert_not @user.valid?, message: "password is too short"
+  end
+
+  test "associated posts should be destroyed when user is destroyed" do
+    @user.save
+    @user.posts.create!(title: "this is an example test", body: "this is the example body")
+    assert_diference 'Post.count', -1, "The article should be destroyed" do
+      @user.destroy
+    end
   end
 
 end

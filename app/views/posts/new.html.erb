@@ -1,0 +1,32 @@
+<% provide(:title, "Nueva entrada") %>
+
+<div class="row">
+  <div class="col-md-9 col-md-offset-1">
+    <%= form_for(@post), url: new_user_post(@post.user.id) do |f| %>
+      <% if @post.errors.any? %>
+        <div class="error-explanation">
+          <div class="alert alert-danger">
+              Se han detectado <%= pluralize(@post.errors.count, "error") %>
+
+              <ul>
+                  <% @post.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                  <% end %>
+              </ul>
+          </div>
+        </div>
+      <% end %>
+      <div class="form-group">
+        <%= f.label :title, "Título" %>
+        <%= f.text_field :title, autofocus: true, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :body, "Texto" %>
+        <%= f.text_area :body, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Publicar", class: "btn btn-default" %>
+      </div>
+    <% end %>
+  </div>
+</div>
