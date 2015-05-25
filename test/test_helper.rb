@@ -8,6 +8,8 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
+  CarrierWave.root = 'test/fixtures/files'
+
   # Add more helper methods to be used by all tests here...
   def logged_in?
   	!sessions[:user_id].nil?

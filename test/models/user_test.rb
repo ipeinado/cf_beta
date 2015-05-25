@@ -69,4 +69,10 @@ class UserTest < ActiveSupport::TestCase
       assert_not @user.valid?, message: "password is too short"
   end
 
+  test "user has an avatar" do
+    user = users(:user_with_avatar)
+    p "HOLA HOLA HOLA " + user.avatar.file.path
+    assert File.exists?(user.avatar.file.path), message: "No avatar file exists!"
+  end
+
 end

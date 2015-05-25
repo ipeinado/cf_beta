@@ -6,6 +6,12 @@ michael:
   password_digest: <%= User.digest('password') %>
   admin: true
 
+user_with_avatar:
+  name: Avatario
+  email: avatar@carrierwave.com
+  password_digest: <%= User.digest('password') %>
+  avatar: 'avatar-default.png'
+
 archer:
   name: Sterling Archer
   email: duchess@example.gov

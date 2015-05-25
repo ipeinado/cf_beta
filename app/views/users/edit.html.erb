@@ -9,7 +9,10 @@
             <%= render 'shared/error_messages' %>
 
             <div class="form-group">
-                <%= f.file_field :avatar %>
+              <%= image_tag @user.avatar_url.to_s, alt: "#{@user.name} avatar" %>
+              <%= f.label :avatar, "Añade una imagen a la cuenta" %>
+              <%= f.file_field :avatar %>
+              <%= f.hidden_field :avatar_cache %>
             </div>
 
             <div class="form-group">
