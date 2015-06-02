@@ -2,9 +2,12 @@
 <html>
 <head>
   <title><%= yield(:title) %> | Closefunding</title>
+  <%= stylesheet_link_tag 'onepage-scroll', media: 'all', 'data-turbolinks-track' => true %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
   <![endif]-->
@@ -15,7 +18,7 @@
     <%= render 'layouts/header' %>
 
     <div id="home" class="main">
-    
+
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %> alert-dismissible" role="alert"><%= value %></div>
       <% end %>
@@ -24,6 +27,22 @@
 
       <%= render 'layouts/footer' %>
     </div>
+
+    <%= javascript_tag do %>
+      $(".main").onepage_scroll({
+        sectionContainer: "section",
+        easing: "ease",
+        animationTime: 1000,
+        pagination: true,
+        updateURL: false,
+        beforeMove: function(index) {},
+        afterMove: function(index) {},
+        loop: false,
+        keyboard: true,
+        responsiveFallback: false,
+        direction: "vertical"
+      });
+    <% end %>
 
 </body>
 </html>
