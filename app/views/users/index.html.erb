@@ -1,13 +1,13 @@
-<% provide(:title, "Usuarios") %>
+<% provide(:title, I18n.t(:users_title)) %>
 
 <div class="row">
 	<div class="col-md-9 col-md-offset-1">
-		<h1>Usuarios</h1>
+		<h1><%= t :users_title %></h1>
 		<%= will_paginate %>
 		<table class="table">
 			<tr>
-				<th>Nombre</th>
-				<th>email</th>
+				<th><%= t User.human_attribute_name("name") %></th>
+				<th><%= t User.human_attribute_name("email") %></th>
 				<th></th>
 				<th></th>
 			</tr>
@@ -16,7 +16,7 @@
 					<%= render user %>
 				<% end %>
 			<% else %>
-				<tr><td colspan=2>No hay usuarios en este momento</td></tr>
+				<tr><td colspan=2><%= t(:no_users) %></td></tr>
 			<% end %>
 		</table>
 		<%= will_paginate %>

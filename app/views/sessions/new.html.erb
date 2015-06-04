@@ -1,20 +1,20 @@
-<% provide(:title, 'Entrar') %>
+<% provide(:title, I18n.t(:login)) %>
 
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
-        <h1>Entrar</h1>
+        <h1><%= t :login %></h1>
 
         <%= form_for(:session, url: login_path) do |f| %>
             <div class="form-group">
-                <%= f.label :email, "Correo electrónico" %>
+                <%= f.label :email, User.human_attribute_name("name") %>
                 <%= f.email_field :email, autofocus: true, class: "form-control" %>
             </div>
             <div class="form-group">
-                <%= f.label :password, "Contraseña" %>
+                <%= f.label :password, User.human_attribute_name("password") %>
                 <%= f.password_field :password, class: "form-control" %>
             </div>
             <div class="form-group">
-                <%= f.submit "Entrar", class: "btn btn-primary" %>
+                <%= f.submit I18n.t(:login), class: "btn btn-primary" %>
             </div>
 
             <!-- <p>¿No tienes una cuenta? <%= link_to 'Regístrate ahora', new_user_path %></p> -->

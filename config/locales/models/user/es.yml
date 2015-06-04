@@ -1,0 +1,17 @@
+es:
+  activerecord:
+    models:
+      user:
+        one: Usuario
+        other: Usuarios
+    attributes:
+      user:
+        name: "Nombre"
+        email: "Correo electrónico"
+        admin: "Administrador"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de la contraseña"
+    errors:
+      messages:
+        one: "Se ha producido un error"
+        other: "Se han producido %{count} errores"

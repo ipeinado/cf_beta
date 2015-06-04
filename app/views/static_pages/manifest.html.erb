@@ -1,4 +1,5 @@
 <% provide(:title, "Manifiesto") %>
 
-<h1>StaticPages#manifest</h1>
+<h1><%= t :manifest_title %></h1>
 <p>Find me in app/views/static_pages/manifest.html.erb</p>
+<p>Publicado <%= t time_ago_in_words(9.days.ago).downcase %></p>
