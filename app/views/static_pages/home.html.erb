@@ -1,5 +1,18 @@
 <% provide(:title, "Bienvenido") %>
 
+<section id="projects-map" class="section-home">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1>Mapa de proyectos #emprendeAquí</h1>
+
+          <div id="map">
+
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
 
 <section id="carousel" class="section-home">
     <div class="container">
@@ -10,19 +23,6 @@
 <section id="discover" class="section-home">
     <div class="container">
         <h1>Descubre / Inspírate</h1>
-    </div>
-</section>
-
-<section id="projects-map" class="section-home">
-    <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <h1>Mapa de Proyectos #emprendeAquí</h1>
-          </div>
-          <div class="col-md-6">
-            <div id="map">
-          </div>
-        </div>
     </div>
 </section>
 
@@ -37,11 +37,3 @@
         <h1>Blog y Eventos Closefunding</h1>
     </div>
 </section>
-
-<%= javascript_tag do %>
-  var map_height = $(window).height();
-  $('#map').height(map_height);
-  L.mapbox.accessToken = 'pk.eyJ1IjoibmFjaG9wZSIsImEiOiI1NWU1NTU4ZWMwZDY0N2EzMzNjOWRmMzI0OWNkZWFmNiJ9.vJEDvTiigh5rONaLVEeOdQ';
-  var map = L.mapbox.map('map', 'nachope.a61a77e9')
-    .setView([37.741, -0.857], 11);
-<% end %>

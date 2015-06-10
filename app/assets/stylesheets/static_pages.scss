@@ -19,7 +19,6 @@ section.section-home {
 }
 
 #projects-map {
-    background: LightSteelBlue;
 
     .container {
       width: 100%;
@@ -29,8 +28,25 @@ section.section-home {
       padding-right: 0;
     }
 
+    h1 {
+      position: absolute;
+      top: 0px;
+      left: 90px;
+      z-index: 999;
+      text-shadow: 1px 1px 1px white;
+    }
+
+
     #map {
       width: 100%;
+    }
+
+    #projects {
+      padding: 60px 40px;
+    }
+
+    .project {
+      padding: 40px 0;
     }
 }
 

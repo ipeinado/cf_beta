@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   #   resources :products
 
   # Users routes
-  resources :users
+  resources :users, :projects
 
 
   # Example resource route with options:
