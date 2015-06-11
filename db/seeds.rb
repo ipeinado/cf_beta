@@ -37,6 +37,7 @@ Project.create!(title: "joyners",
 					)
 Project.create!(title: "Accessible.info",
 					address: "Calle Madres de la Plaza de Mayo, 44, 31013",
+					logo: "AccesibleInfo_LOGO.png",
 					city: "Artica",
 					province: "Navarra",
 					country: "Spain",

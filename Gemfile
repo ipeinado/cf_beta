@@ -32,6 +32,12 @@ gem 'bootstrap-will_paginate', '0.0.10'
 
 gem 'geocoder', '1.2.8'
 
+gem 'carrierwave', '0.10.0'
+gem 'fog'
+gem 'mini_magick'
+
+gem 'figaro'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
