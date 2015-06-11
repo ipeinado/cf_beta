@@ -8,5 +8,9 @@ class ProjectsController < ApplicationController
       format.json { render json: @geoJson }
     end
   end
-  
+
+  def show
+    @project = Project.find(params[:id])
+  end
+
 end

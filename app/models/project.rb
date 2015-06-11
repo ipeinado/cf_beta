@@ -2,6 +2,8 @@ class Project < ActiveRecord::Base
 
   default_scope { where("longitude IS NOT NULL") }
 
+  mount_uploader :logo, ProjectLogoUploader 
+
   geocoded_by :project_location
   after_validation :geocode
 
