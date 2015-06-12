@@ -1,2 +1,12 @@
-<h1><%= @project.title %></h1>
-<p><%= @project.logo %></p>
+<% provide(:title, @project.title) %>
+<div class="row">
+	<div class="col-md-3 col-md-offset-1">
+		<p><%= @project.logo %></p>
+	</div>
+	<div class="col-md-6">
+		<h1><%= @project.title %></h1>
+		<p><%= @project.city %>, <%= @project.country %></p>
+		<p><%= @project.description %></p>
+	</div>
+</div>
+
