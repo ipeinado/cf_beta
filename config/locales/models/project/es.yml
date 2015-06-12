@@ -1,0 +1,21 @@
+es:
+  activerecord:
+    models:
+      project:
+        one: Proyecto
+        other: Proyectos
+    attributes:
+      project:
+        title: "Nombre del proyecto"
+        description: "Descripción del proyecto"
+        address: "Dirección"
+        city: "Ciudad"
+        province: "Provincia"
+        country: "País"
+        website: "Página web del proyecto"
+        twitter: "Twitter"
+        logo: "Logo del proyecto"
+    errors:
+      messages:
+        one: "Se ha producido un error"
+        other: "Se han producido %{count} errores"

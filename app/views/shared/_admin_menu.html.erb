@@ -1,0 +1,8 @@
+<div class="row">
+	<nav role="navigation">
+		<ul class="nav nav-pills">
+			<li class=<%= params[:controller] == 'users' ? 'active' : '' %> ><%= link_to 'Usuarios', users_path %></li>
+			<li class=<%= params[:controller] == 'projects' ? 'active' : '' %> ><%= link_to 'Proyectos', new_project_path %></li>
+		</ul>
+	</nav>
+</div>

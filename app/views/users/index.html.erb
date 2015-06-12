@@ -1,7 +1,10 @@
 <% provide(:title, I18n.t(:users_title)) %>
 
+<%= render 'shared/admin_menu' %>
+
 <div class="row">
 	<div class="col-md-9 col-md-offset-1">
+
 		<h1><%= t :users_title %></h1>
 		<%= will_paginate %>
 		<table class="table">

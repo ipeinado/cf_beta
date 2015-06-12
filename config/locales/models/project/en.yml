@@ -1,0 +1,21 @@
+en:
+  activerecord:
+    models:
+      project:
+        one: Project
+        other: Projects
+    attributes:
+      user:
+        title: "Name of the project"
+        description: "Description of the project"
+        address: "Address"
+        city: "City"
+        province: "State / Province"
+        country: "Country"
+        website: "Project website"
+        twitter: "Twitter"
+        logo: "Logo"
+    errors:
+      messages:
+        one: "An error has been detected"
+        other: "%{count} errors have been detected"

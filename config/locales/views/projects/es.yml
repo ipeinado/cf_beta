@@ -1,0 +1,6 @@
+es:
+  new_project_title: "Nuevo proyecto"
+  flash_create_project_success: "Se ha creado el proyecto correctamente"
+  flash_create_project_fail: "No se ha podido crear el proyecto"
+  flash_create_project_success: "Se ha actualizado el proyecto correctamente"
+  edit_project_title: "Editar proyecto"
