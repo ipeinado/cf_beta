@@ -8,13 +8,13 @@
 
 $(document).ready ->
 
-  map_height = $(window).height()
-  $('#map').height map_height
   L.mapbox.accessToken = 'pk.eyJ1IjoibmFjaG9wZSIsImEiOiI1NWU1NTU4ZWMwZDY0N2EzMzNjOWRmMzI0OWNkZWFmNiJ9.vJEDvTiigh5rONaLVEeOdQ'
-  map = L.mapbox.map('map', 'nachope.a61a77e9', { zoomControl: false }).setView([
+  map = L.mapbox.map('map', 'nachope.a61a77e9').setView([
     37.741
     -0.857
   ], 3)
+
+  map.scrollWheelZoom.disable();
 
   $.ajax
     dataType: 'text'
