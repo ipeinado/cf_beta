@@ -37,7 +37,8 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    if @project.update_attributes(user_params)
+    @project = Project.find(params[:id])
+    if @project.update_attributes(project_params)
         flash[:success] = I18n.t(:flash_update_project_success)
         redirect_to @project
       else
