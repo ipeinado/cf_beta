@@ -1,3 +1,7 @@
 <% provide(:title, "Proyectos") %>
 
 <h1>Proyectos</h1>
+
+<% @projects.each do |project| %>
+  <%= render project %>
+<% end %>
