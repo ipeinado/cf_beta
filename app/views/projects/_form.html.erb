@@ -1,7 +1,7 @@
 <%= form_for(@project) do |f| %>
 	<div class="col-md-3 col-md-offset-1">
 		<%= f.label :logo %>
-		<%= image_tag @project.logo.url %>
+		<%= image_tag @project.logo.url, class: "project-logo", alt: @project.title? ? "logo #{@project.title}" : "default logo" %>
 		<%= f.file_field :logo, class: "form-control" %>
 		<%= f.hidden_field :logo_cache %>
 	</div>

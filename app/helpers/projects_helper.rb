@@ -18,6 +18,9 @@ module ProjectsHelper
           province: project.province,
           country: project.country,
           description: project.description,
+          logo: project.logo? ? project.logo : "thumb_project_logo_fallback.png",
+          website: project.website? ? project.website : "",
+          twitter: project.twitter,
           :'marker-color' => '#03C',
           :'marker-symbol' => 'star',
           :'marker-size' => 'medium'

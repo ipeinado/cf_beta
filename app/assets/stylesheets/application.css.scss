@@ -18,6 +18,7 @@
 @import 'bootstrap';
 
 @import 'static_pages';
+@import 'projects';
 
 $cf-blue: #03C;
 $cf-orange: #F90;
@@ -25,11 +26,15 @@ $cf-yellow: #FC3;
 
 body {
     margin-top: 50px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: Roboto, Arial, sans-serif;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-bottom: 20px;
 }
 
 h1 {
@@ -58,6 +63,14 @@ header {
               color: $cf-orange;
             }
         }
+    }
+}
+
+ul.nav-pills {
+    margin: 20px 0 0; 
+
+    li.active a {
+        background: $cf-blue;
     }
 }
 

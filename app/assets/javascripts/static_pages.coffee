@@ -31,8 +31,12 @@ $(document).ready ->
     # create custom popup
     popupContent =  '<div class="popup">' +
                       '<h3>' + properties.name + '</h3>' +
-                      '<p>' + properties.description + '</p>' +
-                    '</div>'
+                      '<p>' + properties.description + '</p>'
+
+    if properties.website != ""
+      popupContent += '<p style="text-align: center"><a href="' + properties.website + '" target="_blank" class="btn btn-warning" style="color: #FFF;">Ir al proyecto</a></p>'
+
+    popupContent = popupContent + "</div>"
 
     # http://leafletjs.com/reference.html#popup
     marker.bindPopup popupContent,
