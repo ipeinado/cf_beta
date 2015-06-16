@@ -15,6 +15,7 @@ en:
         website: "Project website"
         twitter: "Twitter"
         logo: "Logo"
+        featured_picture: "Featured picture"
     errors:
       messages:
         one: "An error has been detected"

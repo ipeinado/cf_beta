@@ -15,6 +15,7 @@ es:
         website: "Página web del proyecto"
         twitter: "Twitter"
         logo: "Logo del proyecto"
+        featured_picture: "Foto destacada"
     errors:
       messages:
         one: "Se ha producido un error"
