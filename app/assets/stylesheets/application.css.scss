@@ -20,7 +20,7 @@
 @import 'static_pages';
 @import 'projects';
 
-$cf-blue: #03C;
+$cf-blue: #00279D;
 $cf-orange: #F90;
 $cf-yellow: #FC3;
 
@@ -67,7 +67,7 @@ header {
 }
 
 ul.nav-pills {
-    margin: 20px 0 0; 
+    margin: 20px 0 0;
 
     li.active a {
         background: $cf-blue;

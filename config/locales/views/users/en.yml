@@ -4,3 +4,4 @@ en:
   view_user: "See user"
   delete_user: "Remove"
   no_users: "No users at the time"
+  new_user: "New user"

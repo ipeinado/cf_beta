@@ -4,3 +4,4 @@ es:
   view_user: "Ver perfil"
   delete_user: "Eliminar"
   no_users: "No hay usuarios en este momento"
+  new_user: "Nuevo usuario"
