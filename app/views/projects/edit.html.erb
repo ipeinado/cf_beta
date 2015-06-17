@@ -3,9 +3,18 @@
 <%= render 'shared/admin_menu' %>
 
 <div class="row">
-	
+
 	<h1><%= t(:edit_project_title) %></h1>
-	
+
 	<%= render 'form' %>
-	
+
+</div>
+
+<br />
+<br />
+
+<div class="row">
+	<div class="col-md-6 col-md-offset-4">
+		<p><%= link_to "Eliminar proyecto", "#", method: :delete, class: "btn btn-danger" %></p>
+	</div>
 </div>

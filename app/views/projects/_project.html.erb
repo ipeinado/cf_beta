@@ -1,5 +1,23 @@
-<div class="project">
-  <%= image_tag project.logo.small %>
-  <h2><%= project.title %></h2>
+<li class="project" id="project-<%= project.id %>">
+  <div class="project-header" role="banner">
+    <%= image_tag project.logo.thumb if project.logo? %>
+    <h3><%= project.title %></h3>
+  </div>
+
   <p><%= project.description %></p>
-</div>
+</li>
+
+<%= javascript_tag do %>
+
+  $("#project-<%= project.id %>").hover(function() {
+    $(this).attr("title", "Visita la página de <%= project.title %>");
+    $(this).find("h3").css("color", "#F90");
+  }, function() {
+    $(this).removeAttr("title");
+    $(this).find("h3").css("color", "#000");
+  });
+
+  $("#project-<%= project.id %>").click(function(e) {
+    window.location.href = "<%= project_url(project).to_s %>";
+  });
+<% end %>

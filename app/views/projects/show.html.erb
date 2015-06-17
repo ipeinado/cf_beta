@@ -4,9 +4,13 @@
 		<%= image_tag @project.logo %>
 	</div>
 	<div class="col-md-6">
-		<h1><%= @project.title %></h1>
+		<h1>
+			<%= @project.title %>
+			<%= link_to "Editar proyecto", edit_project_path(@project), class: "btn btn-default" %>
+		</h1>
 		<p><%= @project.city %>, <%= @project.country %></p>
 		<p><%= @project.description %></p>
 		<%= image_tag @project.featured_picture %>
+
 	</div>
 </div>

@@ -13,14 +13,16 @@ module ProjectsHelper
         },
         properties: {
           name: project.title,
+          project_id: project.id,
           address: project.address,
           city: project.city,
           province: project.province,
           country: project.country,
           description: project.description,
-          logo: project.logo? ? project.logo : "thumb_project_logo_fallback.png",
+          logo: project.logo? ? project.logo.thumb.url : "",
           website: project.website? ? project.website : "",
           twitter: project.twitter,
+          featured_picture: project.featured_picture? ? project.featured_picture.thumb.url : "",
           :'marker-color' => '#03C',
           :'marker-symbol' => 'star',
           :'marker-size' => 'medium'
