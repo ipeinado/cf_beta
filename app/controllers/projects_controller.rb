@@ -46,6 +46,13 @@ class ProjectsController < ApplicationController
       end
   end
 
+  def destroy
+    @project = Project.find(params[:id])
+    flash[:danger] = I18n.t(:project_destroyed, name: @project.title)
+    @project.destroy
+    redirect_to projects_path
+  end
+
   private
     def project_params
       params.require(:project).permit(:title, :description, :address, :city, :province, :country, :logo, :website, :twitter, :featured_picture)

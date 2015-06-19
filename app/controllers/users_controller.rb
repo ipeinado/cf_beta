@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
       if @user.save
           log_in @user
-          flash[:success] = "Bienvenido a Closefunding!"
+          flash[:success] = I18n.t(:welcome_user, name: @user.name)
           redirect_to @user
       else
           render 'new'
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
   def update
       if @user.update_attributes(user_params)
-          flash[:success] = "Tu perfil se ha actualizado"
+          flash[:success] = I18n.t(:profile_updated)
           redirect_to @user
       else
           render 'edit'
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 
   def destroy
       @user.destroy
-      flash[:success] = "#{@user.name} ha sido eliminado"
+      flash[:success] = I18n.t(:user_deleted, name: @user.name)
       redirect_to users_path
   end
 

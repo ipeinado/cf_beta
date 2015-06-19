@@ -1,7 +1,7 @@
-<% provide(:title, "Proyectos") %>
+<% provide(:title, I18n.t(:projects)) %>
 
 <h1>
-  Proyectos
+  <%= t(:projects) %>
   <% if current_user && admin_user %>
     <%= link_to I18n.t(:new_project_title), new_project_path, class: 'btn btn-default' %>
   <% end %>

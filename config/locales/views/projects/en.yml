@@ -1,6 +1,11 @@
 en:
+  projects: "Projects"
   new_project_title: "New project"
   flash_create_project_success: "The project was created successfully"
   flash_create_project_fail: "Ooops! The project could not be created"
   flash_create_project_success: "The project was updated succesfully"
   edit_project_title: "Edit project"
+  all_projects: "CF Projects"
+  delete_project: "Delete project"
+  project_destroyed: "Project %{name} has been successfully deleted"
+  confirm_delete_project: "Are you sure? Once deleted, there is no going back"

@@ -1,3 +1,6 @@
 es:
   login: "Entrar"
   signup: "Registrarse"
+  log_out: "Salir"
+  login_success: "Bienvenido de vuelta a Closefunding, %{name}"
+  login_fail: "Ups! La combinación correo / contraseña no es válida"

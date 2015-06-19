@@ -5,3 +5,7 @@ en:
   delete_user: "Remove"
   no_users: "No users at the time"
   new_user: "New user"
+  welcome_user: "Welcome to Closefunding, %{name}"
+  profile_updated: "The profile has been updated"
+  user_deleted: "User %{name} has been removed"
+  user_delete_confirm: "Are you sure? Once removed, there is no turning back"

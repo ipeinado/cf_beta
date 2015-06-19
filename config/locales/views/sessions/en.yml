@@ -1,3 +1,6 @@
 en:
   login: "Login"
   signup: "Sign up"
+  log_out: "Log out"
+  login_success: "Welcome back to Closefunding, %{name}"
+  login_fail: "Ooops! The combination email / password is not working"

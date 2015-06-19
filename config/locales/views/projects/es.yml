@@ -1,6 +1,12 @@
 es:
+  projects: "Proyectos"
   new_project_title: "Nuevo proyecto"
   flash_create_project_success: "Se ha creado el proyecto correctamente"
   flash_create_project_fail: "No se ha podido crear el proyecto"
   flash_update_project_success: "Se ha actualizado el proyecto correctamente"
   edit_project_title: "Editar proyecto"
+  all_projects: "Projectos Closefunding"
+  delete_project: "Eliminar proyecto"
+  project_destroyed: "El projecto %{name} se ha eliminado con éxito"
+  confirm_delete_project: "¿Estás seguro? Una vez eliminado, no habrá vuelta atrás"
+

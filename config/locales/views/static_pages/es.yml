@@ -22,3 +22,13 @@
 es:
   hello: "Hello world"
   manifest_title: "Manifiesto Closefunding"
+  alliances: "Alianzas"
+  cookie_policy: "Política de Cookies"
+  manifest: "Manifiesto"
+  discover: "Descubre"
+  promos: "Promos"
+  blog: "Blog"
+  cf_projects: "Proyectos Closefunding"
+  header_welcome: "Hola, %{name}"
+  my_profile: "Mi perfil"
+  admin: "Administración"

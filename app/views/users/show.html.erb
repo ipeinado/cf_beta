@@ -1,9 +1,19 @@
 <% provide(:title, "#{@user.name}") %>
 
+<% if current_user && !current_user?(@user) %>
+	<%= render 'shared/admin_menu' %>
+<% end %>
+
 <div class="row">
     <div class="col-md-4">
         <div class="user_info">
-            <h1><%= @user.name %></h1>
+            <h1>
+            	<%= @user.name %>
+
+            	<% if current_user && (current_user?(@user) || current_user.admin?) %>
+           			<%= link_to t(:edit_user_title), edit_user_path(@user), class: "btn btn-default" %>
+           		<% end %>
+            </h1>
         </div>
     </div>
 </div>

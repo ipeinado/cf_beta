@@ -5,3 +5,8 @@ es:
   delete_user: "Eliminar"
   no_users: "No hay usuarios en este momento"
   new_user: "Nuevo usuario"
+  welcome_user: "Bienvenido a Closefunding, %{name}"
+  profile_updated: "El perfil se ha actualizado con éxito"
+  user_deleted: "El usuario %{name} ha sido eliminado"
+  user_delete_confirm: "¿Estás seguro? Una vez eliminado, no habrá vuelta atrás"
+

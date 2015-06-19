@@ -6,7 +6,7 @@
     </td>
     <td>
         <% if current_user.admin? && !current_user?(user) && !user.admin? %>
-            <%= link_to t(:delete_user), user, class: 'btn btn-danger', method: :delete, data: { confirm: "¿Estás seguro? Una vez eliminado no habrá vuelta atrás" } %>
+            <%= link_to t(:delete_user), user, class: 'btn btn-danger', method: :delete, data: { confirm: t(:user_delete_confirm) } %>
         <% end %>
     </td>
 </tr>

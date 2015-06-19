@@ -1,4 +1,10 @@
 <% provide(:title, @project.title) %>
+
+<ol class="breadcrumb">
+	<li><%= link_to I18n.t(:all_projects), projects_path %></li>
+	<li><%= @project.title %></li>
+</ol>
+
 <div class="row">
 	<div id="project-logo" class="col-md-3 col-md-offset-1">
 		<%= image_tag @project.logo %>
@@ -6,7 +12,7 @@
 	<div class="col-md-6">
 		<h1>
 			<%= @project.title %>
-			<%= link_to "Editar proyecto", edit_project_path(@project), class: "btn btn-default" %>
+			<%= link_to t(:edit_project_title), edit_project_path(@project), class: "btn btn-default" %>
 		</h1>
 		<p><%= @project.city %>, <%= @project.country %></p>
 		<p><%= @project.description %></p>
