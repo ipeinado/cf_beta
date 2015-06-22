@@ -9,3 +9,6 @@ en:
   delete_project: "Delete project"
   project_destroyed: "Project %{name} has been successfully deleted"
   confirm_delete_project: "Are you sure? Once deleted, there is no going back"
+  featured_picture_alt: "Featured picture of project %{project}"
+  visit_web: "Go to project %{project}'s website"
+  visit_twitter: "Go to project %{project}'s twitter"

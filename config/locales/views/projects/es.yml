@@ -5,8 +5,10 @@ es:
   flash_create_project_fail: "No se ha podido crear el proyecto"
   flash_update_project_success: "Se ha actualizado el proyecto correctamente"
   edit_project_title: "Editar proyecto"
-  all_projects: "Projectos Closefunding"
+  all_projects: "Proyectos Closefunding"
   delete_project: "Eliminar proyecto"
   project_destroyed: "El projecto %{name} se ha eliminado con éxito"
   confirm_delete_project: "¿Estás seguro? Una vez eliminado, no habrá vuelta atrás"
-
+  featured_picture_alt: "Fotografía destacada del proyecto %{project}"
+  visit_web: "Visita la web del proyecto %{project}"
+  visit_twitter: "Visita el Twitter del proyecto %{project}"

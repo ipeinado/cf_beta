@@ -13,12 +13,30 @@ ul.projects {
 	overflow: hidden;
 	li.project {
 		width: 320px;
-		padding: 12px;
+		border-radius: 6px;
+		box-shadow: rgba(0, 0, 0, 0.219608) 0px 1px 2px 0px;
 		border: 1px solid #CCC;
 		display: inline-block;
 		cursor: pointer;
 		float: left;
 		margin: 0 1em 1em 0;
+		overflow: hidden;
+
+		.project-index-featured-picture {
+			width: 100%;
+		}
+
+		h3 {
+			margin: 6px 0 0 0;
+		}
+
+		.project-header {
+			padding: 12px 12px 6px;
+		}
+
+		p {
+			padding: 6px 12px 12px;
+		}
 	}
 
 }
@@ -74,5 +92,80 @@ ul.project-actions {
 
 	.project-popup-featured-picture {
 		overflow: hidden;
+	}
+}
+
+/* projects#index */
+.project-header {
+	display: block;
+	overflow: hidden;
+	img {
+		float: left;
+		margin: 0 10px 10px 0;
+	}
+	h3 {
+		margin-top: 10px;
+		overflow: hidden;
+	}
+}
+
+/* projects#show */
+.project-show {
+	position: relative;
+	overflow: hidden;
+	.project-featured-picture {
+		width: 100%;
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -999;
+		img {
+			width: 100%;
+			opacity: .7;
+		}
+	}
+
+	.project-content {
+		z-index: 1000;
+		padding: 36px;
+
+		.project-show-image {
+			float: left;
+			margin-right: 18px;
+			img {
+				width: 120px;
+				border: 3px solid #FFF;
+				border-radius: 4px;
+			}
+		}
+
+		.project-show-content {
+			overflow: hidden;
+
+			h1 {
+				margin-top: 0;
+				padding: 6px;
+				background: rgba(255, 255, 255, .5);
+				text-shadow: 1px 1px 1px #FFF;
+			}
+
+			.project-show-description {
+				padding: 6px;
+				background: rgba(255, 255, 255, .5);
+				margin-bottom: 18px;
+			}
+		}
+
+		ul.social-links {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				display: inline-block;
+				margin-right: .6em;
+			}
+		}
 	}
 }

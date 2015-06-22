@@ -6,17 +6,30 @@
 </ol>
 
 <div class="row">
-	<div id="project-logo" class="col-md-3 col-md-offset-1">
-		<%= image_tag @project.logo %>
-	</div>
-	<div class="col-md-6">
-		<h1>
-			<%= @project.title %>
-			<%= link_to t(:edit_project_title), edit_project_path(@project), class: "btn btn-default" %>
-		</h1>
-		<p><%= @project.city %>, <%= @project.country %></p>
-		<p><%= @project.description %></p>
-		<%= image_tag @project.featured_picture %>
-
+	<div class="col-md-10 col-md-offset-1 project-show">
+		<div class="project-featured-picture">
+			<%= image_tag(@project.featured_picture, alt: I18n.t(:featured_picture_alt, project: @project.title)) if @project.featured_picture? %>
+		</div>
+		<div class="project-content">
+			<div class="project-show-image">
+				<%= image_tag @project.logo %>
+			</div>
+			<div class="project-show-content">
+				<h1>
+					<%= @project.title %>
+					<% if current_user && current_user.admin? %>
+						<%= link_to t(:edit_project_title), edit_project_path(@project), class: "btn btn-default" %>
+					<% end %>
+				</h1>
+				<div class="project-show-description">
+					<p><%= @project.city %>, <%= @project.country %></p>
+					<p><%= @project.description %></p>
+				</div>
+				<ul class="social-links">
+					<li><%= link_to image_tag('social/website.png'), @project.website, target: "_blank", title: t(:visit_web, project: @project.title) if @project.website?%></li>
+					<li><%= link_to image_tag('social/twitter.png'), 'https://twitter.com/' + @project.twitter, target: "_blank", title: t(:visit_twitter, project: @project.title) if @project.twitter?%></li>
+				</ul>
+			</div>
+		</div>
 	</div>
 </div>
