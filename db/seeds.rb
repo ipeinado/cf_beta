@@ -24,7 +24,8 @@ Project.create!(title: "Homelessfonts",
 					country: "Spain",
 					description: "Homelessfonts is an Arrels Foundation initiative which consists of creating a collection of typefaces based on the handwriting of homeless",
 					website: "http://www.homelessfonts.org/",
-					twitter: "homelessfonts"
+					twitter: "homelessfonts",
+					facebook: "https://www.facebook.com/homelessfonts"
 					)
 Project.create!(title: "joyners",
 					address: "Calle Calàbria 169",
@@ -33,7 +34,8 @@ Project.create!(title: "joyners",
 					country: "Spain",
 					description: "¡Comparte piso con séniors afines, divide gastos y disfruta de tu etapa adulta mientras accedes a múltiples servicios!",
 					website: "http://www.joyners.es/",
-					twitter: "somosjoyners"
+					twitter: "somosjoyners",
+					facebook: "https://www.facebook.com/pages/Joyners/1537823113160952"
 					)
 Project.create!(title: "Accessible.info",
 					address: "Calle Madres de la Plaza de Mayo, 44, 31013",
@@ -43,7 +45,8 @@ Project.create!(title: "Accessible.info",
 					country: "Spain",
 					description: "Buscador de lugares accesibles con información del lugar, fotos... Sitios accesibles para mascotas. Auditorias para obtener grado de accesibilidad A, B , C.",
 					website: "http://www.accessible.info/",
-					twitter: "accessible_info"
+					twitter: "accessible_info",
+					facebook: "https://www.facebook.com/accesible.paratodos"
 					)
 Project.create!(title: "Inrex Home Care, LLC",
 					address: "415 W. Schrock Rd.",
@@ -52,7 +55,8 @@ Project.create!(title: "Inrex Home Care, LLC",
 					country: "USA",
 					description: "INREX Home Care, LLC is committed to providing the highest quality of services and support to our community members with physical and developmental disabilities by helping them live their lives to their fullest potential",
 					website: "http://www.inrexhomecare.com",
-					twitter: "InrexHomeCare"
+					twitter: "InrexHomeCare",
+					facebook: "https://www.facebook.com/pages/Inrex-Home-Care-LLC/1537934039754844"
 					)
 Project.create!(title: "VecineoApp",
 					city: "Murcia",
@@ -60,7 +64,8 @@ Project.create!(title: "VecineoApp",
 					country: "España",
 					description: "Ofrece tus servicios a tus vecinos y encuentra ofertas con nuestra App. Vecineo, tu vida en una milla",
 					website: "http://www.vecineo.com/",
-					twitter: "VecineoApp"
+					twitter: "VecineoApp",
+					facebook: "https://www.facebook.com/Vecineo"
 					)
 Project.create!(title: "BCN ACCESSTOUR",
 					city: "Barcelona",
@@ -76,7 +81,8 @@ Project.create!(title: "Ciudad Fácil",
 					country: "Chile",
 					description: "Aplicación móvil inclusiva, para que todos disfrutemos de la ciudad. ¿Te unes en esta aventura :D? Beta disponible en playstore!",
 					website: "http://ciudadfacil.cl/",
-					twitter: "ciudadFacil"
+					twitter: "ciudadFacil",
+					facebook: "https://www.facebook.com/ciudadFacil.cl"
 					)
 Project.create!(title: "encicle",
 					address: "C/ Zapateros, 8",
@@ -85,7 +91,8 @@ Project.create!(title: "encicle",
 					country: "España",
 					description: "Somos una empresa de bicimensajeros valenciana comprometida con las necesidades de nuestra ciudad de una forma sostenible, eficaz y respetuosa.",
 					website: "http://www.enciclebicimensajeros.com/",
-					twitter: "encicle"
+					twitter: "encicle",
+					facebook: "https://www.facebook.com/enciclebicimensajeros"
 					)
 Project.create!(title: "Mi Huerto Web",
 					city: "Huellelhue",
@@ -93,7 +100,8 @@ Project.create!(title: "Mi Huerto Web",
 					country: "Chile",
 					description: "Agricultura sustentable, comercio justo e inclusivo. La nueva manera de obtener tus productos del campo, colaborando directamente con la agricultura familiar campesina.",
 					website: "http://mihuertoweb.cl/",
-					twitter: "MiHuertoWeb"
+					twitter: "MiHuertoWeb",
+					facebook: "https://www.facebook.com/MiHuertoWeb"
 					)
 Project.create!(title: "Huerta Montecarmelo",
 					address: "Monasterio de las Huelgas, 15",
@@ -102,7 +110,8 @@ Project.create!(title: "Huerta Montecarmelo",
 					country: "España",
 					description: "huertos urbanos en pleno Madrid, con trabajadores con discapacidad intelectual",
 					website: "http://www.lahuertademontecarmelo.com/",
-					twitter: "HuertaMtcarmelo"
+					twitter: "HuertaMtcarmelo",
+					facebook: "https://www.facebook.com/LaHuertaDeMontecarmelo"
 					)
 Project.create!(title: "@Trazeo",
 					city: "Córdoba",
@@ -110,7 +119,8 @@ Project.create!(title: "@Trazeo",
 					country: "España",
 					description: "Un nuevo transporte escolar que funciona con el motor de los pies. Convierte las calles en espacios más amables uniendo movilidad infantil y tecnología.",
 					website: "http://trazeo.es/",
-					twitter: "Trazeo"
+					twitter: "Trazeo",
+					facebook: "https://www.facebook.com/trazeo"
 					)
 # 99.times do |n|
 #	name = Faker::Name.name

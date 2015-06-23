@@ -12,3 +12,5 @@ en:
   featured_picture_alt: "Featured picture of project %{project}"
   visit_web: "Go to project %{project}'s website"
   visit_twitter: "Go to project %{project}'s twitter"
+  visit_facebook: "Go to project %{project}'s facebook page"
+  remove_logo: "Remove logo"

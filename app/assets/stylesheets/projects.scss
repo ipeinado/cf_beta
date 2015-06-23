@@ -8,38 +8,57 @@
 
 /* PROJECT INDEX */
 
-ul.projects {
-	list-style-type: none;
-	overflow: hidden;
-	li.project {
-		width: 320px;
-		border-radius: 6px;
-		box-shadow: rgba(0, 0, 0, 0.219608) 0px 1px 2px 0px;
-		border: 1px solid #CCC;
-		display: inline-block;
-		cursor: pointer;
-		float: left;
-		margin: 0 1em 1em 0;
-		overflow: hidden;
-
-		.project-index-featured-picture {
+@media all  and (max-width: 400px) {
+	ul.projects {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		li {
 			width: 100%;
+			border-bottom: 1px solid #CCC;
+			box-shadow: none;
 		}
+	}
+}
 
-		h3 {
-			margin: 6px 0 0 0;
-		}
+@media all and (min-width: 401px) {
+	ul.projects {
+		list-style-type: none;
+		margin: 0;
+		margin-bottom: 36px;
+		padding: 0;
+		overflow: hidden;
+		li.project {
+			width: 320px;
+			border-radius: 6px;
+			box-shadow: rgba(0, 0, 0, 0.219608) 0px 1px 2px 0px;
+			border: 1px solid #CCC;
+			display: inline-block;
+			cursor: pointer;
+			float: left;
+			margin: 0 1em 1em 0;
+			overflow: hidden;
 
-		.project-header {
-			padding: 12px 12px 6px;
-		}
+			.project-index-featured-picture {
+				width: 100%;
+			}
 
-		p {
-			padding: 6px 12px 12px;
+			h3 {
+				margin: 6px 0 0 0;
+			}
+
+			.project-header {
+				padding: 12px 12px 6px;
+			}
+
+			p {
+				padding: 6px 12px 12px;
+			}
 		}
 	}
 
 }
+
 
 /* PROJECT SHOW */
 ul.project-actions {

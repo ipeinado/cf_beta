@@ -28,6 +28,7 @@
 				<ul class="social-links">
 					<li><%= link_to image_tag('social/website.png'), @project.website, target: "_blank", title: t(:visit_web, project: @project.title) if @project.website?%></li>
 					<li><%= link_to image_tag('social/twitter.png'), 'https://twitter.com/' + @project.twitter, target: "_blank", title: t(:visit_twitter, project: @project.title) if @project.twitter?%></li>
+					<li><%= link_to image_tag('social/facebook.png'), @project.facebook, target: "_blank", title: t(:visit_facebook, project: @project.title) if @project.facebook? %></li>
 				</ul>
 			</div>
 		</div>
