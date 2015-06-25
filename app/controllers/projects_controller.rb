@@ -1,11 +1,11 @@
 class ProjectsController < ApplicationController
-
+  
   before_action :logged_in_user, only: [:new, :create, :update, :destroy]
   before_action :admin_user, only: [:new, :create, :update, :destroy]
 
   def index
     @projects = Project.all
-    @geoJson = self.get_geojson
+    @geoJson = get_geojson(@projects)
 
     respond_to do |format|
       format.html

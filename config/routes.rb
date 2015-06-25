@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get 'manifiesto', to: 'static_pages#manifest'
+  get I18n.t(:find_out), to: 'static_pages#findout'
 
   # Log in and log out
   get 'login', to: 'sessions#new'

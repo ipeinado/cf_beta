@@ -32,3 +32,4 @@ es:
   header_welcome: "Hola, %{name}"
   my_profile: "Mi perfil"
   admin: "Administración"
+  find_out: "descubre"

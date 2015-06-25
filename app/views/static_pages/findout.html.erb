@@ -1,0 +1,52 @@
+<% provide(:title, I18n.t(:find_out)) %>
+
+<div class="row">
+  <div class="col-md-8">
+    <h1><%= t(:find_out) %></h1>
+    <% @projects.each do |project| %>
+      <p><%= project.title %>, <%= project.distance if project.distance? %></p>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <div id="map"></div>
+  </div>
+</div>
+
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
+<%= javascript_tag do %>
+$(document).ready(function() {
+  var map;
+  L.mapbox.accessToken = 'pk.eyJ1IjoibmFjaG9wZSIsImEiOiI1NWU1NTU4ZWMwZDY0N2EzMzNjOWRmMzI0OWNkZWFmNiJ9.vJEDvTiigh5rONaLVEeOdQ';
+  map = L.mapbox.map('map', 'nachope.a61a77e9').setView([37.741, -0.857], 2);
+  map.scrollWheelZoom.disable();
+  $.ajax({
+    dataType: 'text',
+    url: 'projects.json',
+    success: function(data) {
+      var geojson;
+      geojson = $.parseJSON(data);
+      return map.featureLayer.setGeoJSON(geojson);
+    }
+  });
+  return map.featureLayer.on('layeradd', function(e) {
+    var marker, popupContent, properties;
+    marker = e.layer;
+    properties = marker.feature.properties;
+    popupContent = '<div class="project-popup popup">';
+    if (properties.logo !== "") {
+      popupContent += '<div class="project-popup-logo"><img src="' + properties.logo + '"></div>';
+    }
+    popupContent += '<div class="project-popup-content">' + '<h3>' + properties.name + '</h3>' + '<p>' + properties.description + '</p></div>';
+    if (properties.featured_picture !== "") {
+      popupContent += '<div class="project-popup-project-link"><a href="/projects/' + properties.project_id + '" class="btn btn-warning">Ir al proyecto</a></div>' + '<div class="project-popup-featured-picture"><img src="' + properties.featured_picture + '" /></div>';
+    } else {
+      popupContent += '<p class="project-popup-p-link"><a href="' + properties.website + '" target="_blank" class="btn btn-warning" style="color: #FFF;">Ir al proyecto</a></p>';
+    }
+    popupContent = popupContent + "</div>";
+    return marker.bindPopup(popupContent, {
+      closeButton: true,
+      minWidth: 320
+    });
+  });
+});
+<% end %>
