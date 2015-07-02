@@ -33,3 +33,7 @@ es:
   my_profile: "Mi perfil"
   admin: "Administración"
   find_out: "descubre"
+  nearby_projects:
+    zero: "Oops! Ahora mismo no hay proyectos cerca de ti"
+    one: "Hay 1 proyecto Closefunding a menos de 100 km. de ti"
+    other: "Hay %{count} proyectos Closefunding a menos de 100 km. de ti"

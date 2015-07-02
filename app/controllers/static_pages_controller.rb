@@ -7,11 +7,21 @@ class StaticPagesController < ApplicationController
   end
 
   def findout
-    @projects= Project.near(Geocoder.coordinates(request.remote_ip), 0, :units => :km)
-    if @projects.count(:all) == 0
-      flash[:danger] = "Ooops! No hay proyectos cerca de ti"
+    @client_coordinates = Geocoder.coordinates(request.remote_ip)
+    @projects= Project.near(@client_coordinates, 100, :units => :km)
+    if @client_coordinates.nil? || @projects.count(:all) == 0
+      flash.now[:danger] = I18n.t(:nearby_projects, count: 0)
+      @client_coordinates = [37.741, -0.857]
       @projects = Project.all
+    else
+      flash.now[:success] = I18n.t(:nearby_projects, count: @projects.count(:all))
     end
+    
     @geoJson_nearby_projects = get_geojson(@projects)
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @geoJson_nearby_projects }
+    end
   end
 end
