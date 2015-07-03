@@ -24,5 +24,8 @@ module CfV01
     config.active_record.raise_in_transactional_callbacks = true
 
     config.assets.initialize_on_precompile = false
+
+    config.web_console.whitelisted_ips = '155.54.180.61'
+
   end
 end

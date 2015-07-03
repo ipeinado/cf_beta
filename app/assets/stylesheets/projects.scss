@@ -59,6 +59,21 @@
 				padding: 6px 12px 12px;
 			}
 		}
+
+		li.project-full {
+			img.project-index-featured-picture {
+				width: 100%;
+				margin-bottom: 36px;
+			}
+
+			.project-header h3 {
+				font-size: 36px;
+			}
+
+			p {
+				margin-bottom: 24px;
+			}
+		}
 	}
 
 }

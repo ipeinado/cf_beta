@@ -19,7 +19,7 @@ module ApplicationHelper
           description: project.description,
           logo: project.logo? ? project.logo.thumb.url : "",
           website: project.website? ? project.website : "",
-          twitter: project.twitter,
+          twitter: project.twitter? ? project.twitter : "",
           featured_picture: project.featured_picture? ? project.featured_picture.thumb.url : "",
           :'marker-color' => '#03C',
           :'marker-symbol' => 'star',

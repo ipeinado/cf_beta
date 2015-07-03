@@ -34,6 +34,6 @@ es:
   admin: "Administración"
   find_out: "descubre"
   nearby_projects:
-    zero: "Oops! Ahora mismo no hay proyectos cerca de ti"
+    zero: "Lo sentimos, ahora mismo no hay proyectos Closefunding cerca de ti. ¡Si conoces alguno, escríbenos!"
     one: "Hay 1 proyecto Closefunding a menos de 100 km. de ti"
     other: "Hay %{count} proyectos Closefunding a menos de 100 km. de ti"

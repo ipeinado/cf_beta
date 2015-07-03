@@ -5,7 +5,17 @@
     <h1><%= t(:find_out) %></h1>
     <ul class="projects">
       <% @projects.each do |project| %>
-        <%= render project %>
+        <li class="project" id="project-<%= project.id %>">
+          <%= image_tag project.featured_picture, class: "project-index-featured-picture" if project.featured_picture? %>
+          <div class="project-header" role="banner">
+            <%= image_tag project.logo.thumb if project.logo? %>
+            <h3><%= project.title %></h3>
+          </div>
+
+          <p><%= project.description %></p>
+
+          <p class="text-muted"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= project.city %>, <%= project.country %></p>
+        </li>
       <% end %>
     </ul>
   </div>
@@ -21,7 +31,7 @@
     var map,
           longitude = $('#map').data('longitude'),
           latitude = $('#map').data('latitude');
-    var zoom = (longitude == 37.741) ? 2 : 9;
+    var zoom = (longitude == 37.741) ? 1 : 9;
 
     L.mapbox.accessToken = 'pk.eyJ1IjoibmFjaG9wZSIsImEiOiI1NWU1NTU4ZWMwZDY0N2EzMzNjOWRmMzI0OWNkZWFmNiJ9.vJEDvTiigh5rONaLVEeOdQ';
 
@@ -39,6 +49,7 @@
     });
 
     map.featureLayer.on('layeradd', function(e) {
+
       var marker, popupContent, properties;
       marker = e.layer;
       properties = marker.feature.properties;
@@ -46,22 +57,36 @@
       if (properties.logo !== "") {
         popupContent += '<div class="project-popup-logo"><img src="' + properties.logo + '"></div>';
       }
-      popupContent += '<div class="project-popup-content">' + '<h3>' + properties.name + '</h3>' + '<p>' + properties.description + '</p></div>';
-      if (properties.featured_picture !== "") {
-        popupContent += '<div class="project-popup-project-link"><a href="/projects/' + properties.project_id + '" class="btn btn-warning">Ir al proyecto</a></div>' + '<div class="project-popup-featured-picture"><img src="' + properties.featured_picture + '" /></div>';
-      } else {
-        popupContent += '<p class="project-popup-p-link"><a href="' + properties.website + '" target="_blank" class="btn btn-warning" style="color: #FFF;">Ir al proyecto</a></p>';
+      popupContent += '<div class="project-popup-content">' + '<h3>' + properties.name + '</h3>';
+      if (properties.address !== null) {
+        popupContent += '<p>' + properties.address + '</p>';
       }
+
+      popupContent += '<p>' + properties.city + ', ' + properties.province + ', ' + properties.country + '</p>';
       popupContent = popupContent + "</div>";
+
+      map.featureLayer.eachLayer(function(marker) {
+        var project_id = marker.feature.properties.project_id;
+        $("#project-" + project_id).bind("click", function(e) {
+          marker.feature.properties['marker-color'] = "#F00";
+          marker.openPopup();
+          map.setView(marker.getLatLng(), 12);
+        });
+      });
 
       marker.bindPopup(popupContent, {
         closeButton: true,
         minWidth: 320
       });
 
-      marker.onclick = function() {
-        alert("hello");
-      }
+    });
+
+
+
+    map.featureLayer.on('click', function(e) {
+      var project_id = e.layer.feature.properties.project_id;
+      $("li.project, li.project-full").hide();
+      $("li#project-" + project_id).removeClass("project").addClass("project-full").show("slow");
     });
 
   });
