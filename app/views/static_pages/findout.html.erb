@@ -68,7 +68,7 @@
       map.featureLayer.eachLayer(function(marker) {
         var project_id = marker.feature.properties.project_id;
         $("#project-" + project_id).bind("click", function(e) {
-          marker.feature.properties['marker-color'] = "#F00";
+          marker.feature.properties['marker-color'] = "#FF0000";
           marker.openPopup();
           map.setView(marker.getLatLng(), 12);
         });
@@ -80,8 +80,6 @@
       });
 
     });
-
-
 
     map.featureLayer.on('click', function(e) {
       var project_id = e.layer.feature.properties.project_id;
