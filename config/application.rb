@@ -25,7 +25,5 @@ module CfV01
 
     config.assets.initialize_on_precompile = false
 
-    config.web_console.whitelisted_ips = '155.54.180.61'
-
   end
 end
