@@ -35,5 +35,5 @@ es:
   find_out: "descubre"
   nearby_projects:
     zero: "Lo sentimos, ahora mismo no hay proyectos Closefunding cerca de ti. ¡Si conoces alguno, escríbenos!"
-    one: "Hay 1 proyecto Closefunding a menos de 100 km. de ti"
-    other: "Hay %{count} proyectos Closefunding a menos de 100 km. de ti"
+    one: "Hay 1 proyecto Closefunding a menos de 250 km. de ti"
+    other: "Hay %{count} proyectos Closefunding a menos de 250 km. de ti"

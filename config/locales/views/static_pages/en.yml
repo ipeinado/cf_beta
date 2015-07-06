@@ -35,5 +35,5 @@ en:
   find_out: "Find out"
   nearby_projects:
     zero: "Sorry! There are currently not any Closefunding projects near you!"
-    one: "There is 1 Closefunding project less than 100 km. away from you"
-    other: "There are %{count} Closefunding projects less than 100 km. away from you"
+    one: "There is 1 Closefunding project less than 250 km. away from you"
+    other: "There are %{count} Closefunding projects less than 250 km. away from you"

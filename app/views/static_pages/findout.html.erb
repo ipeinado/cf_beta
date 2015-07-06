@@ -31,12 +31,13 @@
     var map,
           longitude = $('#map').data('longitude'),
           latitude = $('#map').data('latitude');
-    var zoom = (longitude == 37.741) ? 1 : 9;
+    var zoom = (longitude == 0) ? 1 : 7;
 
     L.mapbox.accessToken = 'pk.eyJ1IjoibmFjaG9wZSIsImEiOiI1NWU1NTU4ZWMwZDY0N2EzMzNjOWRmMzI0OWNkZWFmNiJ9.vJEDvTiigh5rONaLVEeOdQ';
 
     map = L.mapbox.map('map', 'nachope.a61a77e9').setView([longitude, latitude], zoom);
     map.scrollWheelZoom.disable();
+    map.locate();
 
     $.ajax({
       dataType: 'text',
@@ -44,13 +45,12 @@
       success: function(data) {
         var geojson;
         geojson = $.parseJSON(data);
-        console.log(geojson);
         map.featureLayer.setGeoJSON(geojson);
       }
     });
 
     map.featureLayer.on('layeradd', function(e) {
-
+      console.log("It happens");
       var marker, popupContent, properties;
       marker = e.layer;
       properties = marker.feature.properties;
@@ -86,6 +86,22 @@
       var project_id = e.layer.feature.properties.project_id;
       $("li.project, li.project-full").hide();
       $("li#project-" + project_id).removeClass("project").addClass("project-full").show("slow");
+    });
+
+    map.on('locationfound', function(e) {
+      var locationLayer = L.mapbox.featureLayer().addTo(map);
+      locationLayer.setGeoJSON({
+        type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [e.latlng.lng, e.latlng.lat]
+          },
+          properties: {
+            'title': 'You are here!',
+            'marker-color': '#ff8888',
+            'marker-symbol': 'embassy'
+          }
+      });
     });
 
   });
