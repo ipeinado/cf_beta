@@ -37,3 +37,47 @@
     </div>
 </section>
 -->
+
+<%= javascript_tag do %>
+  $(document).ready(function() {
+    var map;
+
+    L.mapbox.accessToken = 'pk.eyJ1IjoibmFjaG9wZSIsImEiOiI1NWU1NTU4ZWMwZDY0N2EzMzNjOWRmMzI0OWNkZWFmNiJ9.vJEDvTiigh5rONaLVEeOdQ';
+
+    map = L.mapbox.map('map', 'nachope.a61a77e9');
+    map.scrollWheelZoom.disable();
+
+    var projectsLayer = L.mapbox.featureLayer().loadURL('/projects.json').addTo(map);
+
+    projectsLayer.on('layeradd', function(e) {
+      var marker = e.layer,
+            popupContent,
+            properties = marker.feature.properties;
+
+      popupContent = '<div class="project-popup popup">';
+
+      if (properties.logo !== "") {
+        popupContent += '<div class="project-popup-logo"><img src="' + properties.logo + '"></div>';
+      }
+
+      popupContent += '<div class="project-popup-content">' + '<h3>' + properties.name + '</h3>' + '<p>' + properties.description + '</p></div>';
+
+      if (properties.featured_picture !== "") {
+        popupContent += '<div class="project-popup-project-link"><a href="/projects/' + properties.project_id + '" class="btn btn-warning">Ir al proyecto</a></div>' + '<div class="project-popup-featured-picture"><img src="' + properties.featured_picture + '" /></div>';
+      } else {
+        popupContent += '<p class="project-popup-p-link"><a href="' + properties.website + '" target="_blank" class="btn btn-warning" style="color: #FFF;">Ir al proyecto</a></p>';
+      }
+      popupContent = popupContent + "</div>";
+
+      marker.bindPopup(popupContent, {
+        closeButton: true,
+        minWidth: 320
+      });
+    });
+
+    projectsLayer.on('ready', function() {
+      map.fitBounds(projectsLayer.getBounds());
+    });
+
+  });
+<% end %>

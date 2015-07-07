@@ -26,52 +26,46 @@
 
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
 <%= javascript_tag do %>
+
   $(document).ready(function() {
 
-    var map,
-          longitude = $('#map').data('longitude'),
-          latitude = $('#map').data('latitude');
-    var zoom = (longitude == 0) ? 1 : 7;
+    var map;
 
     L.mapbox.accessToken = 'pk.eyJ1IjoibmFjaG9wZSIsImEiOiI1NWU1NTU4ZWMwZDY0N2EzMzNjOWRmMzI0OWNkZWFmNiJ9.vJEDvTiigh5rONaLVEeOdQ';
 
-    map = L.mapbox.map('map', 'nachope.a61a77e9').setView([longitude, latitude], zoom);
+    map = L.mapbox.map('map', 'nachope.mlcm20am', { accessToken: 'pk.eyJ1IjoibmFjaG9wZSIsImEiOiI1NWU1NTU4ZWMwZDY0N2EzMzNjOWRmMzI0OWNkZWFmNiJ9.vJEDvTiigh5rONaLVEeOdQ'});
+
     map.scrollWheelZoom.disable();
-    map.locate();
 
-    $.ajax({
-      dataType: 'text',
-      url: 'descubre.json',
-      success: function(data) {
-        var geojson;
-        geojson = $.parseJSON(data);
-        map.featureLayer.setGeoJSON(geojson);
-      }
-    });
+    var projectsLayer = L.mapbox.featureLayer('nachope.mlcm20am', { accessToken: 'pk.eyJ1IjoibmFjaG9wZSIsImEiOiI1NWU1NTU4ZWMwZDY0N2EzMzNjOWRmMzI0OWNkZWFmNiJ9.vJEDvTiigh5rONaLVEeOdQ'}).loadURL('/descubre.json').addTo(map);
 
-    map.featureLayer.on('layeradd', function(e) {
-      console.log("It happens");
-      var marker, popupContent, properties;
-      marker = e.layer;
-      properties = marker.feature.properties;
+    projectsLayer.on('layeradd', function(e) {
+      var marker = e.layer,
+            popupContent,
+            properties = marker.feature.properties;
+
       popupContent = '<div class="project-popup popup">';
-      if (properties.logo !== "") {
+
+      if (properties.logo !== '') {
         popupContent += '<div class="project-popup-logo"><img src="' + properties.logo + '"></div>';
       }
+
       popupContent += '<div class="project-popup-content">' + '<h3>' + properties.name + '</h3>';
+
       if (properties.address !== null) {
         popupContent += '<p>' + properties.address + '</p>';
       }
 
       popupContent += '<p>' + properties.city + ', ' + properties.province + ', ' + properties.country + '</p>';
-      popupContent = popupContent + "</div>";
+
+      popupContent = popupContent + '</div>';
 
       map.featureLayer.eachLayer(function(marker) {
-        var project_id = marker.feature.properties.project_id;
-        $("#project-" + project_id).bind("click", function(e) {
-          marker.feature.properties['marker-color'] = "#FF0000";
+        var project_id;
+        project_id = marker.feature.properties.project_id;
+        $('#project-' + project_id).bind('click', function(e) {
+          marker.feature.properties['marker-color'] = '#FF0000';
           marker.openPopup();
-          map.setView(marker.getLatLng(), 12);
         });
       });
 
@@ -80,29 +74,15 @@
         minWidth: 320
       });
 
-    });
+      map.fitBounds(this.getBounds());
+  });
 
-    map.featureLayer.on('click', function(e) {
-      var project_id = e.layer.feature.properties.project_id;
-      $("li.project, li.project-full").hide();
-      $("li#project-" + project_id).removeClass("project").addClass("project-full").show("slow");
-    });
-
-    map.on('locationfound', function(e) {
-      var locationLayer = L.mapbox.featureLayer().addTo(map);
-      locationLayer.setGeoJSON({
-        type: 'Feature',
-          geometry: {
-            type: 'Point',
-            coordinates: [e.latlng.lng, e.latlng.lat]
-          },
-          properties: {
-            'title': 'You are here!',
-            'marker-color': '#ff8888',
-            'marker-symbol': 'embassy'
-          }
-      });
-    });
+  projectsLayer.on('click', function(e) {
+    var project_id;
+    project_id = e.layer.feature.properties.project_id;
+    $('li.project, li.project-full').hide();
+    $('li#project-' + project_id).removeClass('project').addClass('project-full').show('slow');
+  });
 
   });
 <% end %>

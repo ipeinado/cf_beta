@@ -16,11 +16,9 @@ class StaticPagesController < ApplicationController
       flash.now[:success] = I18n.t(:nearby_projects, count: @projects.count(:all))
     end
 
-    @geoJson_nearby_projects = get_geojson(@projects)
-
     respond_to do |format|
       format.html
-      format.json { render json: @geoJson_nearby_projects }
+      format.json { render json: get_geojson(@projects) }
     end
   end
 end
