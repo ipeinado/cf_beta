@@ -37,7 +37,26 @@
 
     map.scrollWheelZoom.disable();
 
+    var locationLayer = L.mapbox.featureLayer().addTo(map);
+    map.locate();
+
     var projectsLayer = L.mapbox.featureLayer('nachope.mlcm20am', { accessToken: 'pk.eyJ1IjoibmFjaG9wZSIsImEiOiI1NWU1NTU4ZWMwZDY0N2EzMzNjOWRmMzI0OWNkZWFmNiJ9.vJEDvTiigh5rONaLVEeOdQ'}).loadURL('/descubre.json').addTo(map);
+
+    map.on('locationfound', function(e) {
+      console.log("Location found!");
+      locationLayer.setGeoJSON({
+        type: 'Feature',
+        geometry: {
+          type: 'Point',
+          coordinates: [e.latlng.lng, e.latlng.lat]
+        },
+        properties: {
+          'title': 'Here I am!',
+          'marker-color': '#ff8888',
+          'marker-symbol': 'star'
+        }
+      });
+    });
 
     projectsLayer.on('layeradd', function(e) {
       var marker = e.layer,
@@ -74,7 +93,7 @@
         minWidth: 320
       });
 
-      map.fitBounds(this.getBounds());
+      map.fitBounds(this.getBounds().extend(locationLayer.getBounds()));
   });
 
   projectsLayer.on('click', function(e) {
