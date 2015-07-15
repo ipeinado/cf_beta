@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623211444) do
+ActiveRecord::Schema.define(version: 20150713210759) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
@@ -30,6 +30,21 @@ ActiveRecord::Schema.define(version: 20150623211444) do
     t.string   "featured_picture"
     t.string   "facebook"
   end
+
+  create_table "promos", force: :cascade do |t|
+    t.string   "promo_logo"
+    t.string   "name"
+    t.string   "brief_product_description"
+    t.string   "brief_promo_description"
+    t.text     "long_product_description"
+    t.string   "twitter"
+    t.string   "facebook"
+    t.string   "website"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "promos", ["name"], name: "index_promos_on_name", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

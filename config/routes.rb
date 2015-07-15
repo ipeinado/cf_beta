@@ -24,6 +24,12 @@ Rails.application.routes.draw do
 
   resources :users, :projects
 
+  resources :promos, only: [:index, :show]
+
+  scope '/admin' do
+    resources :promos, except: [:index, :show]
+  end
+
   # Example resource route with options:
   #   resources :products do
   #     member do
