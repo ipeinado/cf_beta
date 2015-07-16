@@ -17,6 +17,7 @@ User.create!(name: "Nacho Peinado",
 				  password: "123456",
 				  password: "123456",
 				  admin: true)
+
 Project.create!(title: "Homelessfonts",
 					address: "Riereta 24",
 					city: "Barcelona",
@@ -122,6 +123,15 @@ Project.create!(title: "@Trazeo",
 					twitter: "Trazeo",
 					facebook: "https://www.facebook.com/trazeo"
 					)
+
+Promo.create!(name: "Balsamiq",
+  brief_product_description: "Cloud-based version of Balsamiq mockups",
+  brief_promo_description: "3 months free of Balsamiq",
+  long_product_description: "Balsamiq is the maker of Mockups, the rapid wireframing software that combines the simplicity of paper sketching with the power of a digital tool so that teams can focus on what's important. We're a fast-growing, but small and personable company that competes on usability and service. We believe work should be fun, and that life is too short for bad software.", 
+  twitter: "http://twitter.com/balsamiq",
+  facebook: "http://facebook.com/balsamiq",
+  website: "http://balsamiq.com"
+  )
 # 99.times do |n|
 #	name = Faker::Name.name
 #	email = Faker::Internet.email
