@@ -40,7 +40,7 @@ module SessionsHelper
     def logged_in_user
       unless logged_in?
         store_location
-        flash[:danger] = "Por favor, entra antes de visitar esta página"
+        flash[:danger] = I18n.t(:user_not_logged_in)
         redirect_to login_url
       end
     end

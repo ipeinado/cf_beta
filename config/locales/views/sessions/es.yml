@@ -4,3 +4,5 @@ es:
   log_out: "Salir"
   login_success: "Bienvenido de vuelta a Closefunding, %{name}"
   login_fail: "Ups! La combinación correo / contraseña no es válida"
+  user_not_logged_in: "Por favor, entra antes de visitar esta página"
+  not_permitted: "Operación no permitida"

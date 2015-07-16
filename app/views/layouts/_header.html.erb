@@ -14,7 +14,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><%= link_to t(:manifest), manifiesto_path %></li>
                     <li><%= link_to t(:discover), descubre_path, data: { no_turbolink: true } %></li>
-                    <li><%= link_to t(:promos), '#' %></li>
+                    <li><%= link_to t(:promos), promos_path %></li>
                     <li><%= link_to t(:blog), '#' %></li>
                     <li><%= link_to t(:cf_projects), projects_path %></li>
                     <% if logged_in? %>

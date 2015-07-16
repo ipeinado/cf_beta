@@ -1,0 +1,7 @@
+es:
+  promos: "Promociones Closefunding"
+  new_promo: "Nueva Promo"
+  promo_successfully_created: "Se ha creado la promoción con éxito"
+  edit_promo: "Editar Promoción"
+  promo_successfully_updated: "Se ha actualizado la promoción con éxito"
+  promo_successfully_deleted: "Se ha eliminado la promoción"

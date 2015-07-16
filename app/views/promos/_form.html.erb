@@ -1,0 +1,60 @@
+<%= form_for @promo, html: { multipart: true } do |f| %>
+	<div class="col-md-3 col-md-offset-1">
+		<%= f.label :promo_logo %>
+    <%= f.text_field :promo_logo, class: "form-control" %>
+	</div>
+	<div class="col-md-6">
+
+		<% if @promo.errors.any? %>
+			<div class="error_explanation">
+	   		<div class="alert alert-danger">
+	     		<%= t :messages, scope: "activerecord.errors", count: @promo.errors.count %>
+	       		<ul>
+	           	<% @promo.errors.full_messages.each do |msg| %>
+	                <li><%= msg %></li>
+	  		   		<% end %>
+	       		</ul>
+	      </div>
+	    </div>
+		<% end %>
+
+		<div class="form-group">
+			<%= f.label :name %>
+			<%= f.text_field :name, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :brief_product_description %>
+			<%= f.text_field :brief_product_description, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :brief_promo_description %>
+			<%= f.text_field :brief_promo_description, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :long_product_description %>
+			<%= f.text_area :long_product_description, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :website %>
+			<%= f.url_field :website, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :twitter %>
+			<%= f.text_field :twitter, placeholder: "Ej: @username", class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :facebook %>
+			<%= f.text_field :facebook, placeholder: "Ej: https://www.facebook.com/projectname", class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.submit class: "btn btn-default" %>
+		</div>
+	</div>
+<% end %>

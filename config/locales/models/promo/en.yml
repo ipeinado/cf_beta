@@ -1,0 +1,14 @@
+en:
+  activerecord:
+    models:
+      promo: "Promo"
+    attributes:
+      promo:
+        promo_logo: "Product / Service logo"
+        name: "Product / Service name"
+        brief_product_description: "Brief description of the product/service"
+        long_product_description: "Long description of the product/service"
+        brief_promo_description: "Brief description of the promo"
+        twitter: "Twitter"
+        facebook: "Facebook"
+        website: "Página web"

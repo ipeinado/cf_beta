@@ -1,3 +1,11 @@
-<%= render 'shared/admin_menu' %>
+<% provide(:title, I18n.t(:new_promo)) %>
 
-<h1>New promo</h1>
+<div class="row">
+  <div class="com-md-12">
+    <%= render 'shared/admin_menu' %>
+  </div>
+</div>
+<div class="row">
+  <h1><%= t(:new_promo) %></h1>
+  <%= render 'form' %>
+</div>

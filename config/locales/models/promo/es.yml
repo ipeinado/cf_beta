@@ -1,0 +1,14 @@
+es:
+  activerecord:
+    models:
+      promo: "Promo"
+    attributes:
+      promo:
+        promo_logo: "Logo del producto o servicio"
+        name: "Nombre del producto o servicio"
+        brief_product_description: "Breve descripción del producto o servicio (máx. 255 caracteres)"
+        long_product_description: "Descripción larga del producto o servicio"
+        brief_promo_description: "Breve descripción de la promoción (máx. 255 caracteres)"
+        twitter: "Twitter"
+        facebook: "Facebook"
+        website: "Página web"
