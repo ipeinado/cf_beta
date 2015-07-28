@@ -1,1 +1,28 @@
-<h1><%= @promo.name %></h1>
+<% provide(:title, @promo.name) %>
+
+<div class="row">
+	<div class="col-md-10 col-md-offset-1 promo-show">
+		<div class="project-featured-picture">
+		</div>
+		<div class="promo-content">
+			<div class="promo-show-image">
+			</div>
+			<div class="promo-show-content">
+				<h1>
+					<%= @promo.name %>
+					<% if current_user && current_user.admin? %>
+						<%= link_to t(:edit_project_title), edit_promo_path(@promo), class: "btn btn-default" %>
+					<% end %>
+				</h1>
+				<div class="promo-show-description">
+					<p><%= @promo.brief_promo_description %></p>
+				</div>
+				<ul class="social-links">
+					<li><%= link_to image_tag('social/website.png'), @promo.website, target: "_blank", title: t(:visit_web, project: @promo.name) if @promo.website?%></li>
+					<li><%= link_to image_tag('social/twitter.png'), 'https://twitter.com/' + @promo.twitter, target: "_blank", title: t(:visit_twitter, project: @promo.name) if @promo.twitter?%></li>
+					<li><%= link_to image_tag('social/facebook.png'), @promo.facebook, target: "_blank", title: t(:visit_facebook, project: @promo.name) if @promo.facebook? %></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

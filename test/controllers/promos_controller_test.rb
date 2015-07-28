@@ -7,6 +7,7 @@ class PromosControllerTest < ActionController::TestCase
 
   def setup
     @user = users(:michael)
+    @balsamiq = promos(:balsamiq)
   end
 
   test "should get index" do
@@ -30,5 +31,10 @@ class PromosControllerTest < ActionController::TestCase
     end
     assert_select 'h1', I18n.t(:new_promo)
     assert_select 'form'
+  end
+
+  test "edit should be only done by admins" do
+    get promo_path(@promo)
+    assert true
   end
 end

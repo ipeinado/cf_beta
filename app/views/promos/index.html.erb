@@ -1,1 +1,13 @@
-<h1>All Promos</h1>
+<% provide(:title, t(:promos)) %>
+
+<div class="row">
+  <div class="col-md-12">
+    <h1><%= t(:promos) %></h1>
+
+    <ul id="promos">
+      <% @promos.each do |promo| %>
+        <li class="promo"><%= render promo %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
