@@ -1,5 +1,7 @@
 class Promo < ActiveRecord::Base
 
+  mount_uploader :promo_logo, PromoLogoUploader
+
   validates :name, presence: true
   validates :brief_product_description,
                 presence: true,

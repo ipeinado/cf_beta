@@ -1,4 +1,9 @@
-<h2><%= link_to promo.name, promo %></h2>
-<p class="product-description text-muted"><%= promo.brief_product_description %></p>
-<p class="promo-description"><%= promo.brief_promo_description %></p>
-<p class="get-promo-btn"><%= link_to "Llévate esta promoción", '#', class: 'btn btn-warning' %></p>
+<div class="logo"><%= image_tag(promo.promo_logo.url) if promo.promo_logo?%></div>
+<div class="product-info">
+  <h2><%= link_to promo.name, promo %></h2>
+  <p class="product-description text-muted"><%= promo.brief_product_description %></p>
+</div>
+<div class="promo-info">
+  <p class="promo-description"><%= promo.brief_promo_description %></p>
+  <p class="get-promo-btn"><%= link_to "Llévate esta promoción", '#', class: 'btn btn-warning' %></p>
+</div>

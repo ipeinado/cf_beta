@@ -1,7 +1,16 @@
 <%= form_for @promo, html: { multipart: true } do |f| %>
 	<div class="col-md-3 col-md-offset-1">
 		<%= f.label :promo_logo %>
-    <%= f.text_field :promo_logo, class: "form-control" %>
+		<%= image_tag(@promo.promo_logo.url) if @promo.promo_logo? %>
+    <%= f.file_field :promo_logo, class: "form-control" %>
+		<%= f.hidden_field :promo_logo_cache %>
+
+		<p>
+    <label>
+      <%= f.check_box :remove_promo_logo %>
+      Remove logo
+    </label>
+  </p>
 	</div>
 	<div class="col-md-6">
 
