@@ -65,10 +65,21 @@ ul#promos {
   }
 }
 
+/* promos#new and promos#edit */
+form {
+  .promo-form-header {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #CCC;
+  }
+}
+
 /* promo#show */
 .promo-show {
-
+  position: relative;
   padding: 20px 0;
+  border-bottom: 1px solid #CCC;
+  margin-bottom: 36px;
 
   .promo-show-image {
     float: left;
@@ -77,6 +88,10 @@ ul#promos {
 
   .promo-show-content {
     overflow: hidden;
+  }
+
+  .promo-show-description {
+    color: #F90;
   }
 
   ul.social-links {
@@ -88,5 +103,32 @@ ul#promos {
       display: inline-block;
       margin-right: 10px;
     }
+  }
+  .btn {
+    position: absolute;
+    bottom: 36px;
+    right: 0;
+  }
+}
+
+.promo-show-details {
+
+  margin-bottom: 36px;
+
+  img {
+    float: right;
+    margin-left: 36px;
+    margin-bottom: 36px;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .promo-button-bottom {
+    padding: 20px 0;
+    text-align: center;
   }
 }

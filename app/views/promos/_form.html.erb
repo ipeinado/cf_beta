@@ -1,31 +1,33 @@
 <%= form_for @promo, html: { multipart: true } do |f| %>
-	<div class="col-md-3 col-md-offset-1">
-		<%= f.label :promo_logo %>
-		<%= image_tag(@promo.promo_logo.url) if @promo.promo_logo? %>
-    <%= f.file_field :promo_logo, class: "form-control" %>
-		<%= f.hidden_field :promo_logo_cache %>
 
-		<p>
-    <label>
-      <%= f.check_box :remove_promo_logo %>
-      Remove logo
-    </label>
-  </p>
+	<% if @promo.errors.any? %>
+		<div class="error_explanation">
+			<div class="alert alert-danger">
+				<%= t :messages, scope: "activerecord.errors", count: @promo.errors.count %>
+					<ul>
+						<% @promo.errors.full_messages.each do |msg| %>
+								<li><%= msg %></li>
+						<% end %>
+					</ul>
+			</div>
+		</div>
+	<% end %>
+
+	<div class="row promo-form-header">
+		<div class="col-md-3 col-md-offset-1">
+			<%= f.label :promo_logo %>
+			<%= image_tag(@promo.promo_logo.url) if @promo.promo_logo? %>
+    	<%= f.file_field :promo_logo, class: "form-control" %>
+			<%= f.hidden_field :promo_logo_cache %>
+
+			<p>
+    		<label>
+      		<%= f.check_box :remove_promo_logo %>
+      		Remove logo
+    		</label>
+  		</p>
 	</div>
 	<div class="col-md-6">
-
-		<% if @promo.errors.any? %>
-			<div class="error_explanation">
-	   		<div class="alert alert-danger">
-	     		<%= t :messages, scope: "activerecord.errors", count: @promo.errors.count %>
-	       		<ul>
-	           	<% @promo.errors.full_messages.each do |msg| %>
-	                <li><%= msg %></li>
-	  		   		<% end %>
-	       		</ul>
-	      </div>
-	    </div>
-		<% end %>
 
 		<div class="form-group">
 			<%= f.label :name %>
@@ -43,11 +45,6 @@
 		</div>
 
 		<div class="form-group">
-			<%= f.label :long_product_description %>
-			<%= f.text_area :long_product_description, class: "form-control" %>
-		</div>
-
-		<div class="form-group">
 			<%= f.label :website %>
 			<%= f.url_field :website, class: "form-control" %>
 		</div>
@@ -61,9 +58,52 @@
 			<%= f.label :facebook %>
 			<%= f.text_field :facebook, placeholder: "Ej: https://www.facebook.com/projectname", class: "form-control" %>
 		</div>
+	</div>
+</div>
 
-		<div class="form-group">
-			<%= f.submit class: "btn btn-default" %>
+	<div class="row">
+		<div class="col-md-6 col-md-offset-1">
+			<div class="form-group">
+				<%= f.label :long_product_description %>
+				<%= f.text_area :long_product_description, class: "form-control" %>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :accessibility_options %>
+				<%= f.text_area :accessibility_options, class: "form-control", placeholder: t(:accessibility_options_placeholder) %>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :about_the_promo %>
+				<%= f.text_area :about_the_promo, class: "form-control" %>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :promo_requirements %>
+				<%= f.text_area :promo_requirements, class: "form-control" %>
+			</div>
+		</div>
+
+		<div class="col-md-4">
+			<%= f.label :promo_featured_picture %>
+			<%= image_tag(@promo.promo_featured_picture.url) if @promo.promo_featured_picture? %>
+			<%= f.file_field :promo_featured_picture, class: "form-control" %>
+			<%= f.hidden_field :promo_featured_picture_cache %>
+
+			<p>
+				<label>
+					<%= f.check_box :remove_promo_featured_picture %>
+					Remove logo
+				</label>
+			</p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-10 col-md-offset-1">
+			<div class="form-group">
+				<%= f.submit class: "btn btn-default" %>
+			</div>
 		</div>
 	</div>
 <% end %>

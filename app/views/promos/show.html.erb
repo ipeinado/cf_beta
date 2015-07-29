@@ -3,15 +3,18 @@
 <div class="row">
 	<div class="col-md-10 col-md-offset-1 promo-show">
 		<div class="promo-show-image">
-			<%= image_tag(@promo.promo_logo.url) if @promo.promo_logo? %>
+			<%= image_tag(@promo.promo_logo.url, alt: t(:promo_logo_alt, name: @promo.name)) if @promo.promo_logo? %>
 		</div>
 		<div class="promo-show-content">
 			<h1>
 				<%= @promo.name %>
 				<% if current_user && current_user.admin? %>
-					<%= link_to t(:edit_project_title), edit_promo_path(@promo), class: "btn btn-default" %>
+					<%= link_to t(:edit_promo), edit_promo_path(@promo), class: "btn btn-default" %>
 				<% end %>
 			</h1>
+			<p>
+				<%= @promo.brief_product_description %>
+			</p>
 			<div class="promo-show-description">
 				<p><%= @promo.brief_promo_description %></p>
 			</div>
@@ -21,5 +24,22 @@
 				<li><%= link_to image_tag('social/facebook.png'), @promo.facebook, target: "_blank", title: t(:visit_facebook, project: @promo.name) if @promo.facebook? %></li>
 			</ul>
 		</div>
+		<%= link_to I18n.t(:promo_button), '#', class: 'btn btn-warning' %>
+	</div>
+</div>
+
+<div class="row promo-show-details">
+	<div class="col-md-10 col-md-offset-1">
+		<%= image_tag(@promo.promo_featured_picture.url, alt: I18n.t(:promo_featured_picture_alt, name: @promo.name)) if @promo.promo_featured_picture? %>
+		<h3><%= Promo.human_attribute_name(:long_product_description) %></h3>
+		<p><%= @promo.long_product_description %></p>
+		<h3><%= Promo.human_attribute_name(:accessibility_options) %></h3>
+		<p><%= @promo.accessibility_options %></p>
+		<h3><%= Promo.human_attribute_name(:about_the_promo) %></h3>
+		<p><%= @promo.about_the_promo %></p>
+		<h3><%= Promo.human_attribute_name(:promo_requirements) %></h3>
+		<p><%= @promo.promo_requirements %></p>
+		<p class="promo-button-bottom"><%= link_to I18n.t(:promo_button), '#', class: 'btn btn-lg btn-warning' %></p>
+
 	</div>
 </div>

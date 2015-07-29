@@ -5,3 +5,7 @@ en:
   edit_promo: "Edit Promo"
   promo_successfully_updated: "The promo has been succesfully updated"
   promo_successfully_deleted: "The promo has been succesfully deleted"
+  accessibility_options_placeholder: "Information on available accessibility options"
+  promo_logo_alt: "%{name}'s logo"
+  promo_featured_picture_alt: "%{name}'s featured picture"
+  promo_button: "I want this deal"

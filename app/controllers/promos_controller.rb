@@ -51,6 +51,6 @@ class PromosController < ApplicationController
 
   private
     def promo_params
-      params.require(:promo).permit(:promo_logo, :name, :brief_product_description, :long_product_description, :brief_promo_description, :website, :twitter, :facebook)
+      params.require(:promo).permit(:promo_logo, :name, :brief_product_description, :long_product_description, :brief_promo_description, :accessibility_options, :about_the_promo, :promo_requirements, :promo_featured_picture, :website, :twitter, :facebook)
     end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713210759) do
+ActiveRecord::Schema.define(version: 20150729213615) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
@@ -42,6 +42,10 @@ ActiveRecord::Schema.define(version: 20150713210759) do
     t.string   "website"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.text     "accessibility_options"
+    t.text     "about_the_promo"
+    t.text     "promo_requirements"
+    t.string   "promo_featured_picture"
   end
 
   add_index "promos", ["name"], name: "index_promos_on_name", unique: true
