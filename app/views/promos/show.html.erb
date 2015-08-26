@@ -24,7 +24,7 @@
 				<li><%= link_to image_tag('social/facebook.png'), @promo.facebook, target: "_blank", title: t(:visit_facebook, project: @promo.name) if @promo.facebook? %></li>
 			</ul>
 		</div>
-		<%= link_to I18n.t(:promo_button), '#', class: 'btn btn-warning' %>
+		<%= link_to I18n.t(:promo_button), '#', class: 'btn btn-warning btn-promo' %>
 	</div>
 </div>
 
