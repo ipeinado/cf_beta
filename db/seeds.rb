@@ -26,8 +26,10 @@ Project.create!(title: "Homelessfonts",
 					description: "Homelessfonts is an Arrels Foundation initiative which consists of creating a collection of typefaces based on the handwriting of homeless",
 					website: "http://www.homelessfonts.org/",
 					twitter: "homelessfonts",
-					facebook: "https://www.facebook.com/homelessfonts"
-					)
+					facebook: "https://www.facebook.com/homelessfonts",
+					logo: File.open(File.join(Rails.root.join('public/uploads/projects'), 'Homelessfonts_LOGO.png'))
+)
+
 Project.create!(title: "joyners",
 					address: "Calle Calàbria 169",
 					city: "Barcelona",
@@ -36,7 +38,8 @@ Project.create!(title: "joyners",
 					description: "¡Comparte piso con séniors afines, divide gastos y disfruta de tu etapa adulta mientras accedes a múltiples servicios!",
 					website: "http://www.joyners.es/",
 					twitter: "somosjoyners",
-					facebook: "https://www.facebook.com/pages/Joyners/1537823113160952"
+					facebook: "https://www.facebook.com/pages/Joyners/1537823113160952",
+					logo: File.open(File.join(Rails.root.join('public/uploads/projects'), 'Joiners_LOGO.jpeg'))
 					)
 Project.create!(title: "Accessible.info",
 					address: "Calle Madres de la Plaza de Mayo, 44, 31013",
@@ -47,7 +50,8 @@ Project.create!(title: "Accessible.info",
 					description: "Buscador de lugares accesibles con información del lugar, fotos... Sitios accesibles para mascotas. Auditorias para obtener grado de accesibilidad A, B , C.",
 					website: "http://www.accessible.info/",
 					twitter: "accessible_info",
-					facebook: "https://www.facebook.com/accesible.paratodos"
+					facebook: "https://www.facebook.com/accesible.paratodos",
+					logo: File.open(File.join(Rails.root.join('public/uploads/projects'), 'AccesibleInfo_LOGO.png'))
 					)
 Project.create!(title: "Inrex Home Care, LLC",
 					address: "415 W. Schrock Rd.",
@@ -57,7 +61,8 @@ Project.create!(title: "Inrex Home Care, LLC",
 					description: "INREX Home Care, LLC is committed to providing the highest quality of services and support to our community members with physical and developmental disabilities by helping them live their lives to their fullest potential",
 					website: "http://www.inrexhomecare.com",
 					twitter: "InrexHomeCare",
-					facebook: "https://www.facebook.com/pages/Inrex-Home-Care-LLC/1537934039754844"
+					facebook: "https://www.facebook.com/pages/Inrex-Home-Care-LLC/1537934039754844",
+					logo: File.open(File.join(Rails.root.join('public/uploads/projects'), 'InrexHomeCare_LOGO.jpg'))
 					)
 Project.create!(title: "VecineoApp",
 					city: "Murcia",
@@ -66,7 +71,8 @@ Project.create!(title: "VecineoApp",
 					description: "Ofrece tus servicios a tus vecinos y encuentra ofertas con nuestra App. Vecineo, tu vida en una milla",
 					website: "http://www.vecineo.com/",
 					twitter: "VecineoApp",
-					facebook: "https://www.facebook.com/Vecineo"
+					facebook: "https://www.facebook.com/Vecineo",
+					logo: File.open(File.join(Rails.root.join('public/uploads/projects'), 'VecineoAPP_LOGO.png'))
 					)
 Project.create!(title: "BCN ACCESSTOUR",
 					city: "Barcelona",
@@ -74,7 +80,8 @@ Project.create!(title: "BCN ACCESSTOUR",
 					country: "España",
 					description: "Inbound Tour Operator specialized in #accessibletourism in #Spain. #accessibleholidays for special needs families, senior and PRM.",
 					website: "http://www.bcnaccestour.com/",
-					twitter: "bcnaccestour"
+					twitter: "bcnaccestour",
+					logo: File.open(File.join(Rails.root.join('public/uploads/projects'), 'BCNAccessTour_LOGO.jpeg'))
 					)
 Project.create!(title: "Ciudad Fácil",
 					city: "Valdivia",
@@ -83,7 +90,8 @@ Project.create!(title: "Ciudad Fácil",
 					description: "Aplicación móvil inclusiva, para que todos disfrutemos de la ciudad. ¿Te unes en esta aventura :D? Beta disponible en playstore!",
 					website: "http://ciudadfacil.cl/",
 					twitter: "ciudadFacil",
-					facebook: "https://www.facebook.com/ciudadFacil.cl"
+					facebook: "https://www.facebook.com/ciudadFacil.cl",
+					logo: File.open(File.join(Rails.root.join('public/uploads/projects'), 'CiudadFacil_LOGO.jpg'))
 					)
 Project.create!(title: "encicle",
 					address: "C/ Zapateros, 8",
@@ -93,7 +101,8 @@ Project.create!(title: "encicle",
 					description: "Somos una empresa de bicimensajeros valenciana comprometida con las necesidades de nuestra ciudad de una forma sostenible, eficaz y respetuosa.",
 					website: "http://www.enciclebicimensajeros.com/",
 					twitter: "encicle",
-					facebook: "https://www.facebook.com/enciclebicimensajeros"
+					facebook: "https://www.facebook.com/enciclebicimensajeros",
+					logo: File.open(File.join(Rails.root.join('public/uploads/projects'), 'Encicle_LOGO.jpg'))
 					)
 Project.create!(title: "Mi Huerto Web",
 					city: "Huellelhue",
@@ -102,7 +111,8 @@ Project.create!(title: "Mi Huerto Web",
 					description: "Agricultura sustentable, comercio justo e inclusivo. La nueva manera de obtener tus productos del campo, colaborando directamente con la agricultura familiar campesina.",
 					website: "http://mihuertoweb.cl/",
 					twitter: "MiHuertoWeb",
-					facebook: "https://www.facebook.com/MiHuertoWeb"
+					facebook: "https://www.facebook.com/MiHuertoWeb",
+					logo: File.open(File.join(Rails.root.join('public/uploads/projects'), 'MiHuertoWeb_LOGO.jpg'))
 					)
 Project.create!(title: "Huerta Montecarmelo",
 					address: "Monasterio de las Huelgas, 15",
@@ -112,7 +122,8 @@ Project.create!(title: "Huerta Montecarmelo",
 					description: "huertos urbanos en pleno Madrid, con trabajadores con discapacidad intelectual",
 					website: "http://www.lahuertademontecarmelo.com/",
 					twitter: "HuertaMtcarmelo",
-					facebook: "https://www.facebook.com/LaHuertaDeMontecarmelo"
+					facebook: "https://www.facebook.com/LaHuertaDeMontecarmelo",
+					logo: File.open(File.join(Rails.root.join('public/uploads/projects'), 'HuertaMontecarmelo_LOGO.jpg'))
 					)
 Project.create!(title: "@Trazeo",
 					city: "Córdoba",
