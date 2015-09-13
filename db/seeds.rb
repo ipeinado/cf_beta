@@ -127,11 +127,22 @@ Project.create!(title: "@Trazeo",
 Promo.create!(name: "Balsamiq",
   brief_product_description: "Cloud-based version of Balsamiq mockups",
   brief_promo_description: "3 months free of Balsamiq",
-  long_product_description: "Balsamiq is the maker of Mockups, the rapid wireframing software that combines the simplicity of paper sketching with the power of a digital tool so that teams can focus on what's important. We're a fast-growing, but small and personable company that competes on usability and service. We believe work should be fun, and that life is too short for bad software.", 
+  long_product_description: "Balsamiq is the maker of Mockups, the rapid wireframing software that combines the simplicity of paper sketching with the power of a digital tool so that teams can focus on what's important. We're a fast-growing, but small and personable company that competes on usability and service. We believe work should be fun, and that life is too short for bad software.",
+	about_the_promo: "3 months free extended trial of myBalsamiq with full functionality. The offer applies on new myBalsamiq accounts only and cannot be used towards existing accounts.",
   twitter: "http://twitter.com/balsamiq",
   facebook: "http://facebook.com/balsamiq",
   website: "http://balsamiq.com"
   )
+
+Promo.create!(name: "Trello Gold",
+  brief_product_description: "Trello is the free, flexible, and visual way to organize anything with anyone.",
+  brief_promo_description: "3 FREE months of Trello Gold!",
+  long_product_description: "Drop the lengthy email threads, out-of-date spreadsheets, no-longer-so-sticky notes, and clunky software for managing your projects. Trello lets you see everything about your project in a single glance.",
+	about_the_promo: "Get a $15 discount on Trello Gold",
+  twitter: "http://twitter.com/trello",
+  facebook: "https://www.facebook.com/trelloapp",
+  website: "https://trello.com/"
+)
 # 99.times do |n|
 #	name = Faker::Name.name
 #	email = Faker::Internet.email

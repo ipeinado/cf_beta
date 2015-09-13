@@ -33,8 +33,10 @@
 		<%= image_tag(@promo.promo_featured_picture.url, alt: I18n.t(:promo_featured_picture_alt, name: @promo.name)) if @promo.promo_featured_picture? %>
 		<h3><%= Promo.human_attribute_name(:long_product_description) %></h3>
 		<p><%= @promo.long_product_description %></p>
-		<h3><%= Promo.human_attribute_name(:accessibility_options) %></h3>
-		<p><%= @promo.accessibility_options %></p>
+		<% if !@promo.accessibility_options.blank? %>
+			<h3><%= Promo.human_attribute_name(:accessibility_options) %></h3>
+			<p><%= @promo.accessibility_options %></p>
+		<% end %>
 		<h3><%= Promo.human_attribute_name(:about_the_promo) %></h3>
 		<p><%= @promo.about_the_promo %></p>
 		<h3><%= Promo.human_attribute_name(:promo_requirements) %></h3>

@@ -10,6 +10,7 @@ class PromosController < ApplicationController
   end
 
   def show
+    @promo = Promo.find(params[:id])
   end
 
   def new
@@ -28,9 +29,11 @@ class PromosController < ApplicationController
   end
 
   def edit
+    @promo = Promo.find(params[:id])
   end
 
   def update
+    @promo = Promo.find(params[:id])
     if @promo.update_attributes(promo_params)
       flash[:success] = I18n.t(:promo_successfully_updated)
       redirect_to @promo
