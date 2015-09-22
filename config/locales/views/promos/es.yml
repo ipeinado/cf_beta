@@ -6,6 +6,7 @@ es:
   promo_successfully_updated: "Se ha actualizado la promoción con éxito"
   promo_successfully_deleted: "Se ha eliminado la promoción"
   accessibility_options_placeholder: "Información sobre opciones de accesibilidad incorporadas"
+  categories_placeholder: "Introduzca las etiquetas separadas por comas"
   promo_logo_alt: "Logo de %{name}"
   promo_featured_picture_alt: "Imagen destacada de %{name}"
   promo_button: "Quiero esta promoción"

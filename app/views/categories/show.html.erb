@@ -1,0 +1,13 @@
+<% provide(:title, @category.name) %>
+
+<div class="row">
+  <div class="com-md-10">
+    <h1><%= t(:category_title, name: @category.name) %></h1>
+
+    <ul id="promos">
+      <% @promos.each do |promo| %>
+        <li class="promo"><%= render 'promos/promo', promo: promo %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

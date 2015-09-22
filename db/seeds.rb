@@ -113,7 +113,7 @@ Project.create!(title: "Huerta Montecarmelo",
 					website: "http://www.lahuertademontecarmelo.com/",
 					twitter: "HuertaMtcarmelo",
 					facebook: "https://www.facebook.com/LaHuertaDeMontecarmelo")
-					
+
 Project.create!(title: "@Trazeo",
 					city: "Córdoba",
 					province: "Córdoba",
@@ -124,7 +124,7 @@ Project.create!(title: "@Trazeo",
 					facebook: "https://www.facebook.com/trazeo"
 					)
 
-Promo.create!(name: "Balsamiq",
+balsamiq = Promo.create!(name: "Balsamiq",
   brief_product_description: "Cloud-based version of Balsamiq mockups",
   brief_promo_description: "3 months free of Balsamiq",
   long_product_description: "Balsamiq is the maker of Mockups, the rapid wireframing software that combines the simplicity of paper sketching with the power of a digital tool so that teams can focus on what's important. We're a fast-growing, but small and personable company that competes on usability and service. We believe work should be fun, and that life is too short for bad software.",
@@ -134,7 +134,12 @@ Promo.create!(name: "Balsamiq",
   website: "http://balsamiq.com"
   )
 
-Promo.create!(name: "Trello Gold",
+w = Category.create!(name: "Web")
+
+balsamiq.categories.create(name: "Diseño")
+balsamiq.categories << w
+
+trello = Promo.create!(name: "Trello Gold",
   brief_product_description: "Trello is the free, flexible, and visual way to organize anything with anyone.",
   brief_promo_description: "3 FREE months of Trello Gold!",
   long_product_description: "Drop the lengthy email threads, out-of-date spreadsheets, no-longer-so-sticky notes, and clunky software for managing your projects. Trello lets you see everything about your project in a single glance.",
@@ -143,6 +148,10 @@ Promo.create!(name: "Trello Gold",
   facebook: "https://www.facebook.com/trelloapp",
   website: "https://trello.com/"
 )
+
+trello.categories.create(name: "Project management")
+trello.categories << w
+
 # 99.times do |n|
 #	name = Faker::Name.name
 #	email = Faker::Internet.email

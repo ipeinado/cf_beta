@@ -12,6 +12,13 @@
 					<%= link_to t(:edit_promo), edit_promo_path(@promo), class: "btn btn-default" %>
 				<% end %>
 			</h1>
+			<% if @promo.categories.any? %>
+				<ul class="promo_categories">
+					<% @promo.categories.each do |category| %>
+						<li><%= link_to category.name, category %></li>
+					<% end %>
+				</ul>
+			<% end %>
 			<p>
 				<%= @promo.brief_product_description %>
 			</p>

@@ -1,0 +1,8 @@
+es:
+  activerecord:
+    models:
+      category:
+        one: Categoría
+        other: Categorías
+    attributes:
+      name: Nombre

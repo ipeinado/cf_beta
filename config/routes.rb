@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'categories/show'
+
   # You can have the root of your site routed with "root"
   root 'static_pages#home'
 
@@ -23,6 +25,7 @@ Rails.application.routes.draw do
   # Users routes
 
   resources :users, :projects, :promos
+  resources :categories, only: [:show]
 
   # Example resource route with options:
   #   resources :products do

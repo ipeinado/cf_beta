@@ -1,6 +1,15 @@
 <div class="logo"><%= image_tag(promo.promo_logo.url) if promo.promo_logo?%></div>
 <div class="product-info">
   <h2><%= link_to promo.name, promo %></h2>
+  <% if promo.categories.any? %>
+    <ul class="promo_categories">
+      <% promo.categories.each do |category| %>
+        <li><%= link_to category.name, category %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <ul>
+  </ul>
   <p class="product-description text-muted"><%= promo.brief_product_description %></p>
 </div>
 <div class="promo-info">
