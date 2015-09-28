@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   # Users routes
 
   resources :users, :projects, :promos
-  resources :categories, only: [:show]
+  resources :categories, only: [:index, :show]
 
   # Example resource route with options:
   #   resources :products do
