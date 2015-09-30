@@ -38,6 +38,8 @@ gem 'mini_magick'
 
 gem 'figaro'
 
+gem 'tinymce-rails'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

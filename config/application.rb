@@ -26,5 +26,7 @@ module CfV01
     config.serve_static_files = true
     config.assets.initialize_on_precompile = false
 
+    config.tinymce.install = :compile
+
   end
 end

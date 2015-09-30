@@ -1,0 +1,6 @@
+toolbar:
+  - bold italic | undo redo
+  - link
+menubar: false
+plugins:
+  - link

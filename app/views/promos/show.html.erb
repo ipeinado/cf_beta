@@ -38,16 +38,22 @@
 <div class="row promo-show-details">
 	<div class="col-md-10 col-md-offset-1">
 		<%= image_tag(@promo.promo_featured_picture.url, alt: I18n.t(:promo_featured_picture_alt, name: @promo.name)) if @promo.promo_featured_picture? %>
-		<h3><%= Promo.human_attribute_name(:long_product_description) %></h3>
-		<p><%= @promo.long_product_description %></p>
-		<% if !@promo.accessibility_options.blank? %>
-			<h3><%= Promo.human_attribute_name(:accessibility_options) %></h3>
-			<p><%= @promo.accessibility_options %></p>
+		<% unless @promo.long_product_description.blank? %>
+			<h3><%= Promo.human_attribute_name(:long_product_description) %></h3>
+			<p><%= raw @promo.long_product_description %></p>
 		<% end %>
-		<h3><%= Promo.human_attribute_name(:about_the_promo) %></h3>
-		<p><%= @promo.about_the_promo %></p>
-		<h3><%= Promo.human_attribute_name(:promo_requirements) %></h3>
-		<p><%= @promo.promo_requirements %></p>
+		<% unless @promo.accessibility_options.blank? %>
+			<h3><%= Promo.human_attribute_name(:accessibility_options) %></h3>
+			<p><%= raw @promo.accessibility_options %></p>
+		<% end %>
+		<% unless @promo.about_the_promo.blank? %>
+			<h3><%= Promo.human_attribute_name(:about_the_promo) %></h3>
+			<p><%= raw @promo.about_the_promo %></p>
+		<% end %>
+		<% unless @promo.promo_requirements.blank? %>
+			<h3><%= Promo.human_attribute_name(:promo_requirements) %></h3>
+			<p><%= raw @promo.promo_requirements %></p>
+		<% end %>
 		<p class="promo-button-bottom"><%= link_to I18n.t(:promo_button), '#', class: 'btn btn-lg btn-warning' %></p>
 
 	</div>
