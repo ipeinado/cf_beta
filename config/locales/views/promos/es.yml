@@ -5,6 +5,7 @@ es:
   edit_promo: "Editar Promoción"
   promo_successfully_updated: "Se ha actualizado la promoción con éxito"
   promo_successfully_deleted: "Se ha eliminado la promoción"
+  long_promo_description_placeholder: "Descripción larga de la promoción o servicio"
   accessibility_options_placeholder: "Información sobre opciones de accesibilidad incorporadas"
   categories_placeholder: "Introduzca las etiquetas separadas por comas"
   promo_logo_alt: "Logo de %{name}"
