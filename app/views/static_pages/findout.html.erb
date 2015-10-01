@@ -9,7 +9,7 @@
           <%= image_tag project.featured_picture, class: "project-index-featured-picture" if project.featured_picture? %>
           <div class="project-header" role="banner">
             <%= image_tag project.logo.thumb if project.logo? %>
-            <h3><%= project.title %></h3>
+            <h3><%= link_to project.title, project %></h3>
           </div>
 
           <p><%= project.description %></p>

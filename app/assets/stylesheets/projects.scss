@@ -49,6 +49,17 @@
 
 			h3 {
 				margin: 6px 0 0 0;
+
+				a {
+					font-size: 20px;
+
+					&:hover {
+						color: #F90;
+						text-decoration: none;
+					}
+				}
+
+				font-size: 20px;
 			}
 
 			.project-header {
@@ -67,7 +78,7 @@
 			}
 
 			.project-header h3 {
-				font-size: 36px;
+				font-size: 28px;
 			}
 
 			p {

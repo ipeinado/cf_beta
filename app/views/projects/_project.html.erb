@@ -1,26 +1,11 @@
-<li class="project" id="project-<%= project.id %>">
+<li class="project" data-id="<%= project.id %>" data-title="<%= project.title %>">
   <%= image_tag project.featured_picture, class: "project-index-featured-picture" if project.featured_picture? %>
   <div class="project-header" role="banner">
     <%= image_tag project.logo.thumb if project.logo? %>
-    <h3><%= project.title %></h3>
+    <h3><%= link_to project.title, project %></h3>
   </div>
 
   <p><%= project.description %></p>
 
   <p class="text-muted" style="text-align: right;"><small><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= project.city %>, <%= project.country %></small></p>
 </li>
-
-<%= javascript_tag do %>
-
-  $("#project-<%= project.id %>").hover(function() {
-    $(this).attr("title", "Visita la página de <%= project.title %>");
-    $(this).find("h3").css("color", "#F90");
-  }, function() {
-    $(this).removeAttr("title");
-    $(this).find("h3").css("color", "#000");
-  });
-
-  $("#project-<%= project.id %>").click(function(e) {
-    window.location.href = "<%= project_url(project).to_s %>";
-  });
-<% end %>
