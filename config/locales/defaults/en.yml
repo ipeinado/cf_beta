@@ -117,6 +117,7 @@ en:
       not_an_integer: must be an integer
       odd: must be odd
       record_invalid: 'Validation failed: %{errors}'
+      extension_white_list_error: "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}"
       restrict_dependent_destroy:
         one: Cannot delete record because a dependent %{record} exists
         many: Cannot delete record because dependent %{record} exist

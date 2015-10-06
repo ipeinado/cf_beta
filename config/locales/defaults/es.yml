@@ -115,6 +115,7 @@ es:
       not_a_number: no es un número
       not_an_integer: debe ser un entero
       odd: debe ser impar
+      extension_white_list_error: "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}"
       record_invalid: 'La validación falló: %{errors}'
       taken: ya está en uso
       too_long: es demasiado largo (%{count} caracteres máximo)
