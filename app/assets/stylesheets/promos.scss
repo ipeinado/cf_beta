@@ -64,6 +64,28 @@ ul#promos {
         }
       }
   }
+
+  ul.promo_categories {
+    margin: 0 0 10px 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      display: inline-block;
+      margin-right: .3em;
+      margin-bottom: .6em;
+      a {
+        font-size: 14px;
+        color: black;
+        font-weight: bold;
+
+        &:hover {
+          color: #F90;
+          text-decoration: none;
+        }
+      }
+    }
+  }
 }
 
 /* promos#new and promos#edit */
@@ -131,27 +153,5 @@ form {
   .promo-button-bottom {
     padding: 20px 0;
     text-align: center;
-  }
-}
-
-ul.promo_categories {
-  margin: 0 0 10px 0;
-  padding: 0;
-  list-style-type: none;
-
-  li {
-    display: inline-block;
-    margin-right: .3em;
-    margin-bottom: .6em;
-    a {
-      font-size: 14px;
-      color: black;
-      font-weight: bold;
-
-      &:hover {
-        color: #F90;
-        text-decoration: none;
-      }
-    }
   }
 }
