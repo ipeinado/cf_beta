@@ -63,6 +63,9 @@ group :development, :test do
   # Fake names and emails
   gem 'faker', '1.4.3'
 
+  # Import from spreadsheets
+  gem 'roo', '~> 2.1.0'
+
 end
 
 group :test do

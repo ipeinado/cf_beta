@@ -1,11 +1,12 @@
 class ProjectsController < ApplicationController
-  
+
   before_action :logged_in_user, only: [:new, :create, :update, :destroy]
   before_action :admin_user, only: [:new, :create, :update, :destroy]
 
   def index
-    @projects = Project.all
-    @geoJson = get_geojson(@projects)
+    @projects = Project.paginate(:page => params[:page], :per_page => 20)
+    @all_projects = Project.all
+    @geoJson = get_geojson(@all_projects)
 
     respond_to do |format|
       format.html

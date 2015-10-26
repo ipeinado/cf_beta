@@ -11,8 +11,6 @@ class Project < ActiveRecord::Base
   before_save :valid_address?
 
   validates :title, presence: true
-  validates :city, presence: true
-  validates :province, presence: true
 
   def valid_address?
     !self.longitude.nil?

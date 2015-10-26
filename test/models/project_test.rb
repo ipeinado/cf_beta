@@ -14,16 +14,6 @@ class ProjectTest < ActiveSupport::TestCase
     assert_not @project.valid?, message: "project should have a titles"
   end
 
-  test "project should have a city" do
-    @project.city = ""
-    assert_not @project.valid?, message: "Project should have a city"
-  end
-
-  test "project should have a province" do
-    @project.province = ""
-    assert_not @project.valid?, message: "Project should have a province"
-  end
-
   test "projects that are not geolocated should not be saved" do
     project2 = Project.new(title: "Project with no city", city: "tyuri", province: "alsir")
     assert_no_difference 'Project.count' do
