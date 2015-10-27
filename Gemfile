@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 ruby '2.1.5'
 
-gem 'active_record'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use SCSS for stylesheets
@@ -81,6 +79,7 @@ end
 group :production do
     gem 'pg', '0.18.1'
     gem 'rails_12factor'
+    gem 'active_record'
     gem 'puma', '2.11.2'
 end
 
