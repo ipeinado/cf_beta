@@ -64,7 +64,7 @@ group :development, :test do
   gem 'faker', '1.4.3'
 
   # Import from spreadsheets
-  gem 'roo', '~> 2.1.0'
+  gem 'roo'
 
 end
 
