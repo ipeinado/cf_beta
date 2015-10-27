@@ -346,6 +346,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  activerecord
   bcrypt (~> 3.1.7)
   bootstrap-sass (= 3.3.4.1)
   bootstrap-will_paginate (= 0.0.10)
