@@ -4,6 +4,9 @@ ruby '2.1.5'
 
 gem 'activerecord'
 
+# Import from spreadsheets
+gem 'roo', '2.1.1'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use SCSS for stylesheets
@@ -66,9 +69,6 @@ group :development, :test do
   # Fake names and emails
   gem 'faker', '1.4.3'
 
-  # Import from spreadsheets
-  gem 'roo'
-
 end
 
 group :test do
@@ -83,7 +83,3 @@ group :production do
     gem 'rails_12factor'
     gem 'puma', '2.11.2'
 end
-
-# Windows support
-gem 'tzinfo-data'
-gem 'coffee-script-source', '1.8.0'
