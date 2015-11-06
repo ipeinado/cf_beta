@@ -1,0 +1,26 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+cf_seven_days_ago:
+  title: Closefunding 7 days ago
+  short_description: This is Closefunding 7 days ago
+  daytime: <%= 7.day.ago.to_s(:db) %>
+
+cf_five_days_ago:
+  title: Closefunding in the past
+  short_description: This is Closefunding in the past
+  daytime: <%= 5.day.ago.to_s(:db) %>
+
+cf_onehour:
+  title: Closefunding 1 hour from now
+  short_description: This is Closefunding 1 hour from now
+  daytime: <%= Time.zone.now + (1*60*60) %>
+
+cf_onemonth:
+  title: Closefunding 1 month from now
+  short_description: This is Closefunding 1 month from now
+  daytime: <%= Time.zone.now + (30*24*60*60) %>
+
+cf_oneyear:
+  title: Closefunding 1 year from now
+  short_description: This is Closefunding 1 year from now
+  daytime: <%= Time.zone.now + (365*24*60*60) %>
