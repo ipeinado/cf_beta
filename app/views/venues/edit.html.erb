@@ -1,0 +1,9 @@
+<% provide('title', t(:edit_venue)) %>
+
+<h1>
+  <%= I18n.t(:edit_venue) %>
+</h1>
+
+<%= render 'form' %>
+
+<%= link_to t(:destroy_venue), @venue, method: :delete, class: 'btn btn-danger', data: { confirm: "You sure? "} %>

@@ -1,0 +1,19 @@
+es:
+  activerecord:
+    models:
+      venue:
+        one: Establecimiento
+        other: Establecimientos
+    attributes:
+      venue:
+        name: "Nombre"
+        venue_picture: "Foto del establecimiento"
+        website: "Página web"
+        twitter: "Twitter"
+        facebook: "Facebook"
+        phone: "Teléfono"
+        address: "Dirección"
+        city: "Ciudad"
+        province: "Provincia / Estado"
+        country: "País"
+        accessibility: "Accesibilidad del establecimiento"

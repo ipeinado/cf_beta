@@ -1,0 +1,70 @@
+<%= form_for @venue, html: { multipart: true } do |f| %>
+
+  <% if @venue.errors.any? %>
+    <div class="error_explanation">
+      <div class="alert alert-danger">
+        <%= t :messages, scope: "activerecord.errors", count: @venue.errors.count %>
+          <ul>
+            <% @venue.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :address %>
+    <%= f.text_field :address, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :city %>
+    <%= f.text_field :city, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :province %>
+    <%= f.text_field :province, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :country %>
+    <%= f.text_field :country, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :phone %>
+    <%= f.text_field :phone, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :website %>
+    <%= f.text_field :website, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :twitter %>
+    <%= f.text_field :twitter, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :facebook %>
+    <%= f.text_field :facebook, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :accessibility %>
+    <%= f.text_area :accessibility, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit class: "btn btn-default" %>
+  </div>
+
+<% end %>

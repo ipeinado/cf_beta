@@ -1,0 +1,13 @@
+<% provide(:title, Venue.model_name.human(count: 2)) %>
+
+<h1>
+  <%= Venue.model_name.human(count: 2) %>
+  <% if logged_in? %>
+    <%= link_to t(:new_venue), new_venue_path, class: 'btn btn-default' %>
+  <% end %>
+</h1>
+<ul>
+  <% @venues.each do |venue| %>
+    <li><%= link_to venue.name, venue %></li>
+  <% end %>
+</ul>

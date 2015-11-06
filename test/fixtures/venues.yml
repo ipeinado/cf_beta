@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+spinosa:
+  name: Spinosa
+  venue_picture: MyString
+  website: http://www.spinosaboards.com/es/
+  twitter: spinosacenter
+  facebook: https://www.facebook.com/SpinosaCenter/
+  address: Avenida Radiobaliza Oscar, 2
+  city: Los Alcázares
+  province: Murcia
+  country: España
+  accessibility: Lugar totalmente accesible, con rampas para sillas de ruedas

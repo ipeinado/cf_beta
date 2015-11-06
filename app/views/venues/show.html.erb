@@ -1,0 +1,12 @@
+<% provide(:title, @venue.name) %>
+
+<h1>
+  <%= @venue.name %>
+  <% if logged_in? %>
+    <%= link_to I18n.t(:edit_venue), edit_venue_path(@venue), class: 'btn btn-default' %>
+  <% end %>
+</h1>
+<% if @venue.address %>
+  <p><%= @venue.address %></p>
+<% end %>
+<p><%= @venue.city %><%= ", #{@venue.province}" unless @venue.province.nil? %>, <%= @venue.country %></p>

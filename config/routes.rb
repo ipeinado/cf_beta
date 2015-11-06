@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'venues/index'
+
   get 'categories/show'
 
   # You can have the root of your site routed with "root"
@@ -24,7 +26,7 @@ Rails.application.routes.draw do
 
   # Users routes
 
-  resources :users, :projects, :promos
+  resources :users, :projects, :promos, :venues
   resources :categories, only: [:index, :show]
 
   # Example resource route with options:

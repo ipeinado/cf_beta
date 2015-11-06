@@ -70,6 +70,18 @@ trello = Promo.create!(name: "Trello Gold",
 trello.categories.create(name: "Project management")
 trello.categories << w
 
+Venue.create!(
+  name: "Spinosa",
+  website: "http://www.spinosaboards.com/es/",
+  twitter: "spinosacenter",
+  facebook: "https://www.facebook.com/SpinosaCenter/",
+  address: "Avenida Radiobaliza Oscar, 2",
+  city: "Los Alcázares",
+  province: "Murcia",
+  country: "España",
+	phone: "+34 968 584929",
+  accessibility: "Lugar totalmente accesible, con rampas para sillas de ruedas")
+
 # 99.times do |n|
 #	name = Faker::Name.name
 #	email = Faker::Internet.email

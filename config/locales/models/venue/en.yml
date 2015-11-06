@@ -1,0 +1,19 @@
+en:
+  activerecord:
+    models:
+      venue:
+        one: Venue
+        other: Venues
+    attributes:
+      venue:
+        name: "Name"
+        venue_picture: "Picture of the venue"
+        website: "Website"
+        twitter: "Twitter"
+        facebook: "Facebook"
+        phone: "Phone"
+        address: "Address"
+        city: "City"
+        province: "District / State"
+        country: "Country"
+        accessibility: "Accessibility of the venue"

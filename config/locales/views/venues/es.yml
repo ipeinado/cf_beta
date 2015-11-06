@@ -1,0 +1,8 @@
+es:
+  new_venue: "Nuevo establecimiento"
+  venue_successfully_created: "Se ha creado el establecimiento con éxito"
+  edit_venue: "Editar establecimiento"
+  venue_successfully_updated: "Se ha actualizado el establecimiento con éxito"
+  destroy_venue: "Eliminar establecimiento"
+  destroy_venue_confirm: "¿Esta seguro? Una vez eliminado el establecimiento no habrá cuenta atrás"
+  venue_successfully_deleted: "El establecimiento se ha eliminado con éxito"

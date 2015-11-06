@@ -1,0 +1,8 @@
+en:
+  new_venue: "New venue"
+  venue_successfully_created: "Venue has been successfully created"
+  edit_venue: "Edit venue"
+  venue_successfully_updated: "Venue has been succesfully updated"
+  destroy_venue: "Delete venue"
+  destroy_venue_confirm: "Are you sure you want to delete this venue? There will be no turning back"
+  venue_successfully_deleted: "Venue succesfully deleted"

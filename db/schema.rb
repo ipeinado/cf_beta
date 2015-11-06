@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150917214538) do
+ActiveRecord::Schema.define(version: 20151104181625) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -76,5 +76,23 @@ ActiveRecord::Schema.define(version: 20150917214538) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+
+  create_table "venues", force: :cascade do |t|
+    t.string   "name"
+    t.string   "venue_picture"
+    t.string   "website"
+    t.string   "twitter"
+    t.string   "facebook"
+    t.string   "address"
+    t.string   "city"
+    t.string   "province"
+    t.string   "country"
+    t.text     "accessibility"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "phone"
+  end
 
 end
