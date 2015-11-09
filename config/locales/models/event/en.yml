@@ -1,0 +1,15 @@
+en:
+  activerecord:
+    models:
+      event:
+        one: Event
+        other: Events
+    attributes:
+      venue:
+        title: "Title of the event"
+        event_header_picture: "Event header picture"
+        event_body_picture: "Event body picture"
+        short_description: "Short description of the event"
+        long_description: "Details of the event"
+        daytime: "Date and time of the event"
+        attendance_requirements: "Attendance requirements"

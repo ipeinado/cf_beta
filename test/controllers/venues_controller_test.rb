@@ -5,6 +5,9 @@ class VenuesControllerTest < ActionController::TestCase
   def setup
     @admin = users(:michael)
     @venue = venues(:spinosa)
+    @venue.events.build(title: "Event 1",
+                                 short_description: "Short description of Event 1",
+                                 daytime: Time.zone.local(2016, 1, 10, 12))
   end
 
   test "should get index" do
@@ -17,6 +20,18 @@ class VenuesControllerTest < ActionController::TestCase
     get :show, id: @venue.id
     assert_response :success
     assert_not_nil assigns(:venue), message: "No venue instance variable sent from the controller"
+  end
+
+  test "venue show page shows future events" do
+    @venue.save
+    get :show, id: @venue.id
+    assert_not_nil assigns(:future_venue_events)
+  end
+
+  test "venue show page shows past events" do
+    @venue.save
+    get :show, id: @venue.id
+    assert_not_nil assigns(:past_venue_events)
   end
 
   test "only logged in users should have access to new" do

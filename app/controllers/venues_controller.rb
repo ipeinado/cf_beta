@@ -9,6 +9,8 @@ class VenuesController < ApplicationController
 
   def show
     @venue = Venue.find(params[:id])
+    @future_venue_events = @venue.events.future_ordered
+    @past_venue_events = @venue.events.past_ordered
   end
 
   def new

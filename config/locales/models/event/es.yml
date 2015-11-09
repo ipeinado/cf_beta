@@ -1,0 +1,15 @@
+es:
+  activerecord:
+    models:
+      event:
+        one: Encuentro
+        other: Encuentros
+    attributes:
+      venue:
+        title: "Título del encuentro"
+        event_header_picture: "Fotografía de cabecera"
+        event_body_picture: "Fotografía del encuentro"
+        short_description: "Descripción breve del encuentro"
+        long_description: "Detalles del encuentro"
+        daytime: "Fecha y hora"
+        attendance_requirements: "Requisitos de asistencia"

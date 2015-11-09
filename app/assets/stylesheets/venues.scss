@@ -1,3 +1,15 @@
 // Place all the styles related to the Venues controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.events-container {
+  h2 {
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    a {
+      text-transform: none;
+    }
+  }
+}

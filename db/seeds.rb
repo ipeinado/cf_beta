@@ -70,7 +70,7 @@ trello = Promo.create!(name: "Trello Gold",
 trello.categories.create(name: "Project management")
 trello.categories << w
 
-Venue.create!(
+@venue = Venue.create!(
   name: "Spinosa",
   website: "http://www.spinosaboards.com/es/",
   twitter: "spinosacenter",
@@ -81,6 +81,21 @@ Venue.create!(
   country: "España",
 	phone: "+34 968 584929",
   accessibility: "Lugar totalmente accesible, con rampas para sillas de ruedas")
+
+@venue.events.create!(title: "Closefunding October Meeting",
+																	short_description: "Regular catch-up meeting, October edition",
+																	daytime: Time.zone.local(2011, 10, 15, 10)
+																	)
+
+@venue.events.create!(title: "Closefunding January Meeting",
+																short_description: "Regular catch-up meeting, January edition",
+																daytime: Time.zone.local(2016, 1, 10, 10)
+																)
+
+@venue.events.create!(title: "Closefunding February Meeting",
+																short_description: "Regular catch-up meeting, January edition",
+																daytime: Time.zone.local(2016, 2, 10, 10)
+																)
 
 # 99.times do |n|
 #	name = Faker::Name.name

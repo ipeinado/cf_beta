@@ -8,6 +8,7 @@ class Event < ActiveRecord::Base
   scope :past, -> { where('daytime < ?', Time.zone.now)}
   scope :past_ordered, -> { past.order(daytime: :desc) }
 
+  validates :venue_id, presence: true
   validates :title, presence: true
   validates :short_description, presence: true, length: { maximum: 255 }
   validates :daytime, presence: true
