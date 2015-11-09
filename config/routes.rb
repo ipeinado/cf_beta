@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'events/index'
+
   get 'venues/index'
 
   get 'categories/show'
@@ -26,7 +28,7 @@ Rails.application.routes.draw do
 
   # Users routes
 
-  resources :users, :projects, :promos, :venues
+  resources :users, :projects, :promos, :venues, :events
   resources :categories, only: [:index, :show]
 
   # Example resource route with options:

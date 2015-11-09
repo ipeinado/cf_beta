@@ -1,0 +1,31 @@
+<% provide(:title, @event.title) %>
+
+<div class="event-header" aria-role="banner">
+  <div class="venue-info">
+    <p><%= @venue.name %></p>
+    <ul class="social-links">
+      <li><%= link_to image_tag('social/website.png'), @venue.website, target: '_blank' if @venue.website? %></li>
+      <li><%= link_to image_tag('social/twitter.png'), @venue.twitter, target: '_blank' if @venue.twitter? %></li>
+      <li><%= link_to image_tag('social/facebook.png'), @venue.facebook, target: 'blank' if @venue.facebook? %></li>
+    </ul>
+  </div>
+  <div class="event-header-info">
+  <h1><%= @event.title %></h1>
+  <p><%= @event.short_description %></p>
+  <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= @venue.city %>, <%= @venue.province %>, <%= @venue.country %></p>
+</div>
+
+<div class="event-content" aria-role="content">
+  <h2><%= Event.human_attribute_name(:long_description) %></h2>
+  <p><%= @event.short_description %></p>
+  <h2><%= Event.human_attribute_name(:daytime) %> </h2>
+  <p><%= l @event.daytime, format: :long %></p>
+  <% if @venue.accessibility? %>
+    <h2><%= Venue.human_attribute_name(:accessibility)%></h2>
+    <p><%= @venue.accessibility %></p>
+  <% end %>
+  <% if @event.attendance_requirements? %>
+    <h2><%= Event.human_attribute_name(:attendance_requirements)%></h2>
+    <p><%= @event.attendance_requirements %></p>
+  <% end %>
+</div>

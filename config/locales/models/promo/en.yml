@@ -1,7 +1,9 @@
 en:
   activerecord:
     models:
-      promo: "Promo"
+      promo:
+        one: Promo
+        other: Promos
     attributes:
       promo:
         promo_logo: "Product / Service logo"

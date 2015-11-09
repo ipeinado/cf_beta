@@ -14,9 +14,10 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><%= link_to t(:manifest), manifiesto_path %></li>
                     <li><%= link_to t(:discover), descubre_path, data: { no_turbolink: true } %></li>
-                    <li><%= link_to t(:promos), promos_path %></li>
+                    <li><%= link_to Promo.model_name.human(count: 2), promos_path %></li>
                     <li><%= link_to t(:blog), '#' %></li>
-                    <li><%= link_to t(:cf_projects), projects_path %></li>
+                    <li><%= link_to Project.model_name.human(count: 2), projects_path %></li>
+                    <li><%= link_to Event.model_name.human(count: 2), events_path  %></li>
                     <% if logged_in? %>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">

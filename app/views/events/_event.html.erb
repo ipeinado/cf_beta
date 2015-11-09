@@ -1,0 +1,6 @@
+<%= div_for(event) do %>
+  <p><%= event.venue.city %></p>
+  <p><%= event.venue.name %></p>
+  <h3><%= event.title %></h3>
+  <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= event.venue.province %>, <%= event.venue.country %></p>
+<% end %>

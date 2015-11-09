@@ -1,6 +1,8 @@
 es:
+  event:
+    one: "Encuentro Closefunding"
+    other: "Encuentros Closefunding"
   new_event: "Nuevo encuentro Closefunding"
   future_events: "Próximos encuentros Closefunding"
   past_events: "Encuentros Closefunding pasados"
   no_future_events: "Este establecimiento no tiene encuentros Closefunding planeados"
-  

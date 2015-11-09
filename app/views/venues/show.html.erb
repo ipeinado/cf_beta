@@ -21,7 +21,7 @@
   <% if @future_venue_events.any? %>
     <ul class="event-list">
       <% @future_venue_events.each do |event| %>
-        <li class="event" id="event-<%= event.id %>"><%= event.title %></li>
+        <li><%= render event, partial: 'events/event' %></li>
       <% end %>
     </ul>
   <% else %>
@@ -35,7 +35,7 @@
     <h2><%= t(:past_events) %></h2>
     <ul class="event-list">
       <% @past_venue_events.each do |event| %>
-        <li class="event" id="event-<%= event.id %>"><%= event.title %></li>
+        <li><%= render event, partial: 'events/event' %></li>
       <% end %>
     </ul>
   </div>
