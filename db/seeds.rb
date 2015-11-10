@@ -84,7 +84,7 @@ trello.categories << w
 
 @venue.events.create!(title: "Closefunding October Meeting",
 																	short_description: "Regular catch-up meeting, October edition",
-																	daytime: Time.zone.local(2011, 10, 15, 10)
+																	daytime: Time.zone.local(2015, 10, 15, 10)
 																	)
 
 @venue.events.create!(title: "Closefunding January Meeting",

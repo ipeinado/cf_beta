@@ -27,4 +27,10 @@ class VenueTest < ActiveSupport::TestCase
     @venue.country = ""
     assert_not @venue.valid?, message: "venue should have a country"
   end
+
+  test "Twitter is properly formatted" do
+    @venue.twitter = "Closefunding"
+    @venue.save
+    assert_equal "https://twitter.com/Closefunding", @venue.twitter
+  end
 end

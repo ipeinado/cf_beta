@@ -3,4 +3,6 @@
   <p><%= event.venue.name %></p>
   <h3><%= event.title %></h3>
   <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= event.venue.province %>, <%= event.venue.country %></p>
+  <%= time_tag event.daytime.to_date %>
+  <p><%= event.daytime.to_formatted_s(:time) %></p>
 <% end %>
