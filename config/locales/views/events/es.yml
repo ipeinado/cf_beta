@@ -6,3 +6,5 @@ es:
   future_events: "Próximos encuentros Closefunding"
   past_events: "Encuentros Closefunding pasados"
   no_future_events: "Este establecimiento no tiene encuentros Closefunding planeados"
+  event_create_successfully: "El encuentro se ha creado correctamente"
+  edit_event: "Editar encuentro"

@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
 
   belongs_to :venue
+  accepts_nested_attributes_for :venue
 
   scope :future, -> { where('daytime > ?', Time.zone.now) }
   scope :future_ordered, -> { future.order(daytime: :asc) }

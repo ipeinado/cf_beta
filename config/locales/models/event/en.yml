@@ -5,7 +5,7 @@ en:
         one: Event
         other: Events
     attributes:
-      venue:
+      event:
         title: "Title of the event"
         event_header_picture: "Event header picture"
         event_body_picture: "Event body picture"

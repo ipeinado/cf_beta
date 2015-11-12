@@ -5,7 +5,7 @@ es:
         one: Encuentro
         other: Encuentros
     attributes:
-      venue:
+      event:
         title: "Título del encuentro"
         event_header_picture: "Fotografía de cabecera"
         event_body_picture: "Fotografía del encuentro"

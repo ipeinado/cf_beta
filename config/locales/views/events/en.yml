@@ -6,3 +6,5 @@ en:
   future_events: "Upcoming events"
   past_events: "Past events"
   no_future_events: "No upcoming events"
+  event_create_successfully: "The event has been successfully created"
+  edit_event: "Edit event"

@@ -15,7 +15,7 @@
   <h2>
     <%= t(:future_events) %>
     <% if logged_in? %>
-      <%= link_to I18n.t(:new_event), '', class: 'btn btn-success' %>
+      <%= link_to I18n.t(:new_event), new_event_path(venue: @venue.id), class: 'btn btn-success', id: 'new-event-btn' %>
     <% end %>
   </h2>
   <% if @future_venue_events.any? %>

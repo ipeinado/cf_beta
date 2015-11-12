@@ -1,0 +1,7 @@
+<% provide(:title, I18n.t(:new_event)) %>
+
+<h1><%= t(:new_event) %></h1>
+
+<h1><%= @event.venue.name %></h1>
+
+<%= render 'form' %>
