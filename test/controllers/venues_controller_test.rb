@@ -69,4 +69,11 @@ class VenuesControllerTest < ActionController::TestCase
     assert_redirected_to venue_path(assigns(:venue))
     assert_not flash.empty?
   end
+
+  test "destroy venue destroy dependent events" do
+    @venue.save
+    assert_difference 'Venue.count', -1 do
+      @venue.destroy
+    end
+  end
 end

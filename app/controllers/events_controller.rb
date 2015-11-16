@@ -18,7 +18,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
     if @event.save
-      flash[:success] = 'The event was created successfully'
+      flash[:success] = I18n.t(:event_created_successfully)
       redirect_to @event
     else
       render 'new'
@@ -37,6 +37,15 @@ class EventsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+
+    @event.destroy
+    redirect_to events_path
+    flash[:success] = I18n.t(:event_destroyed_successfully)
+
   end
 
   def event_params
