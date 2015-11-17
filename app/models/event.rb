@@ -10,6 +10,7 @@ class Event < ActiveRecord::Base
   scope :past_ordered, -> { past.order(daytime: :desc) }
 
   mount_uploader :event_header_picture, EventHeaderPictureUploader
+  mount_uploader :event_body_picture, EventBodyPictureUploader
 
   validates :venue_id, presence: true
   validates :title, presence: true

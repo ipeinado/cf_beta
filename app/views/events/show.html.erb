@@ -2,6 +2,7 @@
 
 <div class="event-header" aria-role="banner">
   <div class="venue-info">
+    <%= image_tag @venue.venue_picture.thumb.url %>
     <p><%= @venue.name %></p>
     <ul class="social-links">
       <li><%= link_to image_tag('social/website.png'), @venue.website, target: '_blank' if @venue.website? %></li>
@@ -20,8 +21,9 @@
 </div>
 
 <div class="event-content" aria-role="content">
+  <%= image_tag @event.event_body_picture.url %>
   <h2><%= Event.human_attribute_name(:long_description) %></h2>
-  <p><%= @event.short_description %></p>
+  <p><%= @event.long_description %></p>
   <h2><%= Event.human_attribute_name(:daytime) %> </h2>
   <p><%= l @event.daytime, format: :long %></p>
   <% if @venue.accessibility? %>
