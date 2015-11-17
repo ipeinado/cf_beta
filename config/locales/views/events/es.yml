@@ -12,3 +12,4 @@ es:
   delete_event: "Borrar encuentro"
   confirm_delete_event: "¿Está seguro? Una vez eliminado el encuentro, no habrá vuelta atrás"
   event_destroyed_successfully: "El encuentro se ha eliminado correctamente"
+  remove_event_header_picture: "Borrar imagen de cabecera"

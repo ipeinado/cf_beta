@@ -10,6 +10,7 @@
     </ul>
   </div>
   <div class="event-header-info">
+    <%= image_tag @event.event_header_picture.url %>
   <h1>
     <%= @event.title %>
     <%= link_to t(:edit_event), edit_event_path(@event), class: 'btn btn-default' if logged_in? %>

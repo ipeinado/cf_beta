@@ -9,6 +9,8 @@ class Event < ActiveRecord::Base
   scope :past, -> { where('daytime < ?', Time.zone.now)}
   scope :past_ordered, -> { past.order(daytime: :desc) }
 
+  mount_uploader :event_header_picture, EventHeaderPictureUploader
+
   validates :venue_id, presence: true
   validates :title, presence: true
   validates :short_description, presence: true, length: { maximum: 255 }

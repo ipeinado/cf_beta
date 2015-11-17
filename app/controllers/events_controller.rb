@@ -49,7 +49,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:venue_id, :title, :short_description, :daytime)
+    params.require(:event).permit(:venue_id, :event_header_picture, :event_header_picture_cache, :remove_event_header_picture, :title, :short_description, :daytime)
   end
 
 end

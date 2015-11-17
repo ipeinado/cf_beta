@@ -16,6 +16,20 @@
   <%= f.hidden_field :venue_id, :value => @event.venue.id %>
 
   <div class="form-group">
+    <%= image_tag(@event.event_header_picture_url) if @event.event_header_picture? %>
+    <%= f.label :event_header_picture %>
+    <%= f.file_field :event_header_picture %>
+    <%= f.hidden_field :event_header_picture_cache %>
+  </div>
+  
+  <div class="form-group">
+    <p>
+      <%= f.check_box :remove_event_header_picture %>
+      <%= I18n.t(:remove_event_header_picture) %>
+    </p>
+  </div>
+
+  <div class="form-group">
       <%= f.label :title %>
       <%= f.text_field :title, class: 'form-control' %>
   </div>
