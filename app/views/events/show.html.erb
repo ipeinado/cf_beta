@@ -23,15 +23,15 @@
 <div class="event-content" aria-role="content">
   <%= image_tag @event.event_body_picture.url %>
   <h2><%= Event.human_attribute_name(:long_description) %></h2>
-  <p><%= @event.long_description %></p>
+  <p><%= raw(@event.long_description) %></p>
   <h2><%= Event.human_attribute_name(:daytime) %> </h2>
   <p><%= l @event.daytime, format: :long %></p>
   <% if @venue.accessibility? %>
     <h2><%= Venue.human_attribute_name(:accessibility)%></h2>
-    <p><%= @venue.accessibility %></p>
+    <p><%= raw(@venue.accessibility) %></p>
   <% end %>
   <% if @event.attendance_requirements? %>
     <h2><%= Event.human_attribute_name(:attendance_requirements)%></h2>
-    <p><%= @event.attendance_requirements %></p>
+    <p><%= raw(@event.attendance_requirements) %></p>
   <% end %>
 </div>

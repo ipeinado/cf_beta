@@ -41,7 +41,8 @@
 
   <div class="form-group">
     <%= f.label :long_description %>
-    <%= f.text_area :long_description, class: 'form-control' %>
+    <%= f.text_area :long_description, class: 'form-control tinymce', rows: 10 %>
+    <%= tinymce %>
   </div>
 
   <div class="form-group">
@@ -65,7 +66,8 @@
 
   <div class="form-group">
     <%= f.label :attendance_requirements %>
-    <%= f.text_area :attendance_requirements, class: 'form-control' %>
+    <%= f.text_area :attendance_requirements, class: 'form-control tinymce', rows: 10 %>
+    <%= tinymce %>
   </div>
 
   <div class="form-group">
