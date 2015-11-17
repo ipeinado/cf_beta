@@ -6,3 +6,4 @@ en:
   destroy_venue: "Delete venue"
   destroy_venue_confirm: "Are you sure you want to delete this venue? There will be no turning back"
   venue_successfully_deleted: "Venue succesfully deleted"
+  remove_venue_picture: "Remove picture"

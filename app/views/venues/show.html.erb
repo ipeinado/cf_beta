@@ -1,5 +1,9 @@
 <% provide(:title, @venue.name) %>
 
+<div class="venue-picture">
+  <%= image_tag @venue.venue_picture.url if @venue.venue_picture? %>
+</div>
+
 <h1>
   <%= @venue.name %>
   <% if logged_in? %>

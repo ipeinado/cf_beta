@@ -5,7 +5,7 @@
     <p><%= @venue.name %></p>
     <ul class="social-links">
       <li><%= link_to image_tag('social/website.png'), @venue.website, target: '_blank' if @venue.website? %></li>
-      <li><%= link_to image_tag('social/twitter.png'), @venue.twitter, target: '_blank' if @venue.twitter? %></li>
+      <li><%= link_to image_tag('social/twitter.png'), "https://twitter.com/" + @venue.twitter, target: '_blank' if @venue.twitter? %></li>
       <li><%= link_to image_tag('social/facebook.png'), @venue.facebook, target: 'blank' if @venue.facebook? %></li>
     </ul>
   </div>

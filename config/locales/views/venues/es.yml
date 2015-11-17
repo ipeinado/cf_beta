@@ -6,3 +6,4 @@ es:
   destroy_venue: "Eliminar establecimiento"
   destroy_venue_confirm: "¿Esta seguro? Una vez eliminado el establecimiento no habrá cuenta atrás"
   venue_successfully_deleted: "El establecimiento se ha eliminado con éxito"
+  remove_venue_picture: "Eliminar imagen"
