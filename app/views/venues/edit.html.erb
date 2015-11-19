@@ -1,5 +1,13 @@
 <% provide(:title, t(:edit_venue)) %>
 
+<%= render 'shared/admin_menu' %>
+
+<ol class="breadcrumb">
+  <li><%= link_to Venue.model_name.human(count: 2), venues_path %></li>
+  <li><%= link_to @venue.name, venue_path(@venue) %></li>
+  <li><%= t(:edit_venue) %></li>
+</ol>
+
 <h1>
   <%= I18n.t(:edit_venue) %>
 </h1>

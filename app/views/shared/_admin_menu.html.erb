@@ -1,9 +1,10 @@
 <div class="row">
 	<nav role="navigation">
 		<ul class="nav nav-tabs">
-			<li class=<%= params[:controller] == 'users' ? 'active' : '' %> ><%= link_to t(:users_title), users_path %></li>
-			<li class=<%= params[:controller] == 'projects' ? 'active' : '' %> ><%= link_to t(:projects), new_project_path %></li>
-			<li class=<%= params[:controller] == 'promos' ? 'active' : '' %> ><%= link_to t(:promos), new_promo_path %></li>
+			<li class=<%= params[:controller] == 'users' ? 'active' : '' %> ><%= link_to User.model_name.human(count: 2), users_path %></li>
+			<li class=<%= params[:controller] == 'projects' ? 'active' : '' %> ><%= link_to Project.model_name.human(count: 2), new_project_path %></li>
+			<li class=<%= params[:controller] == 'promos' ? 'active' : '' %> ><%= link_to Promo.model_name.human(count: 2), new_promo_path %></li>
+			<li class=<%= (params[:controller] == 'venues' || params[:controller] == 'events') ? 'active' : '' %> ><%= link_to Venue.model_name.human(count: 2), venues_path %></li>
 		</ul>
 	</nav>
 </div>

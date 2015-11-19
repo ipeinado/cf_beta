@@ -1,46 +1,58 @@
 <% provide(:title, @venue.name) %>
 
-<div class="venue-picture">
-  <%= image_tag @venue.venue_picture.url if @venue.venue_picture? %>
-</div>
-
-<h1>
-  <%= @venue.name %>
-  <% if logged_in? %>
-    <%= link_to I18n.t(:edit_venue), edit_venue_path(@venue), class: 'btn btn-default' %>
-  <% end %>
-</h1>
-<% if @venue.address %>
-  <p><%= @venue.address %></p>
+<% if current_user && current_user.admin? %>
+  <%= render 'shared/admin_menu' %>
 <% end %>
-<p><%= @venue.city %><%= ", #{@venue.province}" unless @venue.province.nil? %>, <%= @venue.country %></p>
 
-<div class="events-container">
-  <h2>
-    <%= t(:future_events) %>
-    <% if logged_in? %>
-      <%= link_to I18n.t(:new_event), new_event_path(venue: @venue.id), class: 'btn btn-success', id: 'new-event-btn' %>
-    <% end %>
-  </h2>
-  <% if @future_venue_events.any? %>
-    <ul class="event-list">
-      <% @future_venue_events.each do |event| %>
-        <li><%= render event, partial: 'events/event' %></li>
-      <% end %>
-    </ul>
-  <% else %>
-    <p><%= t(:no_future_events) %></p>
-  <% end %>
-</div>
+<div class="container-fluid">
 
-
-<% if @past_venue_events.any? %>
-  <div class="events-container">
-    <h2><%= t(:past_events) %></h2>
-    <ul class="event-list">
-      <% @past_venue_events.each do |event| %>
-        <li><%= render event, partial: 'events/event' %></li>
-      <% end %>
-    </ul>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="venue-picture">
+        <%= image_tag @venue.venue_picture.url if @venue.venue_picture? %>
+      </div>
+    </div>
   </div>
-<% end %>
+
+  <h1>
+    <%= @venue.name %>
+    <% if logged_in? %>
+      <%= link_to I18n.t(:edit_venue), edit_venue_path(@venue), class: 'btn btn-default' %>
+    <% end %>
+  </h1>
+  <% if @venue.address %>
+    <p><%= @venue.address %></p>
+  <% end %>
+  <p><%= @venue.city %><%= ", #{@venue.province}" unless @venue.province.nil? %>, <%= @venue.country %></p>
+
+  <div class="events-container">
+    <h2>
+      <%= t(:future_events) %>
+      <% if logged_in? %>
+        <%= link_to I18n.t(:new_event), new_event_path(venue: @venue.id), class: 'btn btn-success', id: 'new-event-btn' %>
+      <% end %>
+    </h2>
+    <% if @future_venue_events.any? %>
+      <ul class="event-list">
+        <% @future_venue_events.each do |event| %>
+          <li><%= render event, partial: 'events/event' %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p><%= t(:no_future_events) %></p>
+    <% end %>
+  </div>
+
+
+  <% if @past_venue_events.any? %>
+    <div class="events-container">
+      <h2><%= t(:past_events) %></h2>
+      <ul class="event-list">
+        <% @past_venue_events.each do |event| %>
+          <li><%= render event, partial: 'events/event' %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+</div>
