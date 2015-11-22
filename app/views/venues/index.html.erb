@@ -10,6 +10,6 @@
 </h1>
 <ul>
   <% @venues.each do |venue| %>
-    <li><%= link_to venue.name, venue %></li>
+    <li><%= link_to venue.name, venue, data: { no_turbolink: true } %></li>
   <% end %>
 </ul>

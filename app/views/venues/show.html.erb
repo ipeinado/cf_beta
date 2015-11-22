@@ -4,32 +4,36 @@
   <%= render 'shared/admin_menu' %>
 <% end %>
 
-<div class="container-fluid">
+<%= div_for(@venue, class: "container-fluid") do |venue| %>
 
   <div class="row">
     <div class="col-md-12">
       <div class="venue-picture">
-        <%= image_tag @venue.venue_picture.url if @venue.venue_picture? %>
+        <%= image_tag venue.venue_picture.url if venue.venue_picture? %>
       </div>
     </div>
   </div>
 
   <h1>
-    <%= @venue.name %>
+    <%= venue.name %>
     <% if logged_in? %>
-      <%= link_to I18n.t(:edit_venue), edit_venue_path(@venue), class: 'btn btn-default' %>
+      <%= link_to I18n.t(:edit_venue), edit_venue_path(venue), class: 'btn btn-default' %>
     <% end %>
   </h1>
-  <% if @venue.address %>
-    <p><%= @venue.address %></p>
+
+  <div id="map" class="col-md-12">
+  </div>
+
+  <% if venue.address %>
+    <p><%= venue.address %></p>
   <% end %>
-  <p><%= @venue.city %><%= ", #{@venue.province}" unless @venue.province.nil? %>, <%= @venue.country %></p>
+  <p><%= venue.city %><%= ", #{venue.province}" unless venue.province.nil? %>, <%= venue.country %></p>
 
   <div class="events-container">
     <h2>
       <%= t(:future_events) %>
       <% if logged_in? %>
-        <%= link_to I18n.t(:new_event), new_event_path(venue: @venue.id), class: 'btn btn-success', id: 'new-event-btn' %>
+        <%= link_to I18n.t(:new_event), new_event_path(venue: venue.id), class: 'btn btn-success', id: 'new-event-btn' %>
       <% end %>
     </h2>
     <% if @future_venue_events.any? %>
@@ -55,4 +59,44 @@
     </div>
   <% end %>
 
-</div>
+<% end %>
+
+<script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
+<%= javascript_tag do %>
+  $(document).ready(function() {
+
+    var map;
+
+    L.mapbox.accessToken = 'pk.eyJ1IjoibmFjaG9wZSIsImEiOiI1NWU1NTU4ZWMwZDY0N2EzMzNjOWRmMzI0OWNkZWFmNiJ9.vJEDvTiigh5rONaLVEeOdQ';
+
+    map = L.mapbox.map('map', 'nachope.mlcm20am', { accessToken: 'pk.eyJ1IjoibmFjaG9wZSIsImEiOiI1NWU1NTU4ZWMwZDY0N2EzMzNjOWRmMzI0OWNkZWFmNiJ9.vJEDvTiigh5rONaLVEeOdQ' }).setView([<%= @venue.latitude %> , <%= @venue.longitude %>], 15);
+    map.scrollWheelZoom.disable();
+
+    var featureLayer = L.mapbox.featureLayer({
+
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [
+          <%= @venue.longitude %>,
+          <%= @venue.latitude %>
+        ]
+      },
+      properties: {
+        title: "<%= @venue.name %>",
+        description: "<%= @venue.address %>, <%= @venue.city %>, <%= @venue.country %>",
+        'marker-size': 'large',
+        'marker-color': '#BE9A6B',
+        'marker-symbol': 'cafe'
+      }
+    }).addTo(map);
+
+  featureLayer.on('ready', function() {
+    // featureLayer.getBounds() returns the corners of the furthest-out markers,
+    // and map.fitBounds() makes sure that the map contains these.
+    map.fitBounds(featureLayer.getBounds());
+  });
+
+
+  });
+<% end %>
