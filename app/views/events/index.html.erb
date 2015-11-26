@@ -1,13 +1,17 @@
 <% provide(:title, I18n.t(:event, count: 2)) %>
 
+<div class="container">
+
 <h1><%= I18n.t(:event, count: 2) %></h1>
 
-<% if @events.any? %>
-  <ul class="events-list">
-    <% @events.each do |event| %>
-      <li><%= render event %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p><%= I18n.t(:no_future_events) %></p>
-<% end %>
+  <% if @events.any? %>
+    <ul class="events-list">
+      <% @events.each do |event| %>
+        <li><%= render event %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p><%= I18n.t(:no_future_events) %></p>
+  <% end %>
+
+</div>

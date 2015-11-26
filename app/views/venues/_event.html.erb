@@ -1,0 +1,8 @@
+<%= div_for(event) do %>
+  <h3><%= link_to event.title, event %></h3>
+  <p><%= event.venue.city %></p>
+  <p><%= event.venue.name %></p>
+  <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= event.venue.province %>, <%= event.venue.country %></p>
+  <%= time_tag event.daytime.to_date %>
+  <p><%= event.daytime.to_formatted_s(:time) %></p>
+<% end %>

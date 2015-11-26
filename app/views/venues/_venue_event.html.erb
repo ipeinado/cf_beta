@@ -1,0 +1,13 @@
+<li class="venue-event">
+  <div class="venue-event-date" datetime="<%= event.daytime.strftime('%Y') %>-<%= event.daytime.strftime('%m') %>-<%= event.daytime.strftime('%d') %>" >
+    <span class="month"><%= I18n.l(event.daytime, format: '%b') %></span>
+    <span class="day"><%= event.daytime.strftime("%d") %></span>
+    <span class="year"><%= event.daytime.strftime("%Y") %></span>
+
+  </div>
+  <div class="venue-event-info">
+    <h3><%= link_to event.title, event %></h3>
+    <time><%= event.daytime.to_formatted_s(:time) %></time>
+  </div>
+
+</li>

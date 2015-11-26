@@ -2,20 +2,106 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-div.events-container {
-  h2 {
-    font-size: 18px;
-    font-weight: 400;
-    text-transform: uppercase;
+.venue {
 
-    a {
-      text-transform: none;
+  .venue-header {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+    margin-bottom: 2em;
+
+    img {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
+
+    .venue-header-text {
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      padding-top: 320px;
+      padding-left: 24px;
+
+      h1 {
+        color: #FFF;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, .8);
+
+        a {
+          text-shadow: none;
+        }
+      }
+    }
+  }
+
+  div.events-container {
+    h2 {
+      font-size: 18px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    a.btn {
+      margin-bottom: 20px;
+    }
+  }
+
+  #map {
+    height: 200px;
+    margin-bottom: 2em;
+  }
+
+  .venue-info {
+    font-size: 14px;
   }
 }
 
-.venue {
-  #map {
-    height: 200px;
+.venue-event {
+
+  display: block;
+  overflow: hidden;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #DEDEDE;
+  margin-bottom: 1em;
+
+  .venue-event-date {
+    display: table-cell;
+    width: 80px;
+    padding-right: 1em;
+    line-height: 26px;
+    text-align: center;
+
+    .month {
+      display: table-row;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+    .day {
+      display: table-row;
+      font-size: 32px;
+      color: #F90;
+    }
+    .year {
+      display: table-row;
+    }
+  }
+
+  .venue-event-info {
+    display: table-cell;
+    overflow: hidden;
+
+    h3 {
+      font-size: 20px;
+      font-weight: normal;
+      margin: 0 0 6px 0;
+
+      a:hover {
+        text-decoration: none;
+        color: #F90;
+      }
+    }
   }
 }
