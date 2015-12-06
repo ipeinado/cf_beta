@@ -1,8 +1,12 @@
 <%= div_for(event) do %>
-  <p><%= event.venue.city %></p>
-  <p><%= event.venue.name %></p>
-  <h3><%= link_to event.title, event %></h3>
-  <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= event.venue.province %>, <%= event.venue.country %></p>
-  <%= time_tag event.daytime.to_date %>
-  <p><%= event.daytime.to_formatted_s(:time) %></p>
+  <div class="event-li-venue-info" style="background-image: url(<%= event.event_header_picture.eventlist.url %>)">
+    <p><%= event.venue.city %></p>
+  </div>
+  <div class="event-li-event-info">
+    <p><%= event.venue.name %></p>
+    <h3><%= link_to event.title, event %></h3>
+    <%= time_tag event.daytime.to_date %>
+    <p><%= event.daytime.to_formatted_s(:time) %></p>
+    <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= event.venue.province %>, <%= event.venue.country %></p>
+  </div>
 <% end %>

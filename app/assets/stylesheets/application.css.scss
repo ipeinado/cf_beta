@@ -55,6 +55,7 @@ header {
 
     .navbar-default {
         background: $cf-blue;
+        z-index: 29999;
 
         .navbar-nav > li > a {
             color: #FFF;

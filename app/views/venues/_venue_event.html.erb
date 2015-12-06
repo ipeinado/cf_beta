@@ -6,8 +6,10 @@
 
   </div>
   <div class="venue-event-info">
-    <h3><%= link_to event.title, event %></h3>
-    <time><%= event.daytime.to_formatted_s(:time) %></time>
+    <%= image_tag event.event_header_picture.thumb.url %>
+    <div class="venue-event-info-content">
+      <h3><%= link_to event.title, event %></h3>
+      <time><%= event.daytime.to_formatted_s(:time) %></time>
+    </div>
   </div>
-
 </li>

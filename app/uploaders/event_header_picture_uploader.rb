@@ -28,11 +28,19 @@ class EventHeaderPictureUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  # process :scale => [200, 300]
+  process :resize_to_fit => [960, 360]
   #
   # def scale(width, height)
   #   # do something
   # end
+
+  version :eventlist do
+    process :resize_to_fill => [320, 240]
+  end
+
+  version :thumb do
+    process :resize_to_fill => [96, 96]
+  end
 
   # Create different versions of your uploaded files:
   # version :thumb do

@@ -1,37 +1,93 @@
 <% provide(:title, @event.title) %>
 
-<div class="event-header" aria-role="banner">
-  <div class="venue-info">
-    <%= image_tag @venue.venue_picture.thumb.url %>
-    <p><%= @venue.name %></p>
-    <ul class="social-links">
-      <li><%= link_to image_tag('social/website.png'), @venue.website, target: '_blank' if @venue.website? %></li>
-      <li><%= link_to image_tag('social/twitter.png'), "https://twitter.com/" + @venue.twitter, target: '_blank' if @venue.twitter? %></li>
-      <li><%= link_to image_tag('social/facebook.png'), @venue.facebook, target: 'blank' if @venue.facebook? %></li>
-    </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 event-header" role="banner">
+        <%= image_tag @event.event_header_picture.url %>
+
+        <div class="event-header-info">
+          <div class="event-header-info-date">
+            <span class="month"><%= I18n.l(@event.daytime, format: '%b') %></span>
+            <span class="day"><%= @event.daytime.strftime("%d") %></span>
+          </div>
+          <div class="event-header-info-content">
+            <h1>
+              <%= @event.title %>
+              <%= link_to t(:edit_event), edit_event_path(@event), class: 'btn btn-default' if logged_in? %>
+            </h1>
+            <p><%= @event.short_description %></p>
+          </div>
+      </div>
+    </div>
   </div>
-  <div class="event-header-info">
-    <%= image_tag @event.event_header_picture.url %>
-  <h1>
-    <%= @event.title %>
-    <%= link_to t(:edit_event), edit_event_path(@event), class: 'btn btn-default' if logged_in? %>
-  </h1>
-  <p><%= @event.short_description %></p>
-  <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= @venue.city %>, <%= @venue.province %>, <%= @venue.country %></p>
+
+  <div class="row">
+    <div class="col-md-8 event-content">
+      <h2><%= Event.human_attribute_name(:daytime) %> </h2>
+      <p><span class="glyphicon glyphicon-time" aria-hidden="true"></span> <%= l @event.daytime, format: :long %></p>
+      <%= image_tag @event.event_body_picture.url %>
+      <h2><%= Event.human_attribute_name(:long_description) %></h2>
+      <p><%= raw(@event.long_description) %></p>
+      <% if @venue.accessibility? %>
+        <h2><%= Venue.human_attribute_name(:accessibility)%></h2>
+        <p><%= raw(@venue.accessibility) %></p>
+      <% end %>
+      <% if @event.attendance_requirements? %>
+        <h2><%= Event.human_attribute_name(:attendance_requirements)%></h2>
+        <p><%= raw(@event.attendance_requirements) %></p>
+      <% end %>
+    </div>
+    <div class="col-md-4 event-venue-info">
+      <%= image_tag @venue.venue_picture.thumb.url, class: "venue-image" %>
+      <h3><%= link_to @venue.name, @venue %></h3>
+      <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= @venue.city %>, <%= @venue.province %>, <%= @venue.country %></p>
+      <div id="map"></div>
+      <ul class="social-links">
+        <li><%= link_to @venue.website, @venue.website, target: '_blank' if @venue.website? %></li>
+        <li><%= link_to "https://twitter.com/" + @venue.twitter, "https://twitter.com/" + @venue.twitter, target: '_blank' if @venue.twitter? %></li>
+        <li><%= link_to @venue.facebook, @venue.facebook, target: 'blank' if @venue.facebook? %></li>
+      </ul>
+    </div>
+  </div>
 </div>
 
-<div class="event-content" aria-role="content">
-  <%= image_tag @event.event_body_picture.url %>
-  <h2><%= Event.human_attribute_name(:long_description) %></h2>
-  <p><%= raw(@event.long_description) %></p>
-  <h2><%= Event.human_attribute_name(:daytime) %> </h2>
-  <p><%= l @event.daytime, format: :long %></p>
-  <% if @venue.accessibility? %>
-    <h2><%= Venue.human_attribute_name(:accessibility)%></h2>
-    <p><%= raw(@venue.accessibility) %></p>
-  <% end %>
-  <% if @event.attendance_requirements? %>
-    <h2><%= Event.human_attribute_name(:attendance_requirements)%></h2>
-    <p><%= raw(@event.attendance_requirements) %></p>
-  <% end %>
-</div>
+
+<script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
+<%= javascript_tag do %>
+  $(document).ready(function() {
+
+    var map;
+
+    L.mapbox.accessToken = 'pk.eyJ1IjoibmFjaG9wZSIsImEiOiI1NWU1NTU4ZWMwZDY0N2EzMzNjOWRmMzI0OWNkZWFmNiJ9.vJEDvTiigh5rONaLVEeOdQ';
+
+    map = L.mapbox.map('map', 'nachope.mlcm20am', { accessToken: 'pk.eyJ1IjoibmFjaG9wZSIsImEiOiI1NWU1NTU4ZWMwZDY0N2EzMzNjOWRmMzI0OWNkZWFmNiJ9.vJEDvTiigh5rONaLVEeOdQ' }).setView([<%= @event.venue.latitude %> , <%= @event.venue.longitude %>], 15);
+    map.scrollWheelZoom.disable();
+
+    var featureLayer = L.mapbox.featureLayer({
+
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: [
+          <%= @event.venue.longitude %>,
+          <%= @event.venue.latitude %>
+        ]
+      },
+      properties: {
+        title: "<%= @event.venue.name %>",
+        description: "<%= @event.venue.address %>, <%= @event.venue.city %>, <%= @event.venue.country %>",
+        'marker-size': 'large',
+        'marker-color': '#BE9A6B',
+        'marker-symbol': 'cafe'
+      }
+    }).addTo(map);
+
+  featureLayer.on('ready', function() {
+    // featureLayer.getBounds() returns the corners of the furthest-out markers,
+    // and map.fitBounds() makes sure that the map contains these.
+    map.fitBounds(featureLayer.getBounds());
+  });
+
+
+  });
+<% end %>

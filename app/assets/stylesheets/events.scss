@@ -13,3 +13,159 @@ ul.event-list {
   }
 
 }
+
+div.event-header {
+  height: 360px;
+  overflow: hidden;
+  margin-bottom: 2em;
+  background: #2590bc;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .event-header-info {
+    z-index: 9999;
+    position: absolute;
+    bottom: 24px;
+    margin: 0;
+    padding: 0 2em;
+    color: #FFF;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, .8);
+
+    .event-header-info-date {
+      display: table-cell;
+      width: 80px;
+      height: 80px;
+      line-height: 32px;
+      border: 3px solid #FFF;
+      text-align: center;
+      background: rgba(0, 0, 0, .2);
+      border-radius: 3px;
+
+      .month {
+        display: block;
+        font-size: 18px;
+        text-transform: uppercase;
+        color: #FFF;
+      }
+      .day {
+        display: block;
+        font-size: 32px;
+        color: #FFF;
+      }
+    }
+
+    .event-header-info-content {
+      display: table-cell;
+      padding-left: 1em;
+
+      h1 {
+        margin: 0 0 4px;
+
+        a {
+          text-shadow: none;
+        }
+      }
+    }
+  }
+}
+
+div.event-content {
+  h2 {
+    margin-top: 24px;
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  img {
+    width: 100%;
+  }
+
+}
+
+div.event-venue-info {
+  img.venue-image {
+    border-radius: 50%;
+    width: 96px;
+    height: 96px;
+    float: left;
+    margin: 0 18px 18px 0;
+  }
+
+  h3 {
+    margin: 6px 0;
+  }
+
+  div#map {
+    display: block;
+    height: 200px;
+    clear: both;
+    margin-bottom: 24px;
+  }
+
+  ul.social-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+ul.events-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline-block;
+    float: left;
+    width: 240px;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.219608) 0px 1px 2px 0px;
+    border: 1px solid #CCC;
+    padding: 0;
+    box-sizing: border-box;
+    margin-right: 1em;
+    margin-bottom: 1em;
+
+    .event-li-venue-info {
+      padding-top: 72px;
+      background-color: #666;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: #FFF;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, .8);
+      height: 160px;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+
+    .event-li-event-info {
+      background-color: #F90;
+      text-align: center;
+      color: #FFF;
+      padding: 16px;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+
+      h3 {
+        font-weight: 300;
+        font-size: 22px;
+        line-height: 32px;
+        text-transform: uppercase;
+        a {
+          color: #FFF;
+        }
+      }
+    }
+  }
+}
