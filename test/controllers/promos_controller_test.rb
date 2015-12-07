@@ -27,7 +27,7 @@ class PromosControllerTest < ActionController::TestCase
     get :new
     assert_select 'title', "#{I18n.t(:new_promo)} | Closefunding"
     assert_select 'ul.nav-tabs' do
-      assert_select 'li.active', 'Promos'
+      assert_select 'li.active', Promo.model_name.human(count: 2)
     end
     assert_select 'h1', I18n.t(:new_promo)
     assert_select 'form'

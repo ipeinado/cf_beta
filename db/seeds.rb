@@ -84,16 +84,19 @@ trello.categories << w
 
 @venue.events.create!(title: "Closefunding October Meeting",
 																	short_description: "Regular catch-up meeting, October edition",
+																	long_description: "Esta reunión ya se celebró en Octubre",
 																	daytime: Time.zone.local(2015, 10, 15, 10)
 																	)
 
 @venue.events.create!(title: "Closefunding January Meeting",
-																short_description: "Regular catch-up meeting, January edition",
+																short_description: "Reunión regular para ponernos al día, edición de Enero",
+																long_description: "Estáis todos invitados a la reunión de Enero de Closefunding",
 																daytime: Time.zone.local(2016, 1, 10, 10)
 																)
 
 @venue.events.create!(title: "Closefunding February Meeting",
-																short_description: "Regular catch-up meeting, January edition",
+																short_description: "Reunión regular para ponernos al día, edición de Febrero",
+																long_description: "Estáis todos invitados a la reunión de Febrero de Closefunding",
 																daytime: Time.zone.local(2016, 2, 10, 10)
 																)
 
