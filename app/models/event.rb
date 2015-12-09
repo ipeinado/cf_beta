@@ -12,6 +12,9 @@ class Event < ActiveRecord::Base
   mount_uploader :event_header_picture, EventHeaderPictureUploader
   mount_uploader :event_body_picture, EventBodyPictureUploader
 
+  acts_as_taggable
+  acts_as_taggable_on :categories
+
   validates :venue_id, presence: true
   validates :title, presence: true
   validates :short_description, presence: true, length: { maximum: 255 }

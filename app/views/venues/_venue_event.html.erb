@@ -8,6 +8,13 @@
   <div class="venue-event-info">
     <%= image_tag event.event_header_picture.thumb.url %>
     <div class="venue-event-info-content">
+      <% if event.tag_list.any? %>
+        <ul class="event-categories">
+          <% event.tag_list.each do |tag| %>
+            <li class="event-category"><%= tag %></li>
+          <% end %>
+        </ul>
+      <% end %>
       <h3><%= link_to event.title, event %></h3>
       <time><%= event.daytime.to_formatted_s(:time) %></time>
     </div>

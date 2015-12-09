@@ -3,15 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 ul.event-list {
-
   list-style-type: none;
   margin: 0 0 2em;
   padding: 0;
-
-  div.event {
-    background: yellow;
-  }
-
 }
 
 div.event-header {
@@ -124,7 +118,7 @@ ul.events-list {
   margin: 0;
   padding: 0;
 
-  li {
+  li.event {
     display: inline-block;
     float: left;
     width: 240px;
@@ -157,15 +151,34 @@ ul.events-list {
       border-bottom-left-radius: 6px;
       border-bottom-right-radius: 6px;
 
+      a {
+        color: #FFF;
+      }
+
       h3 {
         font-weight: 300;
         font-size: 22px;
         line-height: 32px;
         text-transform: uppercase;
-        a {
-          color: #FFF;
-        }
       }
     }
+  }
+}
+
+ul.event-categories {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li.event-category {
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 0.3em;
+    text-shadow: none;
+    padding: .3em .5em;
+    background: #FFF;
+    color: #000;
+    border-radius: 2px;
+    border: 1px solid #E0E0E0;
   }
 }

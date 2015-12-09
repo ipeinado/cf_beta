@@ -11,6 +11,7 @@
     height: 360px;
     overflow: hidden;
     margin-bottom: 2em;
+    background-color: #666;
 
     img {
       width: 100%;
@@ -100,7 +101,7 @@
     h3 {
       font-size: 20px;
       font-weight: normal;
-      margin: 0 0 6px 0;
+      margin: 6px 0;
 
       a:hover {
         text-decoration: none;

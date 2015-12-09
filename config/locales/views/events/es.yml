@@ -14,3 +14,4 @@ es:
   event_destroyed_successfully: "El encuentro se ha eliminado correctamente"
   remove_event_header_picture: "Borrar imagen de cabecera"
   remove_event_body_picture: "Borrar imagen del encuentro"
+  event_tag_list: "Categorías del evento (separadas por comas)"

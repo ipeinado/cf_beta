@@ -16,6 +16,13 @@
               <%= link_to t(:edit_event), edit_event_path(@event), class: 'btn btn-default' if logged_in? %>
             </h1>
             <p><%= @event.short_description %></p>
+            <% if @event.tag_list.any? %>
+              <ul class="event-categories">
+                <% @event.tag_list.each do |tag| %>
+                  <li class="event-category"><%= tag %></li>
+                <% end %>
+              </ul>
+            <% end %>
           </div>
       </div>
     </div>

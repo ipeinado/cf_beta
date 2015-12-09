@@ -7,7 +7,7 @@
   <% if @events.any? %>
     <ul class="events-list">
       <% @events.each do |event| %>
-        <li><%= render event %></li>
+        <li class="event"><%= render event %></li>
       <% end %>
     </ul>
   <% else %>

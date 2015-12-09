@@ -46,6 +46,8 @@ gem 'figaro'
 
 gem 'tinymce-rails'
 
+gem 'acts-as-taggable-on', '~> 3.4'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
