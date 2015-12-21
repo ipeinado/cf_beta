@@ -7,8 +7,7 @@
 <%= div_for(@venue, class: "container-fluid") do |venue| %>
 
   <header class="row" role="banner">
-    <div class="col-md-10 col-md-offset-1 venue-header">
-      <%= image_tag venue.venue_picture.url if venue.venue_picture? %>
+    <div class="col-md-10 col-md-offset-1 venue-header" style='background-image: url(<%= venue.venue_picture.url %>)'>
       <div class="venue-header-text">
         <h1>
           <%= venue.name %>

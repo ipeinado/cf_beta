@@ -2,8 +2,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 event-header" role="banner">
-        <%= image_tag @event.event_header_picture.url %>
+    <div class="col-md-12 event-header" role="banner" style="background-image: url(<%= @event.event_header_picture.url %>)">
 
         <div class="event-header-info">
           <div class="event-header-info-date">
