@@ -6,11 +6,11 @@
     <% if event.tag_list.any? %>
       <ul class="event-categories">
         <% event.tag_list.each do |tag| %>
-          <li class="event-category"><%= tag %></li>
+          <li class="event-category"><%= link_to tag, tag_path(tag) %></li>
         <% end %>
       </ul>
     <% end %>
-    <h3><%= link_to event.title, event %></h3>
+    <h3><%= link_to event.title, event_path(event) %></h3>
 
     <p><%= link_to event.venue.name, event.venue %></p>
     <%= time_tag event.daytime.to_date %>

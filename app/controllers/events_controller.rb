@@ -51,6 +51,11 @@ class EventsController < ApplicationController
 
   end
 
+  def tag
+    @tag = params[:tag]
+    @events = Event.tagged_with(@tag)
+  end
+
   def event_params
     params.require(:event).permit(:venue_id, :event_header_picture, :event_header_picture_cache, :remove_event_header_picture, :title, :short_description, :long_description, :event_body_picture, :event_body_picture_cache, :remove_event_body_picture, :daytime, :tag_list)
   end

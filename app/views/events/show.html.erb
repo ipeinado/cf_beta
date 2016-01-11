@@ -18,7 +18,7 @@
             <% if @event.tag_list.any? %>
               <ul class="event-categories">
                 <% @event.tag_list.each do |tag| %>
-                  <li class="event-category"><%= tag %></li>
+                  <li class="event-category"><%= link_to tag, tag_path(tag) %></li>
                 <% end %>
               </ul>
             <% end %>

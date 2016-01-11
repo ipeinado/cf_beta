@@ -15,3 +15,4 @@ en:
   remove_event_header_picture: "Remove header image"
   remove_event_body_picture: "Remove body image"
   event_tag_list: "Categories of the event (separated by commas)"
+  events_tagged_with: "Events tagged as %{tag}"

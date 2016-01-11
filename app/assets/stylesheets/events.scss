@@ -16,7 +16,7 @@ div.event-header {
   background-clip: content-box;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position-y: center; 
+  background-position-y: center;
 
   img {
     position: absolute;
@@ -155,7 +155,7 @@ ul.events-list {
       border-bottom-left-radius: 6px;
       border-bottom-right-radius: 6px;
 
-      a {
+      h3 a, p a {
         color: #FFF;
       }
 
@@ -178,11 +178,21 @@ ul.event-categories {
     display: inline-block;
     font-size: 12px;
     margin-right: 0.3em;
-    text-shadow: none;
-    padding: .3em .5em;
-    background: #FFF;
-    color: #000;
-    border-radius: 2px;
-    border: 1px solid #E0E0E0;
+
+    a {
+      color: #000;
+      text-decoration: none;
+      text-shadow: none;
+      padding: .3em .5em;
+      background: #FFF;
+      border-radius: 2px;
+      border: 1px solid #E0E0E0;
+
+      &:hover {
+        color: #333;
+        background-color: #e6e6e6;
+        border-color: #adadad;
+      }
+    }
   }
 }
