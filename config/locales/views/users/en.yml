@@ -9,3 +9,4 @@ en:
   profile_updated: "The profile has been updated"
   user_deleted: "User %{name} has been removed"
   user_delete_confirm: "Are you sure? Once removed, there is no turning back"
+  remove_avatar: "Remove profile picture"

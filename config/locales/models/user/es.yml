@@ -11,6 +11,8 @@ es:
         admin: "Administrador"
         password: "Contraseña"
         password_confirmation: "Confirmación de la contraseña"
+        website: "Página web personal"
+        avatar: "Foto de perfil"
     errors:
       messages:
         one: "Se ha producido un error"

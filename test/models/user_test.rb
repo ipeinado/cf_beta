@@ -69,4 +69,9 @@ class UserTest < ActiveSupport::TestCase
       assert_not @user.valid?, message: "password is too short"
   end
 
+  test "bio should not be longer than 255 characters long" do
+    @user.bio = 'a' * 256
+    assert_not @user.valid?, message: "bio should not be longer than 255 characters long"
+  end
+
 end

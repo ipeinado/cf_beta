@@ -5,15 +5,34 @@
 <% end %>
 
 <div class="row">
-    <div class="col-md-4">
-        <div class="user_info">
-            <h1>
-            	<%= @user.name %>
+    <div class="col-md-3 co-md-offset-1 user-avatar">
+			<%= image_tag @user.avatar.url %>
+		</div>
+		<div class="col-md-9 user-info">
+        <h1>
+            <%= @user.name %>
 
-            	<% if current_user && (current_user?(@user) || current_user.admin?) %>
-           			<%= link_to t(:edit_user_title), edit_user_path(@user), class: "btn btn-default" %>
-           		<% end %>
-            </h1>
-        </div>
+            <% if current_user && (current_user?(@user) || current_user.admin?) %>
+           		<%= link_to t(:edit_user_title), edit_user_path(@user), class: "btn btn-default" %>
+           	<% end %>
+        </h1>
+
+				<p>
+					<% if @user.bio.present? %>
+						<%= @user.bio %>
+					<% end %>
+				</p>
+
+				<ul class="user-social-links">
+					<% if @user.twitter.present? %>
+						<li><%= link_to @user.twitter, @user.twitter %></li>
+					<% end %>
+					<% if @user.linkedin.present? %>
+						<li><%= link_to @user.linkedin, @user.linkedin %></li>
+					<% end %>
+					<% if @user.website.present? %>
+						<li><%= link_to @user.website, @user.website %></li>
+					<% end %>
+				</ul>
     </div>
 </div>

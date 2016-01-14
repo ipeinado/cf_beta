@@ -20,6 +20,11 @@ class User < ActiveRecord::Base
         length: { minimum: 6 },
         allow_blank: true
 
+    validates :bio,
+      length: { maximum: 255 }
+
+    mount_uploader :avatar, AvatarUploader
+
     has_secure_password
 
     # Returns the hash digest of the given string
