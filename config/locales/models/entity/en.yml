@@ -1,0 +1,15 @@
+en:
+  activerecord:
+    models:
+      entity:
+        one: Entity
+        other: Entities
+    attributes:
+      entity:
+        name: "Name"
+        entity_logo: "Entity logo"
+        city: "City"
+        twitter: "Twitter"
+        facebook: "Facebook"
+        website: "Entity website"
+        bio: "Bio (255 characters max)"

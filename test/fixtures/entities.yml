@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+closefunding:
+  name: Closefunding
+  twitter: https://twitter.com/closefunding
+  facebook: https://www.facebook.com/pages/Closefunding/796245717111990
+  website: http://closefunding.es
+  bio: La primera plataforma social de emprendimiento inclusivo y colaborativo de proximidad. Impulsando el desarrollo de comunidades de emprendimiento local.
+  city: Los Alcázares
