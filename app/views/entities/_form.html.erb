@@ -1,0 +1,57 @@
+<%= form_for @entity, html: {multipart: true } do |f| %>
+
+  <% if @entity.errors.any? %>
+    <div class="error_explanation">
+      <div class="alert alert-danger">
+        <%= t :messages, scope: "activerecord.errors", count: @entity.errors.count %>
+          <ul>
+            <% @entity.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="col-md-3">
+    <%= f.label :entity_logo %>
+  </div>
+
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :city %>
+      <%= f.text_field :city, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :bio %>
+      <%= f.text_field :bio, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :twitter %>
+      <%= f.url_field :twitter, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :facebook %>
+      <%= f.url_field :facebook, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :website %>
+      <%= f.url_field :website, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit class: 'btn btn-default' %>
+    </div>
+
+  </div>
+
+<% end %>

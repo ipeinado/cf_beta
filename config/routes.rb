@@ -18,7 +18,6 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   get 'events/tag/:tag', to: 'events#tag', as: 'tag'
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -30,7 +29,7 @@ Rails.application.routes.draw do
 
   # Users routes
 
-  resources :users, :projects, :promos, :venues, :events
+  resources :users, :projects, :promos, :venues, :events, :entities
   resources :categories, only: [:index, :show]
 
   # Example resource route with options:

@@ -1,0 +1,6 @@
+es:
+  entity:
+    one: "Entidad"
+    other: "Entidades"
+  new_entity: "Nueva entidad"
+  entity_created_successfully: "La entidad se ha creado correctamente"

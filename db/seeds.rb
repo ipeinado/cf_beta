@@ -100,6 +100,15 @@ trello.categories << w
 																daytime: Time.zone.local(2016, 2, 10, 10)
 																)
 
+closefunding = Entity.create!(
+	name: "Closefunding",
+	twitter: "https://twitter.com/closefunding",
+	facebook: "https://www.facebook.com/pages/Closefunding/796245717111990",
+	website: "http://closefunding.es",
+	bio: "La primera plataforma social de emprendimiento inclusivo y colaborativo de proximidad. Impulsando el desarrollo de comunidades de emprendimiento local.",
+	city: "Los Alcázares"
+)
+
 # 99.times do |n|
 #	name = Faker::Name.name
 #	email = Faker::Internet.email

@@ -5,6 +5,7 @@
 			<li class=<%= params[:controller] == 'projects' ? 'active' : '' %> ><%= link_to Project.model_name.human(count: 2), new_project_path %></li>
 			<li class=<%= params[:controller] == 'promos' ? 'active' : '' %> ><%= link_to Promo.model_name.human(count: 2), new_promo_path %></li>
 			<li class=<%= (params[:controller] == 'venues' || params[:controller] == 'events') ? 'active' : '' %> ><%= link_to Venue.model_name.human(count: 2), venues_path %></li>
+			<li class=<%= params[:controller] == 'entities' ? 'active' : '' %> ><%= link_to Entity.model_name.human(count: 2), new_entity_path %></li>
 		</ul>
 	</nav>
 </div>

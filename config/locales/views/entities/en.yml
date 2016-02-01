@@ -1,0 +1,6 @@
+en:
+  entity:
+    one: "Entity"
+    other: "Entities"
+  new_entity: "New entity"
+  entity_created_successfully: "Entity created successfully"

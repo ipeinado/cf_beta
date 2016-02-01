@@ -1,0 +1,11 @@
+<% provide(:title, I18n.t(:entity, count: 2)) %>
+<div class="container">
+  <div class="row">
+    <h1><%= I18n.t(:entity, count: 2) %></h1>
+    <ul>
+      <% @entities.each do |entity| %>
+        <li><%= link_to entity.name, entity %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
