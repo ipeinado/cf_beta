@@ -27,16 +27,30 @@ class EntitiesController < ApplicationController
   end
 
   def edit
+    @entity = Entity.find(params[:id])
   end
 
   def update
+    @entity = Entity.find(params[:id])
+
+    if @entity.update_attributes(entity_params)
+      flash[:success] = I18n.t(:entity_successfully_updated)
+      redirect_to @entity
+    else
+      render(:edit)
+    end
+
   end
 
   def destroy
+    @entity = Entity.find(params[:id])
+    flash[:success] = I18n.t(:entity_successfully_deleted)
+    @entity.destroy
+    redirect_to entities_path
   end
 
   private
     def entity_params
-      params.require(:entity).permit(:name, :entity_logo, :city, :bio, :twitter, :facebook, :website)
+      params.require(:entity).permit(:name, :entity_logo, :entity_logo_cache, :remove_entity_logo, :city, :bio, :twitter, :facebook, :website)
     end
 end

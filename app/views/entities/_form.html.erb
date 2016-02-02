@@ -14,7 +14,18 @@
   <% end %>
 
   <div class="col-md-3">
-    <%= f.label :entity_logo %>
+    <div class="form-group">
+      <%= f.label :entity_logo %>
+      <%= image_tag @entity.entity_logo_url %>
+      <%= f.file_field :entity_logo %>
+      <%= f.hidden_field :entity_logo_cache %>
+    </div>
+    <div class="form-group">
+      <label>
+        <%= f.check_box :remove_entity_logo %>
+        <%= I18n.t(:remove_entity_logo) %>
+      </label>
+    </div>
   </div>
 
   <div class="col-md-6">

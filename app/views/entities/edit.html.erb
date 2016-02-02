@@ -1,0 +1,17 @@
+<% provide(:title, I18n.t(:edit_entity)) %>
+
+<div class="row">
+  <div class="col-md-12">
+    <h1><%= I18n.t(:edit_entity) %></h1>
+  </div>
+</div>
+
+<div class="row">
+  <%= render('form') %>
+</div>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= link_to t(:delete_entity), entity_path(@entity), method: :delete, data: { confirm: t(:confirm_delete_entity)}, class: "btn btn-danger" %>
+  </div>
+</div>
