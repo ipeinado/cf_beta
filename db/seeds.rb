@@ -109,6 +109,16 @@ closefunding = Entity.create!(
 	city: "Los Alcázares"
 )
 
+50.times do |n|
+	name = Faker::Company.name
+	entity_logo= Faker::Company.logo
+	bio = Faker::Company.catch_phrase
+	city = Faker::Address.city
+	website = Faker::Internet.url
+
+	Entity.create!(name: name, entity_logo: entity_logo, bio: bio, city: city, website: website)
+end
+
 # 99.times do |n|
 #	name = Faker::Name.name
 #	email = Faker::Internet.email
