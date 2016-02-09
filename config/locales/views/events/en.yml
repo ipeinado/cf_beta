@@ -16,3 +16,5 @@ en:
   remove_event_body_picture: "Remove body image"
   event_tag_list: "Categories of the event (separated by commas)"
   events_tagged_with: "Events tagged as %{tag}"
+  sponsors: "Sponsors"
+  no_sponsors: "This event has no sponsors yet"

@@ -78,4 +78,25 @@
   <div class="form-group">
     <%= f.submit class: 'btn btn-default' %>
   </div>
+
+  <h2><%= t(:sponsors) %></h2>
+
+  <% User.all.each do |user| %>
+    <div class="form-group">
+      <%= check_box_tag :user_ids, user.id, @event.users.include?(user), name: 'event[user_ids][]' %>
+      <%= label_tag :user_ids, user.name %>
+    </div>
+  <% end %>
+
+  <% Entity.all.each do |entity| %>
+    <div class="form-group">
+      <%= check_box_tag :entity_ids, entity.id, @event.entities.include?(entity), name: 'event[entity_ids][]' %>
+      <%= label_tag :entity_ids, entity.name %>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-default' %>
+  </div>
+
 <% end %>

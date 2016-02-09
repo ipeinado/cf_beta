@@ -16,3 +16,5 @@ es:
   remove_event_body_picture: "Borrar imagen del encuentro"
   event_tag_list: "Categorías del evento (separadas por comas)"
   events_tagged_with: "Eventos sobre %{tag}"
+  sponsors: "Patrocinadores del encuentro"
+  no_sponsors: "Este encuentro no tiene patrocinadores todavía. ¿Te animas?"
