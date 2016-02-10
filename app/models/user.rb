@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
     has_many :sponsorships, as: :sponsor, dependent: :destroy
     has_many :events, through: :sponsorships
+    has_many :organizings, dependent: :destroy
+    has_many :organized_events, through: :organizings, source: :event
 
     validates :name,
         presence: true,

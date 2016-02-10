@@ -8,13 +8,13 @@
 
 require 'roo'
 
-User.create!(name: "Jaisiel Madrid",
+jaisiel = User.create!(name: "Jaisiel Madrid",
 				  email: "jaisielms@gmail.com",
 				  password: "123456",
 				  password_confirmation: "123456",
 				  admin: true)
 
-User.create!(name: "Nacho Peinado",
+nacho = User.create!(name: "Nacho Peinado",
 				  email: "i.peinado.martinez@gmail.com",
 				  password: "123456",
 				  password_confirmation: "123456",
@@ -88,17 +88,21 @@ trello.categories << w
 																	daytime: Time.zone.local(2015, 10, 15, 10)
 																	)
 
-@venue.events.create!(title: "Closefunding January Meeting",
-																short_description: "Reunión regular para ponernos al día, edición de Enero",
-																long_description: "Estáis todos invitados a la reunión de Enero de Closefunding",
-																daytime: Time.zone.local(2016, 1, 10, 10)
+march_meeting = @venue.events.create!(title: "Closefunding March Meeting",
+																short_description: "Reunión regular para ponernos al día, edición de Marzo",
+																long_description: "Estáis todos invitados a la reunión de Marzo de Closefunding",
+																daytime: Time.zone.local(2016, 3, 10, 10)
 																)
 
-@venue.events.create!(title: "Closefunding February Meeting",
-																short_description: "Reunión regular para ponernos al día, edición de Febrero",
-																long_description: "Estáis todos invitados a la reunión de Febrero de Closefunding",
-																daytime: Time.zone.local(2016, 2, 10, 10)
+april_meeting = @venue.events.create!(title: "Closefunding April Meeting",
+																short_description: "Reunión regular para ponernos al día, edición de Abril",
+																long_description: "Estáis todos invitados a la reunión de Abril de Closefunding",
+																daytime: Time.zone.local(2016, 4, 10, 10)
 																)
+march_meeting.organizers << jaisiel
+march_meeting.organizers << nacho
+
+april_meeting.organizers << jaisiel
 
 closefunding = Entity.create!(
 	name: "Closefunding",
@@ -108,6 +112,9 @@ closefunding = Entity.create!(
 	bio: "La primera plataforma social de emprendimiento inclusivo y colaborativo de proximidad. Impulsando el desarrollo de comunidades de emprendimiento local.",
 	city: "Los Alcázares"
 )
+
+march_meeting.entities << closefunding
+
 
 50.times do |n|
 	name = Faker::Company.name

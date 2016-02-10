@@ -4,6 +4,8 @@ class Event < ActiveRecord::Base
   has_many :sponsorships, dependent: :destroy
   has_many :entities, through: :sponsorships, source: :sponsor, source_type: 'Entity'
   has_many :users, through: :sponsorships, source: :sponsor, source_type: 'User'
+  has_many :organizings, dependent: :destroy
+  has_many :organizers, through: :organizings, source: :user
 
   accepts_nested_attributes_for :venue
 

@@ -18,3 +18,4 @@ es:
   events_tagged_with: "Eventos sobre %{tag}"
   sponsors: "Patrocinadores del encuentro"
   no_sponsors: "Este encuentro no tiene patrocinadores todavía. ¿Te animas?"
+  organizers: "Organizadores"

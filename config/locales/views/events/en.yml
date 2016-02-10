@@ -18,3 +18,4 @@ en:
   events_tagged_with: "Events tagged as %{tag}"
   sponsors: "Sponsors"
   no_sponsors: "This event has no sponsors yet"
+  organizers: "Organizers"
