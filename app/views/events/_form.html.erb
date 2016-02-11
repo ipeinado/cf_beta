@@ -79,6 +79,14 @@
     <%= f.submit class: 'btn btn-default' %>
   </div>
 
+  <h2><%= t(:organizers) %></h2>
+  <% User.all.each do |user| %>
+    <div class="form-group">
+      <%= check_box_tag :organizer_ids, user.id, @event.organizers.include?(user), name: 'event[organizer_ids][]' %>
+      <%= label_tag :organizer_ids, user.name %>
+    </div>
+  <% end %>
+
   <h2><%= t(:sponsors) %></h2>
 
   <% User.all.each do |user| %>
