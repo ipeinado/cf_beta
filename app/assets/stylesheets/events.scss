@@ -138,13 +138,25 @@ ul.events-list {
       padding-top: 72px;
       background-color: #666;
       text-align: center;
-      font-size: 18px;
-      font-weight: bold;
-      color: #FFF;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, .8);
       height: 160px;
       border-top-left-radius: 6px;
       border-top-right-radius: 6px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: .8;
+      }
+
+      a {
+        font-size: 18px;
+        font-weight: bold;
+        color: #FFF;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, .8);
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
 
     .event-li-event-info {

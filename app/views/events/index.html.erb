@@ -2,7 +2,7 @@
 
 <div class="container">
 
-<h1><%= I18n.t(:event, count: 2) %></h1>
+<h1><%= I18n.t(:event, count: 2) %> <%= @city if @city.present? %></h1>
 
   <% if @events.any? %>
     <ul class="events-list">
@@ -11,7 +11,7 @@
       <% end %>
     </ul>
   <% else %>
-    <p><%= I18n.t(:no_future_events) %></p>
+    <p><%= I18n.t(:no_future_events) %> <%= I18n.t(:in_this_city) if @city.present? %></p>
   <% end %>
 
 </div>

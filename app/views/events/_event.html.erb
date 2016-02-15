@@ -1,6 +1,6 @@
 <%= div_for(event) do %>
   <div class="event-li-venue-info" style="background-image: url(<%= event.event_header_picture.eventlist.url %>)">
-    <p><%= event.venue.city %></p>
+    <p><%= link_to event.venue.city, events_path( city: event.venue.city ) %></p>
   </div>
   <div class="event-li-event-info">
     <% if event.tag_list.any? %>

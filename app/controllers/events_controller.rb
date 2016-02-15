@@ -4,7 +4,12 @@ class EventsController < ApplicationController
   before_action :admin_user, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @events = Event.future_ordered.all
+    if params[:city].present?
+      @city = params[:city]
+      @events = Event.future_ordered.joins(:venue).merge(Venue.where( city: @city ) )
+    else
+      @events = Event.future_ordered.all
+    end
   end
 
   def show
