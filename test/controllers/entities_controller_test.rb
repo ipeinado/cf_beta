@@ -12,7 +12,7 @@ class EntitiesControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show, id: 1
+    get :show, id: @entity.id
     assert_response :success
   end
 

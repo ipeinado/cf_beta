@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160210232042) do
+ActiveRecord::Schema.define(version: 20160210231136) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -64,7 +64,6 @@ ActiveRecord::Schema.define(version: 20160210232042) do
   end
 
   add_index "organizings", ["event_id"], name: "index_organizings_on_event_id"
-  add_index "organizings", ["user_id", "event_id"], name: "index_organizings_on_user_id_and_event_id", unique: true
   add_index "organizings", ["user_id"], name: "index_organizings_on_user_id"
 
   create_table "projects", force: :cascade do |t|
