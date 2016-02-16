@@ -42,14 +42,14 @@
         <h2><%= Event.human_attribute_name(:attendance_requirements)%></h2>
         <p><%= raw(@event.attendance_requirements) %></p>
       <% end %>
-      <% if @event.organizers.any? %>
+      <!-- <% if @event.organizers.any? %>
         <h2><%= t(:organizers) %></h2>
         <ul>
           <% @event.organizers.each do |organizer| %>
             <li><%= organizer.name %></li>
           <% end %>
         </ul>
-      <% end %>
+      <% end %> -->
     </div>
     <div class="col-md-4 event-venue-info">
       <%= image_tag @venue.venue_picture.thumb.url, class: "venue-image" %>
