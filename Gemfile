@@ -48,6 +48,9 @@ gem 'tinymce-rails'
 
 gem 'acts-as-taggable-on', '~> 3.4'
 
+# Fake names and emails
+gem 'faker', '1.4.3'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -67,9 +70,6 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring', '1.3.6'
-
-  # Fake names and emails
-  gem 'faker', '1.4.3'
 
 end
 
