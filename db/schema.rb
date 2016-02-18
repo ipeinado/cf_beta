@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160210231136) do
+ActiveRecord::Schema.define(version: 20160218213839) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -104,14 +104,15 @@ ActiveRecord::Schema.define(version: 20160210231136) do
   add_index "promos", ["name"], name: "index_promos_on_name", unique: true
 
   create_table "sponsorships", force: :cascade do |t|
-    t.integer  "sponsor_id"
-    t.integer  "event_id"
+    t.integer  "sponsor_id",   null: false
+    t.integer  "event_id",     null: false
     t.string   "sponsor_type"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
   add_index "sponsorships", ["event_id"], name: "index_sponsorships_on_event_id"
+  add_index "sponsorships", ["sponsor_id", "event_id", "sponsor_type"], name: "index_sponsorships_on_sponsor_id_and_event_id_and_sponsor_type"
   add_index "sponsorships", ["sponsor_id"], name: "index_sponsorships_on_sponsor_id"
 
   create_table "taggings", force: :cascade do |t|
