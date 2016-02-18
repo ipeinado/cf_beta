@@ -46,7 +46,7 @@
         <h2><%= t(:organizers) %></h2>
         <ul>
           <% @event.organizers.each do |organizer| %>
-            <li><%= organizer.name %></li>
+            <li><%= link_to organizer.name, organizer %></li>
           <% end %>
         </ul>
       <% end %>
