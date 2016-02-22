@@ -13,6 +13,7 @@ class Promo < ActiveRecord::Base
   validates :brief_promo_description,
                 presence: true,
                 length: { maximum: 255 }
+  validates :link, presence: true
 
   def all_categories=(names)
     self.categories = names.split(", ").map do |name|

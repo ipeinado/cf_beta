@@ -6,7 +6,12 @@ class PromosController < ApplicationController
   before_action :admin_user, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @promos = Promo.all
+    if (params[:region])
+      @region = params[:region]
+      @promos = Promo.where('region=?', @region)
+    else
+      @promos = Promo.all
+    end
   end
 
   def show
@@ -51,6 +56,6 @@ class PromosController < ApplicationController
 
   private
     def promo_params
-      params.require(:promo).permit(:promo_logo, :name, :brief_product_description, :long_product_description, :brief_promo_description, :accessibility_options, :about_the_promo, :promo_requirements, :promo_featured_picture, :website, :twitter, :facebook, :all_categories)
+      params.require(:promo).permit(:promo_logo, :name, :brief_product_description, :long_product_description, :brief_promo_description, :accessibility_options, :about_the_promo, :promo_requirements, :promo_featured_picture, :website, :twitter, :facebook, :all_categories, :region, :link)
     end
 end

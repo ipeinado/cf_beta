@@ -29,7 +29,7 @@
 	</div>
 	<div class="col-md-6">
 
-		<div class="form-group">
+		<div class="form-group required">
 			<%= f.label :name %>
 			<%= f.text_field :name, class: "form-control" %>
 		</div>
@@ -39,12 +39,12 @@
 			<%= f.text_field :all_categories, class: "form-control", placeholder: t(:categories_placeholder) %>
 		</div>
 
-		<div class="form-group">
+		<div class="form-group required">
 			<%= f.label :brief_product_description %>
 			<%= f.text_field :brief_product_description, class: "form-control" %>
 		</div>
 
-		<div class="form-group">
+		<div class="form-group required">
 			<%= f.label :brief_promo_description %>
 			<%= f.text_field :brief_promo_description, class: "form-control" %>
 		</div>
@@ -63,11 +63,22 @@
 			<%= f.label :facebook %>
 			<%= f.text_field :facebook, placeholder: "Ej: https://www.facebook.com/projectname", class: "form-control" %>
 		</div>
+
+		<div class="form-group required">
+			<%= f.label :link %>
+			<%= f.url_field :link, class: "form-control" %>
+		</div>
 	</div>
 </div>
 
 	<div class="row">
 		<div class="col-md-6 col-md-offset-1">
+
+			<div class="form-group">
+				<%= f.label :region %>
+				<%= f.text_field :region, class: "form-control" %>
+			</div>
+
 			<div class="form-group">
 				<%= f.label :long_product_description %>
 				<%= f.text_area :long_product_description, class: "form-control tinymce", placeholder: t(:long_promo_description_placeholder), rows: 5 %>

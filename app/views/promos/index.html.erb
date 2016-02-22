@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-md-12">
-    <h1><%= t(:promos) %></h1>
+    <h1><%= t(:promos) %> <%= "@ #{@region}" if @region.present?  %></h1>
 
     <ul id="promos">
       <% @promos.each do |promo| %>

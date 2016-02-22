@@ -11,8 +11,9 @@
   <ul>
   </ul>
   <p class="product-description text-muted"><%= promo.brief_product_description %></p>
+  <p><%= link_to promo.region, promos_path(region: promo.region) if promo.region.present? %></p>
 </div>
 <div class="promo-info">
   <p class="promo-description"><%= promo.brief_promo_description %></p>
-  <p class="get-promo-btn"><%= link_to "Llévate esta promoción", '#', class: 'btn btn-warning' %></p>
+  <p class="get-promo-btn"><%= link_to "Llévate esta promoción", promo.link, class: 'btn btn-warning' %></p>
 </div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160218213839) do
+ActiveRecord::Schema.define(version: 20160222223619) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -99,6 +99,8 @@ ActiveRecord::Schema.define(version: 20160218213839) do
     t.text     "about_the_promo"
     t.text     "promo_requirements"
     t.string   "promo_featured_picture"
+    t.string   "region"
+    t.string   "link"
   end
 
   add_index "promos", ["name"], name: "index_promos_on_name", unique: true

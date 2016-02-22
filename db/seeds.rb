@@ -48,7 +48,9 @@ balsamiq = Promo.create!(name: "Balsamiq",
   facebook: "http://facebook.com/balsamiq",
   website: "http://balsamiq.com",
 	remote_promo_logo_url: "https://s3.eu-central-1.amazonaws.com/cfbeta/uploads/promo/promo_logo/1/Balsamiq_LOGO.png",
-	remote_promo_featured_picture_url: "https://s3.eu-central-1.amazonaws.com/cfbeta/uploads/promo/promo_featured_picture/1/Balsamic_ImagenDestacada_Cuerpo.jpg.png"
+	remote_promo_featured_picture_url: "https://s3.eu-central-1.amazonaws.com/cfbeta/uploads/promo/promo_featured_picture/1/Balsamic_ImagenDestacada_Cuerpo.jpg.png",
+	region: "Global",
+	link: "https://balsamiq.com/download/"
   )
 
 w = Category.create!(name: "Web")
@@ -64,7 +66,9 @@ trello = Promo.create!(name: "Trello Gold",
   twitter: "http://twitter.com/trello",
   facebook: "https://www.facebook.com/trelloapp",
   website: "https://trello.com/",
-	remote_promo_logo_url: "https://s3.eu-central-1.amazonaws.com/cfbeta/uploads/promo/promo_logo/2/Trello_LOGO.png"
+	remote_promo_logo_url: "https://s3.eu-central-1.amazonaws.com/cfbeta/uploads/promo/promo_logo/2/Trello_LOGO.png",
+	region: "Global",
+	link: "https://trello.com/signup"
 )
 
 trello.categories.create(name: "Project management")

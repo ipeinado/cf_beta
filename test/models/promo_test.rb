@@ -33,4 +33,10 @@ class PromoTest < ActiveSupport::TestCase
     @promo.brief_promo_description = 'a' * 256
     assert_not @promo.valid?, message: "brief promo description should not be longer than 255 characters"
   end
+
+  test "link should be present" do
+    @promo.link = ""
+    assert_not @promo.valid?, message: "link should be present"
+  end
+
 end
