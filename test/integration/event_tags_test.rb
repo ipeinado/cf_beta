@@ -8,8 +8,12 @@ class EventTagsTest < ActionDispatch::IntegrationTest
     @event2 = events(:cf_onemonth)
     @event3 = events(:cf_oneyear)
 
-    @event1.tag_list.add("closefunding")
-    @event3.tag_list.add("closefunding")
+    @event1.tag_list.add("closefunding", "coworking")
+    @event1.save
+    @event2.tag_list.add("business", "coworking")
+    @event2.save
+    @event3.tag_list.add("closefunding", "business")
+    @event3.save
   end
 
   test "events page has 3 events" do
@@ -18,5 +22,12 @@ class EventTagsTest < ActionDispatch::IntegrationTest
     assert assigns(:events)
     assert_select 'li.event', count: 3
   end
-  
+
+  test "related events appear in show event" do
+    get event_path(id: @event1.id)
+    assert_response :success
+    assert assigns(:related_events)
+    assert_select 'li.event', count: 2
+  end
+
 end

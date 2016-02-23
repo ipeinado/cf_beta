@@ -84,6 +84,17 @@
   </div>
 </div>
 
+<div class="row">
+  <div class="col-md-12">
+    <ul class="events-list">
+      <h2><%= t(:related_events) %></h2>
+      <% @related_events.each do |event| %>
+        <li class="event"><%= render event %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
 
 <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
 <%= javascript_tag do %>

@@ -15,6 +15,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @venue = Venue.find(@event.venue_id)
+    @related_events = Event.tagged_with(@event.tag_list, :any => true).where.not(id: @event.id).limit(3)
   end
 
   def new
