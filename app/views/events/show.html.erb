@@ -24,6 +24,7 @@
             <% end %>
           </div>
       </div>
+      <%= link_to t(:join_event), '#', class: 'btn btn-warning btn-lg join-event-btn-header' %>
     </div>
   </div>
 
@@ -50,22 +51,6 @@
           <% end %>
         </ul>
       <% end %>
-    </div>
-    <div class="col-md-4 event-venue-info">
-      <%= image_tag @venue.venue_picture.thumb.url, class: "venue-image" %>
-      <h3><%= link_to @venue.name, @venue %></h3>
-      <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= @venue.city %>, <%= @venue.province %>, <%= @venue.country %></p>
-      <div id="map"></div>
-      <ul class="social-links">
-        <li><%= link_to @venue.website, @venue.website, target: '_blank' if @venue.website? %></li>
-        <li><%= link_to "https://twitter.com/" + @venue.twitter, "https://twitter.com/" + @venue.twitter, target: '_blank' if @venue.twitter? %></li>
-        <li><%= link_to @venue.facebook, @venue.facebook, target: 'blank' if @venue.facebook? %></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12">
       <h2><%= I18n.t(:sponsors) %></h2>
       <% if @event.users.any? || @event.entities.any? %>
         <ul class="sponsors-list">
@@ -80,6 +65,23 @@
       <% else %>
         <p><%= t(:no_sponsors) %></p>
       <% end %>
+
+      <p style="text-align: center">
+        <%= link_to t(:join_event), '#', class: 'btn btn-warning btn-lg' %>
+      </p>
+    </div>
+
+
+    <div class="col-md-4 event-venue-info">
+      <%= image_tag @venue.venue_picture.thumb.url, class: "venue-image" %>
+      <h3><%= link_to @venue.name, @venue %></h3>
+      <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <%= @venue.city %>, <%= @venue.province %>, <%= @venue.country %></p>
+      <div id="map"></div>
+      <ul class="social-links">
+        <li><%= link_to @venue.website, @venue.website, target: '_blank' if @venue.website? %></li>
+        <li><%= link_to "https://twitter.com/" + @venue.twitter, "https://twitter.com/" + @venue.twitter, target: '_blank' if @venue.twitter? %></li>
+        <li><%= link_to @venue.facebook, @venue.facebook, target: 'blank' if @venue.facebook? %></li>
+      </ul>
     </div>
   </div>
 </div>
