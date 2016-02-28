@@ -97,12 +97,17 @@ march_meeting = @venue.events.create!(title: "Closefunding March Meeting",
 																long_description: "Estáis todos invitados a la reunión de Marzo de Closefunding",
 																daytime: Time.zone.local(2016, 3, 10, 10)
 																)
+march_meeting.tag_list.add("closefunding", "business")
+march_meeting.save
 
 april_meeting = @venue.events.create!(title: "Closefunding April Meeting",
 																short_description: "Reunión regular para ponernos al día, edición de Abril",
 																long_description: "Estáis todos invitados a la reunión de Abril de Closefunding",
 																daytime: Time.zone.local(2016, 4, 10, 10)
 																)
+april_meeting.tag_list.add("closefunding" , "networking")
+april_meeting.save
+
 march_meeting.organizers << jaisiel
 march_meeting.organizers << nacho
 
