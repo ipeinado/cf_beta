@@ -1,5 +1,13 @@
 <% provide(:title, @event.title) %>
 
+<% content_for :og_tags do %>
+  <meta property="og:url" content="<%= request.original_url %>" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="<%= @event.title %>" />
+  <meta property="og:description" content="<%= @event.short_description %>" />
+  <meta property="og:image" content="<%= @event.event_header_picture.url %>" />
+<% end %>
+
 <div class="container">
   <div class="row">
     <div class="col-md-12 event-header" role="banner" style="background-image: url(<%= @event.event_header_picture.url %>)">
@@ -65,6 +73,11 @@
       <% else %>
         <p><%= t(:no_sponsors) %></p>
       <% end %>
+
+      <ul>
+        <li><div class="fb-share-button" data-href="#{ request.original_url }" data-layout="button" data-mobile-iframe="true"></div></a></li>
+        <li><%= link_to 'Twitter', "https://twitter.com/intent/tweet", title: "Tuitea sobre este encuentro", class: "twitter-share-button", data: { text: @event.title + " @ " + @event.venue.city, size: "large", url: event_url(@event.id), hashtags: "socent, eventoCF", via: "CloseFunding" }%></li>
+      </ul>
 
       <p style="text-align: center">
         <%= link_to t(:join_event), '#', class: 'btn btn-warning btn-lg' %>
@@ -138,4 +151,35 @@
 
 
   });
+<% end %>
+
+<%= javascript_tag do %>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.6&appId=1705704936371353";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+<% end %>
+
+<%= javascript_tag do %>
+
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+
 <% end %>
