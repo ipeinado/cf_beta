@@ -10,3 +10,4 @@ es:
   user_deleted: "El usuario %{name} ha sido eliminado"
   user_delete_confirm: "¿Estás seguro? Una vez eliminado, no habrá vuelta atrás"
   remove_avatar: "Eliminar foto de perfil"
+  manifest_support: "Apoya el manifiesto"

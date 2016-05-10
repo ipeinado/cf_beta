@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
   end
 
   def manifest
+    @user_supporters = User.manifest_supporters
   end
 
   def findout
