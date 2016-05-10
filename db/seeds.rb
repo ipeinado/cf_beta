@@ -131,6 +131,7 @@ march_meeting.entities << closefunding
 	bio = Faker::Company.catch_phrase
 	city = Faker::Address.city
 	website = Faker::Internet.url
+	manifest_support = Faker::Boolean.boolean
 
 	Entity.create!(name: name, entity_logo: entity_logo, bio: bio, city: city, website: website)
 end

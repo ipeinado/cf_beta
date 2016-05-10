@@ -1,5 +1,7 @@
 class Entity < ActiveRecord::Base
 
+  scope :manifest_supporters, -> { where( manifest_support: true )}
+
   has_many :sponsorships, as: :sponsor, dependent: :destroy
   has_many :events, through: :sponsorships
 

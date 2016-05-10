@@ -60,6 +60,13 @@
     </div>
 
     <div class="form-group">
+      <label>
+        <%= f.check_box :manifest_support %>
+        <%= I18n.t(:manifest_support) %>
+      </label>
+    </div>
+
+    <div class="form-group">
       <%= f.submit class: 'btn btn-default' %>
     </div>
 

@@ -5,6 +5,7 @@ class StaticPagesController < ApplicationController
 
   def manifest
     @user_supporters = User.manifest_supporters
+    @entity_supporters = Entity.manifest_supporters
   end
 
   def findout

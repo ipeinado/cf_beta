@@ -51,6 +51,6 @@ class EntitiesController < ApplicationController
 
   private
     def entity_params
-      params.require(:entity).permit(:name, :entity_logo, :entity_logo_cache, :remove_entity_logo, :city, :bio, :twitter, :facebook, :website)
+      params.require(:entity).permit(:name, :entity_logo, :entity_logo_cache, :remove_entity_logo, :city, :bio, :twitter, :facebook, :website, :manifest_support)
     end
 end
