@@ -133,7 +133,7 @@ march_meeting.entities << closefunding
 	website = Faker::Internet.url
 	manifest_support = Faker::Boolean.boolean
 
-	Entity.create!(name: name, entity_logo: entity_logo, bio: bio, city: city, website: website)
+	Entity.create!(name: name, entity_logo: entity_logo, bio: bio, city: city, website: website, manifest_support: manifest_support)
 end
 
 # 99.times do |n|

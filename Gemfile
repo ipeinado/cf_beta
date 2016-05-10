@@ -49,7 +49,7 @@ gem 'tinymce-rails'
 gem 'acts-as-taggable-on', '~> 3.4'
 
 # Fake names and emails
-gem 'faker', '1.4.3'
+gem 'faker', '1.6.3'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
