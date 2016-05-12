@@ -7,8 +7,9 @@ class MessagesController < ApplicationController
     @message = ManifestSupportMessage.new(message_params)
 
     if @message.valid?
+      MessageMailer.support_message(@message).deliver_now
       flash[:success] = I18n.t(:thanks_for_supporting)
-      redirect_to manifiesto_path 
+      redirect_to manifiesto_path
     else
       render :manifest_support
     end
