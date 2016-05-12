@@ -1,8 +1,8 @@
 <% provide(:title, "Manifiesto") %>
 
 <h1><%= t :manifest_title %></h1>
-<p>Find me in app/views/static_pages/manifest.html.erb</p>
-<p>Publicado <%= t time_ago_in_words(9.days.ago).downcase %></p>
+
+<p style="text-align: center"><%= link_to t(:support_the_manifest), support_path, class: 'btn btn-large btn-warning' %></p>
 
 <% if @user_supporters.any? %>
   <ul class="supporters">

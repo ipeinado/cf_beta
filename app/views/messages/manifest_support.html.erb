@@ -1,0 +1,47 @@
+<% provide(:title, I18n.t(:support_the_manifest)) %>
+<div class="row">
+  <div class="col-md-12">
+    <h1><%= I18n.t(:support_the_manifest) %></h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <p><%= I18n.t(:support_explanation) %></p>
+
+    <%= form_for @message, url: messages_manifest_support_path do |f| %>
+      <% if @message.errors.any? %>
+        <div id="error_explanation">
+          <ul>
+            <% @message.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          <ul>
+        </div>
+      <% end %>
+
+      <div class="form-group required">
+        <%= f.label :name, I18n.t(:message_name) %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group required">
+        <%= f.label :email, I18n.t(:message_email) %>
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :twitter %>
+        <%= f.text_field :twitter, class: 'form-control', placeholder: I18n.t(:twitter_placeholder) %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :website, I18n.t(:message_website) %>
+        <%= f.url_field :website, class: 'form-control', placeholder: "http://..." %>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit t(:support_the_manifest), class: 'btn btn-warning btn-large' %>
+      </div>
+    <% end %>
+  </div>
+</div>

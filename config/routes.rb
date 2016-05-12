@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'support', to: 'messages#manifest_support', as: 'support'
+  post 'messages/manifest_support', to: 'messages#create_manifest_support'
+
   get 'events/index'
 
   get 'venues/index'
