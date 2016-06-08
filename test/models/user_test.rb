@@ -7,7 +7,9 @@ class UserTest < ActiveSupport::TestCase
         name: "Example User",
         email: "user@example.com",
         password: "foobar",
-        password_confirmation: "foobar")
+        password_confirmation: "foobar",
+        provider: "identity",
+        uid: "455")
   end
 
   test "user should be valid" do

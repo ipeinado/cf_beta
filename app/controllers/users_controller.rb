@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def create
       @user = User.new(user_params)
       @user.provider = "identity"
-      @user.uid = @user.id.to_s
+      @user.uid = (User.count + 1).to_s
       if @user.save
           log_in @user
           flash[:success] = I18n.t(:welcome_user, name: @user.name)
@@ -56,7 +56,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-        params.require(:user).permit(:name, :email, :avatar, :remove_avatar, :twitter, :linkedin, :website, :bio, :password, :password_confirmation, :manifest_support)
+        params.require(:user).permit(:name, :email, :avatar, :remove_avatar, :twitter, :linkedin, :website, :bio, :password, :password_confirmation, :manifest_support, :provider, :uid)
     end
 
     def get_user

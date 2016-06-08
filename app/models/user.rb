@@ -30,6 +30,9 @@ class User < ActiveRecord::Base
     validates :bio,
       length: { maximum: 255 }
 
+    validates :provider, presence: true
+    validates :uid, presence: true
+
     mount_uploader :avatar, AvatarUploader
 
     has_secure_password

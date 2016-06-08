@@ -10,16 +10,16 @@ require 'roo'
 
 jaisiel = User.create!(name: "Jaisiel Madrid",
 				  email: "jaisielms@gmail.com",
-				  password: "123456",
-				  password_confirmation: "123456",
+				  password: ENV["jaisiel_pwd"],
+				  password_confirmation: ENV["jaisiel_pwd"],
 				  provider: "identity",
 				  uid: "1",
 				  admin: true)
 
 nacho = User.create!(name: "Nacho Peinado",
 				  email: "i.peinado.martinez@gmail.com",
-				  password: "123456",
-				  password_confirmation: "123456",
+				  password: ENV["nacho_pwd"],
+				  password_confirmation: ENV["nacho_pwd"],
 				  provider: "identity",
 				  uid: "2",
 				  admin: true)
