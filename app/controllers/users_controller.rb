@@ -45,6 +45,12 @@ class UsersController < ApplicationController
       redirect_to users_path
   end
 
+  def create_user_from_twitter
+    user = User.from_omniauth(request.env['omniauth.auth'])
+    flash[:success] = "Thanks for supporting the manifesto"
+    redirect_to manifiesto_path
+  end
+
   private
 
     def user_params

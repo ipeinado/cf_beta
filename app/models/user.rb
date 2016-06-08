@@ -40,4 +40,19 @@ class User < ActiveRecord::Base
         BCrypt::Password.create(string, cost: cost)
     end
 
+    class << self
+        def from_omniauth(auth_hash)
+            user = User.find_or_create_by(twitter: auth_hash['info']['nickname'])
+            user.name = auth_hash['info']['name']
+            user.email = auth_hash['info']['nickname'].concat('@cftest.es')
+            user.password = auth_hash['info']['nickname']
+            user.password_confirmation = auth_hash['info']['nickname'].concat(auth_hash[:uid])
+            user.website = auth_hash['info']['urls']['Website']
+            user.bio = auth_hash['info']['description']
+            user.remote_avatar_url = auth_hash['info']['image']
+            user.save!
+            puts user
+        end
+    end
+
 end

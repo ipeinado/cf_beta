@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.5'
+ruby '2.2.4 '
 
 gem 'activerecord'
 
@@ -50,6 +50,8 @@ gem 'acts-as-taggable-on', '~> 3.4'
 
 # Fake names and emails
 gem 'faker', '1.6.3'
+
+gem 'omniauth-twitter'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
