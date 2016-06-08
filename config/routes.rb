@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get '/auth/:provider/callback', to: 'users#create_user_from_twitter'
   get 'support', to: 'messages#manifest_support', as: 'support'
   post 'messages/manifest_support', to: 'messages#create_manifest_support'
 
@@ -22,6 +21,9 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   get 'events/tag/:tag', to: 'events#tag', as: 'tag'
+
+    get '/auth/twitter/callback', to: 'users#create_user_from_twitter'
+    get '/auth/facebook/callback', to: 'users#create_user_from_facebook'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -52,6 +52,7 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'faker', '1.6.3'
 
 gem 'omniauth-twitter'
+gem 'omniauth-facebook'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

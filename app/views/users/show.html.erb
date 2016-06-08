@@ -1,6 +1,6 @@
 <% provide(:title, "#{@user.name}") %>
 
-<% if current_user && !current_user?(@user) %>
+<% if current_user && !current_user?(@user) && current_user.admin? %>
 	<%= render 'shared/admin_menu' %>
 <% end %>
 

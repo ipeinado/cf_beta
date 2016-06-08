@@ -48,9 +48,23 @@ class UsersController < ApplicationController
   end
 
   def create_user_from_twitter
-    user = User.from_omniauth(request.env['omniauth.auth'])
-    flash[:success] = "Thanks for supporting the manifesto"
+    @user = User.from_tw_omniauth(request.env['omniauth.auth'])
+    if @user.save
+      flash[:success] = "Thanks for supporting the manifesto"
+    else
+      flash[:danger] = "Something went wrong"
+    end    
     redirect_to manifiesto_path
+  end
+
+  def create_user_from_facebook
+    @user = User.from_fb_omniauth(request.env['omniauth.auth'])
+    if @user.save
+      flash[:success] = "Thanks for supporting the manifesto"
+    else
+      flash[:danger] = "Something went wrong"
+    end
+    redirect_to manifiesto_path  
   end
 
   private

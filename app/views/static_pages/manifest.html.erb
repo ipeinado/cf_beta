@@ -5,7 +5,8 @@
 <div style="text-align: center;">
   <h2>Add yourself to our wall</h2>
   <p>Just sign in using your Twitter account and we'll add your profile picture to our wall</p>
-  <%= link_to image_tag("social/twitter.png"), "/auth/twitter", alt: "Sign in using Twitter" %>
+  <%= link_to image_tag("social/twitter.png"), "/auth/twitter", title: "Sign in using Twitter" %>
+  <%= link_to image_tag("social/facebook.png"), "/auth/facebook", title: "Sign in using Facebook" %>
 </div>
 <% if @user_supporters.any? %>
   <ul class="supporters">
