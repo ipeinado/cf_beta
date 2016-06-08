@@ -18,6 +18,8 @@ class UsersController < ApplicationController
 
   def create
       @user = User.new(user_params)
+      @user.provider = "identity"
+      @user.uid = @user.id.to_s
       if @user.save
           log_in @user
           flash[:success] = I18n.t(:welcome_user, name: @user.name)

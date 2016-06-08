@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160510222552) do
+ActiveRecord::Schema.define(version: 20160608074426) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -151,9 +151,13 @@ ActiveRecord::Schema.define(version: 20160510222552) do
     t.string   "website"
     t.string   "avatar"
     t.boolean  "manifest_support"
+    t.string   "provider"
+    t.string   "uid"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true
+  add_index "users", ["uid"], name: "index_users_on_uid"
 
   create_table "venues", force: :cascade do |t|
     t.string   "name"

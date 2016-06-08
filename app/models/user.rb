@@ -42,16 +42,17 @@ class User < ActiveRecord::Base
 
     class << self
         def from_omniauth(auth_hash)
-            user = User.find_or_create_by(twitter: auth_hash['info']['nickname'])
-            user.name = auth_hash['info']['name']
+            user = User.find_or_create_by(provider: auth_hash.provider, uid: auth_hash.uid)            
+            user.name = auth_hash.info.name
             user.email = auth_hash['info']['nickname'].concat('@cftest.es')
-            user.password = auth_hash['info']['nickname']
-            user.password_confirmation = auth_hash['info']['nickname'].concat(auth_hash[:uid])
-            user.website = auth_hash['info']['urls']['Website']
-            user.bio = auth_hash['info']['description']
-            user.remote_avatar_url = auth_hash['info']['image']
-            user.save!
-            puts user
+            user.password = auth_hash.info.nickname
+            user.password_confirmation = auth_hash.info.nickname
+            user.website = auth_hash.info.urls.Website
+            user.bio = auth_hash.info.description
+            user.remote_avatar_url = auth_hash.info.image
+            user.twitter = auth_hash.info.urls.Twitter
+            user.manifest_support = true
+            user.save
         end
     end
 
